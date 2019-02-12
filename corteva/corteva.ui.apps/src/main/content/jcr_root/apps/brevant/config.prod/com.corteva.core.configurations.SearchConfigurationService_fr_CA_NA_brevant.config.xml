@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="sling:OsgiConfig"
-    autoCompleteUrl="https://content.atomz.com/autocomplete/sp10/05/6b/da-stage/"
-          filterOption="Article###q1=Article;x1=contentType,Au sujet de Corteva###q1=Au+sujet+de+Corteva;x1=contentType,Innovation###q1=Innovation;x1=contentType,Durabilité###q1=Durabilit%C3%A9;x1=contentType,Carrière###q1=Carri%C3%A8re;x1=contentType,Évènement###q1=%C3%89v%C3%A8nement;x1=contentType,QFP###q1=QFP;x1=contentType,Documentation Technique###q1=Documentation+Technique;x1=contentType,Produit###q1=Produit;x1=contentType,Biographie###q1=Biographie;x1=contentType,Média###q1=M%C3%A9dia;x1=contentType,Légal###q1=L%C3%A9gal;x1=contentType"
-    maxSuggestionLength="5"
-    minCharacterLength="3"
-    searchUrl="https://stage-sp10056bda.guided.ss-omtrdc.net"
-    sortOption="Pertinence###m_DuPontSort=relevance,Date de dernière modification###m_DuPontSort=date"/>

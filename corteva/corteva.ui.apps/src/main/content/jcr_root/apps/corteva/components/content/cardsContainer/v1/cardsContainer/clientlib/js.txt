@@ -1,3 +1,0 @@
-#base=js
-dist/cardsContainer.js
-dist/container-responsive.js

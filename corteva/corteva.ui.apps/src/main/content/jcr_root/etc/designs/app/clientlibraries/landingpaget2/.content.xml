@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="cq:ClientLibraryFolder"
-    categories="[corteva.landingpaget2]"
-    embed="[components.globalHeader,components.navigationDropdown,component.globalfooter,components.breadcrumb,components.hero,components.textonimage,components.galleryVideoPlayer,components.galleryImage,component.fixedGridTilesContainer,components.cardsContainer,components.relatedContentFullWidthCard,components.relatedContentCard,components.tilesContainer,components.anchorNavigation,components.accordionList,components.richText,components.eloquaForm,components.navSearch,components.scrollToTop,components.hrTag,components.lightNavigation,components.productFilter,components.featureLinkList,components.countrySelector]"/>

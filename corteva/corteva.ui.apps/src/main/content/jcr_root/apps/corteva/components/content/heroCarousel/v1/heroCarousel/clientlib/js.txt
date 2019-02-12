@@ -1,3 +1,0 @@
-#base=js
-
-dist/hero-carousel.js

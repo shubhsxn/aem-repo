@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="sling:OsgiConfig"
-    host.prefix="https://agco-auth-stage.pioneer.com"
-	captchaSiteKey="6LfAgFgUAAAAALiJFyS8TZsYfz2KKh2wLSPm5iuA"
-    captchaSecretKey="6LfAgFgUAAAAAB5uJMuHv1ZK0OypBjkZiq81kMjg"
-	countrySelectorRootPath="/content/corteva"
-    rootPath="http://www.corteva.com/"
-	company="corteva-commercial"/>

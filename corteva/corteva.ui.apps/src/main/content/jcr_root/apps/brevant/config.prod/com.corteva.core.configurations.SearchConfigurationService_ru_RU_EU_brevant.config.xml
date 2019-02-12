@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="sling:OsgiConfig"
-    autoCompleteUrl="https://content.atomz.com/autocomplete/sp10/05/6b/dc-stage/"
-          filterOption="Career###q1=Career;x1=contentType,Event###q1=Event;x1=contentType,Article###q1=Article;x1=contentType,Technical Documentation###q1=Technical+Documentation;x1=contentType,FAQ###q1=FAQ;x1=contentType,Promotional Content###q1=Promotional+Content;x1=contentType,About Corteva###q1=About+Corteva;x1=contentType,Biography###q1=Biography;x1=contentType,Innovation###q1=Innovation;x1=contentType,Legal###q1=Legal;x1=contentType,Media###q1=Media;x1=contentType,Sustainability###q1=Sustainability;x1=contentType,Product###q1=Product;x1=contentType"
-    maxSuggestionLength="5"
-    minCharacterLength="3"
-    searchUrl="https://stage-sp10056bdc.guided.ss-omtrdc.net"
-    sortOption="Актуальность###m_DuPontSort=relevance,Дата последнего изменения###m_DuPontSort=date"/>

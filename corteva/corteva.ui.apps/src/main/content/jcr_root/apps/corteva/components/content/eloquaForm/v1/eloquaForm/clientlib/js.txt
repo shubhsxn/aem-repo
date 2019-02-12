@@ -1,2 +1,0 @@
-#base=js
-dist/eloqua-form.js

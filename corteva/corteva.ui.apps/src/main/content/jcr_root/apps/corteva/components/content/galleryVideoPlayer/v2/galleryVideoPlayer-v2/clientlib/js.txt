@@ -1,3 +1,0 @@
-#base=js
-jquerylib.js 
-gallery-video-player.js

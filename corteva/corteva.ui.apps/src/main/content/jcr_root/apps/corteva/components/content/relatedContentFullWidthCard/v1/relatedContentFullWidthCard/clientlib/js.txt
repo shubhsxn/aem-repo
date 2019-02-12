@@ -1,2 +1,0 @@
-#base=js
-dist/related-content-full-width-card.js

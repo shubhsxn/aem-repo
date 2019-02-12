@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="sling:OsgiConfig"
-    autoCompleteUrl="https://content.atomz.com/autocomplete/sp10/05/6b/d8-stage/"
-          filterOption="Karriere###q1=Karriere;x1=contentType,Veranstaltungen###q1=Veranstaltungen;x1=contentType,Artikel###q1=Artikel;x1=contentType,Technische Dokumente###q1=Technische+Dokumente;x1=contentType,Frage und Antwort###q1=Frage+und+Antwort;x1=contentType,Promotional Content###q1=Promotional+Content;x1=contentType,Über Corteva###q1=%c3%9cber+Corteva;x1=contentType,Biografie###q1=Biografie;x1=contentType,Innovation###q1=Innovation;x1=contentType,Rechtliches###q1=Rechtliches;x1=contentType,Medien###q1=Medien;x1=contentType,Nachhaltigkeit###q1=Nachhaltigkeit;x1=contentType,Produkt###q1=Produkt;x1=contentType"
-    maxSuggestionLength="5"
-    minCharacterLength="3"
-    searchUrl="https://stage-sp10056bd8.guided.ss-omtrdc.net"
-    sortOption="Relevanz###m_DuPontSort=relevance,Zuletzt geändertes Datum###m_DuPontSort=date"/>

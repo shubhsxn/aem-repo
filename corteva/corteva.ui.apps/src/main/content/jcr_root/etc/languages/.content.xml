@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="sling:Folder"
-    languages="[en,de,fr,fr_ca,en_us,en_ca,en_br,ko,ko_kr,en_au,,pt,pt_br,zh,zh_cn,hu,hu_hu,it,it_it,ja,ja_jp,en_nz,ro,ro_ro,tr,tr_tr,lt,lt_lt,lv,lv_lv,et,et_ee,uk_ua,ru_ru,es_ar]"/>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="sling:OsgiConfig"
-	pdpRootPath="/content/corteva/au/au/en/homepage/products-and-solutions"
-	productContentRootPath="/content/corteva/au/au/en/homepage/products-and-solutions"
-	labelFinderPath="/content/corteva/au/au/en/homepage/label-finder"/>

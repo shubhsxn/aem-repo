@@ -1,6 +1,0 @@
-#base=js
-author-common.js
-dialog-ready-functions.js
-custom-dropdown-showhide.js
-validations.js
-checkboxshowhide.js
