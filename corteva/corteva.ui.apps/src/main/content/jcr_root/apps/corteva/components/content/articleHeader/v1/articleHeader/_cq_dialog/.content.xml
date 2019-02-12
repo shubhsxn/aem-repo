@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Article Header"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="article-feed">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Article Header"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <displayArticleType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                defaultChecked="{Boolean}true"
+                                fieldDescription="Display Article Type"
+                                name="./displayArticleType"
+                                text="Display Article Type"
+                                uncheckedValue="false"
+                                value="true"/>
+                            <displayPublishDate
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                defaultChecked="{Boolean}true"
+                                fieldDescription="Display Publish Date"
+                                name="./displayPublishDate"
+                                text="Display Publish Date"
+                                uncheckedValue="false"
+                                value="true"/>
+                            <displayByLine
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="isMandatoryCheck"
+                                defaultChecked="{Boolean}false"
+                                fieldDescription="Display By Line"
+                                name="./displayByLine"
+                                requiredtocheck="displayByLine"
+                                text="Display By Line"
+                                uncheckedValue="false"
+                                value="true"/>
+                            <bylinePrefix
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Enter Byline Label"
+                                fieldLabel="Byline Prefix"
+                                maxlength="{Long}40"
+                                name="./bylinePrefix"
+                                requiredtocheck="displayByLine"
+                                value=" ${not empty cqDesign.bylinePrefix ? cqDesign.bylinePrefix : &quot;Written By&quot;}"/>
+                            <displayRevisionDate
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="isMandatoryCheck"
+                                defaultChecked="{Boolean}false"
+                                fieldDescription="Display Revision Date"
+                                name="./displayRevisionDate"
+                                requiredtocheck="displayRevisionDate"
+                                text="Display Revision Date"
+                                uncheckedValue="false"
+                                value="true"/>
+                            <revisionDatePrefix
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Enter Revision Date"
+                                fieldLabel="Revision Date Prefix"
+                                maxlength="{Long}40"
+                                name="./revisionDatePrefix"
+                                requiredtocheck="displayRevisionDate"
+                                value="Revised"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title"
+                                fieldLabel="Title"
+                                maxlength="{Long}100"
+                                name="./title"
+                                required="{Boolean}true"/>
+                            <introText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Intro Text"
+                                name="./introText"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <findreplace
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <spellcheck
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <misctools
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                            <chars jcr:primaryType="nt:unstructured">
+                                                <copyright
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#169;"/>
+                                                <trademark
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#8482;"/>
+                                                <registered
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#174;"/>
+                                                <emDash
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#8212;"/>
+                                                <pound
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#163;"/>
+                                                <nbsp
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#160;"/>
+                                            </chars>
+                                        </specialCharsConfig>
+                                    </misctools>
+                                    <styles
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <styles jcr:primaryType="nt:unstructured">
+                                            <plainSpan
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="defaultSpan"
+                                                text="Default (add span tag)"/>
+                                            <lead
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="lead"
+                                                text="Lead"/>
+                                        </styles>
+                                    </styles>
+                                    <table
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,subsuperscript#subscript,subsuperscript#superscript,links#modifylink,links#unlink,links#anchor,#image,findreplace#find,findreplace#replace,spellcheck#checktext,misctools#specialchars,misctools#sourceedit,#styles,#paraformat,table#table]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                    ref="paraformat"/>
+                                                <styles
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="styles:getStyles:styles-pulldown"
+                                                    ref="styles"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+								<htmlRules jcr:primaryType="nt:unstructured">
+                                       <docType jcr:primaryType="nt:unstructured">
+                                           <typeConfig
+                                                 jcr:primaryType="nt:unstructured"
+                                                 useSemanticMarkup="{Boolean}true">
+                                                 <semanticMarkupMap
+                                                     jcr:primaryType="nt:unstructured"
+                                                     b="strong"
+													 i="em"/>
+                                            </typeConfig>
+                                        </docType>
+                                </htmlRules>
+                            </introText>
+                            <setImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                assetfieldstobepopulated="\{&quot;imageAltText&quot;:&quot;./altText&quot;}"
+                                class="assetMetadataClass">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <smartimage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget "
+                                        fieldLabel="Hero Image"
+                                        fileNameParameter="./fileName"
+                                        fileReferenceParameter="./fileReference"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./file"
+                                        title="Upload Image Asset"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <altText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/image/alttext"/>
+                                </items>
+                            </setImage>
+                            <displayHeroImageAttribution
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                               
+                                defaultChecked="{Boolean}true"
+                                fieldDescription="Display Hero Image Attribution"
+                                name="./displayHeroImageAttribution"
+                               
+                                text="Display Hero Image Attribution"
+                                uncheckedValue="false"
+                                value="true"/>
+                            <heroImageAttributionPrefix
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Enter Hero Image Attribution prefix"
+                                fieldLabel="Hero Image Attribution Prefix"
+                                value="Photo Credit :"
+                                name="./heroImageAttributionPrefix"/>
+                               
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

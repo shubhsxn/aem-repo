@@ -1,0 +1,6 @@
+Dear ${authorName},
+
+<a href= "${payload.link}">${payload.title}</a> > was rejected for publishing. Please follow-up with reviewer group for more information.  
+
+\ -------------------------------------------------------------------------------------\
+This is a system-generated email; please do not reply to this email address.

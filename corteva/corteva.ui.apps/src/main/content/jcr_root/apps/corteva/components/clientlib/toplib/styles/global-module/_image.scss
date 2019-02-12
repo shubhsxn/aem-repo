@@ -1,0 +1,15 @@
+picture img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: auto;
+}
+
+picture {
+  background: transparent;
+}
+
+img.lazyload,img.lazyloading{
+	background: url('../images/preloader.gif') center center no-repeat;
+	width: 100%;
+}

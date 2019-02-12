@@ -1,0 +1,36 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+		<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+			Edit Feature Link List
+		</sly>
+		<sly data-sly-use.featureList="com.corteva.model.component.models.FeatureLinkListModel">
+			<div class="band white nav03-feature-link-list">
+			<div class="band-content">
+		        <section>
+		            <h2>${featureList.sectionTitle}</h2>
+					<a href="${featureList.spotlightPath}" data-analytics-type="featured-link" data-analytics-value=${featureList.spotlightTitle}>
+						 <picture>	
+							<source srcset="${comElement.imagePath.desktopImagePath}" media="(min-width: 1200px)">
+							<source srcset="${comElement.imagePath.tabletImagePath}" media="(min-width: 992px)">
+							<source srcset="${comElement.imagePath.mobileImagePath}" media="(max-width: 991px)">
+							<img class="" src="${comElement.imagePath.desktopImagePath  @ context='uri'}" alt="${comElement.altText}">	
+						 </picture>
+						 <span>${featureList.spotlightTitle}</span>
+					</a>
+				</section>
+				<section>
+            	<h2> ${featureList.listTitle}</h2>
+        		<sly data-sly-list="${featureList.listItems}">
+					<a href="${item.listItemPath}" data-analytics-type="featured-link" data-analytics-value=${item.listItemTitle}>${item.listItemTitle}</a>
+				</sly>
+			</section>
+		</div>
+	</sly>
+</div> 

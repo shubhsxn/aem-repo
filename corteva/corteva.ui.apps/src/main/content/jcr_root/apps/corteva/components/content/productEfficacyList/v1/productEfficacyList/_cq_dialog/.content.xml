@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Product Efficacy List"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <section
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Component Title"
+                                maxlength="{Long}120"
+                                name="./controlTitle"
+                                required="{Boolean}true"/>
+                            <setIntroText
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Intro Paragraph *"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <introText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/bodytext"/>
+                                </items>
+                            </setIntroText>
+                            <use
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Select use"
+                                name="./controlUse"
+                                required="{Boolean}true"
+                                value="">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <weeds
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Weeds"
+                                        value="weeds"/>
+                                    <diseases
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Diseases"
+                                        value="plantDiseases"/>
+                                    <pests
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Pests"
+                                        value="pests"/>
+                                </items>
+                            </use>
+                            <controllist
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/common/tagspicker"
+                                allowBulkEdit="{Boolean}true"
+                                fieldLabel="Controlled List *"
+                                fieldDescription="Select controlled list only from the above selected facet"
+                                name="./cq:controltag"
+                                required="{Boolean}true"
+                                rootPath="/etc/tags/corteva/efficacy"/>
+                            <suppresslist
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/common/tagspicker"
+                                allowBulkEdit="{Boolean}true"
+                                fieldLabel="Suppressed List"
+                                fieldDescription="Select suppressed list only from the above selected facet"
+                                name="./cq:suppresstag"
+                                rootPath="/etc/tags/corteva/efficacy"/>
+							<hideLabelFinderUrl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                defaultChecked="{Boolean}false"
+                                fieldDescription="Hide Label Finder Url"
+                                name="./hideLabelFinderUrl"
+                                text="Hide Label Finder Url"
+                                uncheckedValue="false"
+                                value="true"/>
+                        </items>
+                    </columns>
+                </items>
+            </section>
+        </items>
+    </content>
+</jcr:root>

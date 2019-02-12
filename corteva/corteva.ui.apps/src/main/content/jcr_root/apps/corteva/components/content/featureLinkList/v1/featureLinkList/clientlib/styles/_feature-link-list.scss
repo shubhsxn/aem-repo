@@ -1,0 +1,96 @@
+$gutter: 104px;
+.nav03-feature-link-list {
+  &.band.white {
+    border-bottom: 1px solid $border-secondary;
+  }
+  h2 {
+    font-size: $heading-s;
+    line-height: 30px;
+    margin-bottom: 12px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: $font-sm;
+      line-height: 20px;
+      margin-bottom: 0;
+      margin-top: 30px;
+    }
+  }
+  section:first-child {
+    h2 {
+      margin: 0 0 14px;
+      @media screen and (min-width: $mobile) {
+        margin-bottom: 33px;
+      }
+    }
+    a img, a span {
+      display: block;
+    }
+    a {
+      font-size: $heading-s;
+      line-height: 30px;
+      color: $brand-primary;
+      font-family: $brand-font;
+      @media screen and (max-width: $mobile) {
+        font-size: $font-xl;
+        line-height: 24px;
+      }
+      span {
+        margin-top: 15px;
+      }
+    }
+    img {
+      max-width: 328px;
+      @media screen and (max-width: $mobile) {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+  section:last-child {
+    a:first-child {
+      padding-top: 20px;
+    }
+
+    a {
+      border-bottom: 1px solid $border-secondary;
+      display: block;
+      padding: 24px 30px 24px 1px;
+      font-family: $brand-font;
+      font-size: $font-l;
+      line-height: 24px;
+      background: transparent url(../vectors/hyperlink-arrow-positive.svg) right center no-repeat;
+      background-size: 18px 10px;
+      @media screen and (max-width: $mobile) {
+        font-size: $base-font;
+        line-height: 22px;
+        padding: 24px 30px 24px 1px;
+      }
+    }
+
+    a:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      padding-top:0;
+      margin-top: 24px;
+    }
+  }
+
+  @media screen and (min-width: $mobile) {
+    section {
+      display: inline-block;
+      vertical-align: top;
+      letter-spacing: auto;
+      &:first-child {
+        max-width: 328px;
+      }
+      &:last-child {
+        width: calc(100% - 328px - #{$gutter});
+        margin-left: $gutter;
+      }
+    }
+    .band-content {
+      letter-spacing: 0;
+      font-size: 0;
+    }
+  }
+}

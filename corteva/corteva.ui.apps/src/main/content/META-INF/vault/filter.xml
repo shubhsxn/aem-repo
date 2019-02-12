@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/corteva">
+        <exclude pattern="/apps/corteva/install" />
+    </filter>
+	<filter root="/apps/brevant" />
+	<filter root="/apps/granite" />
+    <filter root="/apps/sling" />
+	<filter root="/apps/cq/gui" />
+	<filter root="/apps/cq/experience-fragments" />
+    <filter root="/conf/corteva" />
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/corteva-image" />
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/corteva-audio-file" />
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/corteva-downloadable-file" />
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/corteva-icon" />
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/corteva-logo" />
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/corteva-video" />
+    <filter root="/etc/designs/app"/>
+    <filter root="/etc/designs/brevant"/>
+    <filter root="/etc/acs-commons"/>
+	<filter root="/etc/notification/email/corteva"/>
+	<filter root="/etc/workflow/models/basicworkflow"/>
+	<filter root="/etc/workflow/models/basicdeactivationworkflow"/>
+	<filter root="/etc/workflow/models/extendedapprovalworkflow"/>
+	<filter root="/etc/workflow/models/dam/update_asset"/>
+	<filter root="/etc/languages"/>
+	<filter root="/content/experience-fragments">
+		 <exclude pattern="/content/experience-fragments(/.*)" />
+	</filter>
+	<filter root="/apps/dam" />
+    <filter root="/apps/corteva-dam" />
+    <filter root="/apps/wcm/core/resources/languages" />
+</workspaceFilter>

@@ -1,0 +1,132 @@
+/* ==========================================================================
+   SPACING
+
+   Spacing definitions, function and mixins for creating a margins and padding
+   ========================================================================== */
+$spacing-scale: (
+    jumbodecimal: 100,
+    hulk: 90,
+    titan: 80,
+    collosal: 70,
+    jumbo: 60,
+    xxxlarge: 50,
+    xxlarge: 40,
+    xlarge: 30,
+    largemedium : 25,
+    large: 20,
+    mediumlarge: 18,
+    medium: 15,
+    mediumsmall: 13,
+    small: 10,
+    smallmedium: 8,
+    xsmall: 5,
+    xxsmall: 3,
+    micro: 2,
+    nano: 1,
+    none: 0
+);
+
+/**
+ Getter for retrieving a spacing size in rem
+ @param {String} $size Name of spacing size to retrieve from spacing scale
+*/
+@function get-spacing($size){
+    @if(map-has-key($spacing-scale, $size)) {
+        @return rem(map-get($spacing-scale, $size));
+    } @else {
+        @return $size;
+    }
+}
+
+/**
+ Getter for retrieving a spacing size in px
+ @param {String} $size Name of spacing size to retrieve from spacing scale
+*/
+@function get-spacing-px($size){
+    @if(map-has-key($spacing-scale, $size)) {
+        @return px-size(map-get($spacing-scale, $size));
+    } @else {
+        @return $size;
+    }
+}
+
+/**
+ Getter for retrieving a spacing size
+ @param {String} $sizes A list of sizes to retrieve spacing from the spacing scale for
+ Accepts values in the Top Right Bottom Left format
+*/
+@function get-sizing($sizes) {
+    $size-list: null;
+
+    @each $size in $sizes {
+        @if(not $size-list) {
+            $size-list: get-spacing($size);
+        } @else {
+            $size-list: append($size-list, get-spacing($size));
+        }
+    }
+
+    @return $size-list;
+}
+
+/* ==========================================================================
+   Mixins for creating margins
+
+   Each mixin accepts the same format that the vanilla property excepts
+
+   For example:
+
+   @include margin-top($size);
+
+   @include margin($size $size $size $size); (for top right bottom left)
+   ========================================================================== */
+@mixin margin-top($size) {
+    margin-top: get-spacing($size);
+}
+
+@mixin margin-right($size) {
+    margin-right: get-spacing($size);
+}
+
+@mixin margin-bottom($size) {
+    margin-bottom: get-spacing($size);
+}
+
+@mixin margin-left($size) {
+    margin-left: get-spacing($size);
+}
+
+@mixin margin($sizes) {
+    @include directional-property(margin, false, get-sizing($sizes));
+}
+
+/* ==========================================================================
+   Mixins for creating padding
+
+   Each mixin accepts the same format that the vanilla property excepts
+
+   For example:
+
+   @include padding-top($size);
+
+   @include padding($size $size $size $size); (for top right bottom left)
+   ========================================================================== */
+@mixin padding-top($size) {
+    padding-top: get-spacing($size);
+}
+
+@mixin padding-right($size) {
+    padding-right: get-spacing($size);
+}
+
+@mixin padding-bottom($size) {
+    padding-bottom: get-spacing($size);
+}
+
+@mixin padding-left($size) {
+    padding-left: get-spacing($size);
+}
+
+@mixin padding($sizes) {
+    @include directional-property(padding, false, get-sizing($sizes));
+}

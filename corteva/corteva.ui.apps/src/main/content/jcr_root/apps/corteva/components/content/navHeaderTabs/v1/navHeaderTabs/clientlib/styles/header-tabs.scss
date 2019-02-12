@@ -1,0 +1,123 @@
+.nav04-header-tabs {
+  padding: 70px 0 0;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 30px;
+  }
+
+  &.ready ~ .band.white {
+    border-top: none;
+  }
+
+  nav {
+    html.no-js & {
+      display: none;
+    }
+    position: sticky;
+    top: 0;
+    margin-top: 50px;
+    background: $foundation-quaternary;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 25px;
+      overflow-y: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .band-content {
+      display: flex;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 1024px;
+      width: 100%;
+      
+      @media screen and (max-width: 1440px) {
+        padding: 0;
+      }
+
+      @media screen and (max-width: 1280px) {
+        width: 100vw;
+        padding: 0 2.8vw;
+      }
+
+      @media screen and (max-width: 1024px) {
+        width: 100vw;
+        padding: 0 10vw;
+      }
+
+      @media screen and (max-width: $mobile) {
+        padding: 0 5vw;
+      }
+    }
+
+    a {
+      font-size: $font-m;
+      line-height: 20px;
+      color: $brand-primary;
+      font-weight: bold;
+      padding: 20px 0 16px;
+      display: inline-block;
+      margin-right: 30px;
+      border-bottom: 4px solid transparent;
+      flex-shrink: 0;
+      &.active {
+        color: $foundation-primary;
+        border-bottom: 4px solid $brand-primary;
+      }
+    }
+  }
+
+  /* Setting up the show/hide */
+  ~ .band.ready {
+    display: none;
+    padding-top: 30px;
+    @media screen and (min-width: $mobile) {
+      padding-top: 70px; 
+    }
+  &.cq-Editable-dom {
+    display: block;
+  }
+    &.active {
+      display: block;
+      .band-content {
+        opacity: 1;
+      }
+    }
+
+    .band-content {
+      transition: all 1s ease;
+      opacity: 0;
+    }
+  }
+}
+
+/* Authoring issue fixed */
+.nav04-header-tabs ~ .band.ready.cq-Editable-dom .band > .band-content {
+  opacity: 1;
+}
+@media screen and (max-width: 1300px){
+  .nav04-header-tabs {
+    .band-content{
+      padding: 0 10vw;
+      margin: 0;
+    }
+    nav{
+      .band-content{
+        padding: 0 10vw;
+        margin: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobile){
+  .nav04-header-tabs {
+    .band-content{
+      padding: 0 5vw;
+    }
+    nav{
+      .band-content{
+        padding: 0 5vw;
+      }
+    }
+  }
+}

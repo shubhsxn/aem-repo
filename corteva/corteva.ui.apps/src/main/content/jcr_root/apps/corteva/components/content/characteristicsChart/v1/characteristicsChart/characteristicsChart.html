@@ -1,0 +1,66 @@
+<!--/*
+
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+  <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">Edit Characteristics Chart </sly>
+
+<!-- Component Variations -->
+<!-- Sidebar: use class 'sidebar' or 'no-sidebar' on outer container div.chart--container -->
+<!-- Disclaimer: use class 'disclaimer' or 'no-disclaimer' on outer container div.chart--container -->
+<!-- Color Scheme: use class 'gray' 'white' or 'maroon' on outer container div.chart--container -->
+
+<sly data-sly-use.charcchat="com.corteva.model.component.models.CharacteristicChart">
+</sly>
+			   
+<div class="chart-container band ${charcchat.theme} ${charcchat.displaySidebar}" data-chart-csv="${charcchat.chartData}" data-empty-flag="${charcchat.emptyCsvFields}">
+    <div class="chart-container-content band-content">
+        <h2 class="chart-title">${charcchat.title}</h2>
+        <div class="chart">
+            <div class="chart-graph">
+                <div class=" chart-header">
+                    <div class="chart-label"></div>
+                    <div class="chart-bar">
+                        <div class="x-label">1</div>
+                        <div class="x-label">2</div>
+                        <div class="x-label">3</div>
+                        <div class="x-label">4</div>
+                        <div class="x-label">5</div>
+                        <div class="x-label">6</div>
+                        <div class="x-label">7</div>
+                        <div class="x-label">8</div>
+                        <div class="x-label">9</div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="chart-sidebar">
+			
+                <table class="chart-sidebar-content">
+                    <sly data-sly-list.sidebars="${charcchat.sidebarList}">
+                    <tr>
+                        <td>${sidebars.labelSidebar}</td>
+                        <td class="bold">${sidebars.valueSidebar}</td>
+                    </tr>
+                    </sly>
+                </table>
+            </div>
+               
+			
+        </div>
+
+		<sly data-sly-test="${charcchat.disclaimer}">
+        <div class="chart-disclaimer">
+            <div>${charcchat.disclaimer @ context='html'}</div>
+        </div>
+		 </sly>
+    </div>
+</div>
+</sly>
+</div>

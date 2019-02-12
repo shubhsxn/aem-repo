@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="nt:unstructured">
+                    <formheading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide form heading"
+                        fieldLabel="Form Heading"
+                        name="./formheading"/>
+                    <thankyoupage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide thank you page url"
+                        fieldLabel="Thank You Page"
+                        name="./thankyoupage"/>
+                    <thankyoupage2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide thank you page2 url"
+                        fieldLabel="Thank You Page2"
+                        name="./thankyoupage2"/>
+                    <fieldsettitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide thank you page2 url"
+                        fieldLabel="Field set Title"
+                        name="./fieldsettitle"/>
+                    <actionurl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide action URL"
+                        fieldLabel="Action URL"
+                        name="./actionurl"/>
+                    <formname
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide form name"
+                        fieldLabel="Form Name"
+                        name="./formname"/>
+                    <formid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide form ID"
+                        fieldLabel="Form ID"
+                        name="./formid"/>
+                    <onsubmitfun
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Onsubmit Function"
+                        fieldLabel="on Submit JS Function"
+                        name="./onsubmitfun"/>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Tab 2">
+                <items jcr:primaryType="nt:unstructured">
+                    <requiredtext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide required error message text"
+                        fieldLabel="Required text"
+                        name="./requiredtext"/>
+                    <thankyoupage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide thank you page url"
+                        fieldLabel="Thank You Page"
+                        name="./thankyoupage"/>
+                    <thankyoupage2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide thank you page2 url"
+                        fieldLabel="Thank You Page2"
+                        name="./thankyoupage2"/>
+                    <fieldsettitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide thank you page2 url"
+                        fieldLabel="Field set Title"
+                        name="./fieldsettitle"/>
+                    <actionurl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide action URL"
+                        fieldLabel="Action URL"
+                        name="./actionurl"/>
+                    <formname
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide form name"
+                        fieldLabel="Form Name"
+                        name="./formname"/>
+                    <formid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Please provide form ID"
+                        fieldLabel="Form ID"
+                        name="./formid"/>
+                    <onsubmitfun
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldDescription="Onsubmit Function"
+                        fieldLabel="on Submit JS Function"
+                        name="./onsubmitfun"/>
+                </items>
+            </tab2>
+        </items>
+    </items>
+</jcr:root>

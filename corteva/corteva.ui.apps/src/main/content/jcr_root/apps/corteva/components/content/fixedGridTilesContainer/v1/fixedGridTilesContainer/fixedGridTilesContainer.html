@@ -1,0 +1,55 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+  <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+    <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+    Edit Fixed Grid Container
+    </sly>
+    <sly data-sly-use.fixedGridObj="com.corteva.model.component.models.FixedGridModel">
+    <sly data-sly-test.isFixedGrid="${comElement.viewType=='fixedGridTiles'}" />
+	<sly data-sly-test.isBlogHeader="${comElement.viewType=='blogLandingHeader'}" />
+    <sly data-sly-test="${isBlogHeader}">
+        <sly data-sly-test.title="${fixedGridObj.shortTitle}" />
+		<sly data-sly-test.className="${'white con19-blog-landing-header'}" />
+	</sly>
+    <sly data-sly-test="${isFixedGrid}">
+        <sly data-sly-test.title="${comElement.title}" />
+		<sly data-sly-test.className="${''}" />
+	</sly>
+
+        <div class="band c-con01-fixed-grid-tiles__wrapper ${fixedGridObj.bgColor} ${className}">
+        <div class="band-content">
+          <sly data-sly-test="${isFixedGrid}">
+            <div class="atm01-header-v1__wrapper">
+              <sly data-sly-test="${title}">
+                <h2>
+                    ${title @ context = 'html'}
+                </h2>
+              </sly>
+              ${comElement.bodyText @ context='html'}
+            </div>
+          </sly>
+          <sly data-sly-test="${isBlogHeader}">
+            <header>
+              <sly data-sly-test="${title}">
+                <h2>
+                    ${title @ context = 'html'}
+                </h2>
+              </sly>
+              <p class="subhead">${comElement.bodyText @ context='html'}</p>
+            </header>
+          </sly>
+          <div class="impact ${fixedGridObj.cropFirstExpandedTile ? 'crop-image' : ''}">
+            <sly data-sly-resource="${fixedGridObj.responsiveGridNodeName @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+          </div>
+        </div>
+      </div>
+    </sly>
+  </sly>
+</div>

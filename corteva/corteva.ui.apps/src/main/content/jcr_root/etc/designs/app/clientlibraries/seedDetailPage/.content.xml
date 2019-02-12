@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:ClientLibraryFolder"
+    categories="[corteva.seedDetailPage]"
+    embed="[components.breadcrumb,components.columnControl,component.globalfooter,components.globalHeader,components.anchorNavigation,components.productHeader,components.productIntro,components.productTileLinkList,components.characteristicsChart,components.tiles,components.featureLinkList,components.accordionList,components.richText,components.hotspotimage,components.textonimage,components.galleryImage,components.galleryVideoPlayer,components.eloquaForm,components.eloquaFormCustom,components.navSearch]"/>

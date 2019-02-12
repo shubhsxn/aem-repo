@@ -1,0 +1,72 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+        Edit Hero Carousel
+        </sly>
+        <sly data-sly-use.carousal="com.corteva.model.component.models.HeroCarousalModel">
+        <div class="c-hro3__wrapper">
+            <div class="angled-wrapper">
+                <div class="carousel-hero" data-flickity='{ "accessibility": true }'>
+                    <sly data-sly-list="${carousal.carousalSlides}">
+                        <div class="carousel-cell">
+                            <picture>
+                              <source srcset="${item.imageSrc @ context='uri'}" media="(min-width: 1200px)">
+                              <source srcset="${item.imageSrc @ context='uri'}" media="(min-width: 992px)">
+                              <source srcset="${item.mobImage @ context='uri'}" media="(max-width: 991px)">
+                              <img class="" src="${item.imageSrc @ context='uri'}" alt="${item.altText}">
+                            </picture>
+                            <div class="band">
+                                <div class="band-content">
+                                    <div class="text">
+                                        <sly data-sly-test="${item.eyebrowLabel}">
+                                            <p>${item.eyebrowLabel}</p>
+                                        </sly>
+                                        <h1>${item.panelTitle @ context = 'html'}</h1>
+			    			        	<sly data-sly-test="${item.buttonText && item.buttonAction=='_self'}">
+                                        <a class="unstyle" data-analytics-type="cta-hero" data-analytics-value=${item.panelTitle} target=${item.buttonAction} href="${item.buttonLink}">
+                                            <span>
+                                                <button class="c-button invert">
+                                                    ${item.buttonText}
+                                                </button>
+                                            </span>
+                                        </a>
+			    			        	</sly>
+			    			        	<sly data-sly-test="${item.buttonText && item.buttonAction=='_blank'}">
+                                        <a class="unstyle" data-analytics-type="cta-hero" data-analytics-value=${item.panelTitle} target=${item.buttonAction} rel="noopener noreferrer" href="${item.buttonLink}">
+                                            <span>
+                                                <button class="c-button invert">
+                                                    ${item.buttonText}
+                                                </button>
+                                            </span>
+                                        </a>
+			    			        	</sly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </sly>
+                </div>
+            </div>
+            <div class="angled-trim"></div>
+            <div class="c-hro3__button-row">
+                <div class="button-group button-group--cells">
+                    <sly data-sly-test.is-selected="is-selected" />
+                    <sly data-sly-list="${carousal.carousalSlides}">
+                        <p class="button ${itemList.first ? 'is-selected' : ''}" data-analytics-type="hero-nav" data-analytics-value=${item.panelTitle}>
+                    		${item.panelTitle}
+                   		 </p>
+                    </sly>
+                </div>
+            </div>
+        </div>
+        </sly>
+    </sly>
+</div>

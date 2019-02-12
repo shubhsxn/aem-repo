@@ -1,0 +1,71 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+   <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+      <sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+         ConfigureOne Column Feature Component
+      </sly>
+      <sly data-sly-use.onecolumnfeature="com.corteva.model.component.models.OneColumnFeatureModel">
+
+         <sly data-sly-test="${onecolumnfeature.fullBleed == true && onecolumnfeature.viewType == 'titlewithtwoimage'}">
+            <div class="band white str05-feature-1-column fullbleed">
+         </sly>
+
+         <sly data-sly-test="${onecolumnfeature.fullBleed == false || onecolumnfeature.viewType == 'titlewithoneimage'}">
+            <div class="band white str05-feature-1-column">
+         </sly>
+            <div class="band-content">
+               <!-- ATM01 MODULE HEADER V1 -->
+               <div class="atm01-header-v1__wrapper ">
+                  <h2>
+                     ${onecolumnfeature.title @ context = 'html'}
+                  </h2>
+               </div>
+               <div class="images row">
+                  <!-- Whether there is one or two images, just put them in here. CSS will size them -->
+                  <div class="col s12 ${onecolumnfeature.viewType == 'titlewithtwoimage' ? 'm6' : ''}">
+                     <picture>
+                        <source srcset="${onecolumnfeature.imagePath.desktopImagePath  @ context='uri'}" media="(min-width: 1200px)">
+                        <source srcset="${onecolumnfeature.imagePath.tabletImagePath  @ context='uri'}" media="(min-width: 992px)">
+                        <source srcset="${onecolumnfeature.imagePath.mobileImagePath}" media="(max-width: 991px)">
+                        <img src="${onecolumnfeature.imagePath.desktopImagePath  @ context='uri'}" alt="${onecolumnfeature.altText}">
+                     </picture>
+                  </div>
+                                        
+                  <sly data-sly-test="${onecolumnfeature.viewType == 'titlewithtwoimage'}">
+                     <div class="col s12 m6"> 
+                        <picture>
+                           <source srcset="${onecolumnfeature.bleedImagePath.desktopImagePath  @ context='uri'}" media="(min-width: 1200px)">
+                           <source srcset="${onecolumnfeature.bleedImagePath.tabletImagePath  @ context='uri'}" media="(min-width: 992px)">
+                           <source srcset="${onecolumnfeature.bleedImagePath.mobileImagePath  @ context='uri'}" media="(max-width: 991px)">
+                           <img  src="${onecolumnfeature.bleedImagePath.desktopImagePath  @ context='uri'}" alt="${onecolumnfeature.bleedAltText}">
+                        </picture>
+                     </div>
+                  </sly>              
+               </div>
+               <sly data-sly-test="${onecolumnfeature.bodyText}"> 
+                  ${onecolumnfeature.bodyText @ context='html'}
+               </sly>
+               <sly data-sly-test="${onecolumnfeature.buttonLink}">
+			   <sly data-sly-test="${properties.oneColumnButtonAction=='_self'}">
+                  <a class="c-button" href="${onecolumnfeature.buttonLink}" data-analytics-type="cta-featured-content" data-analytics-value="${onecolumnfeature.title}" target=${properties.oneColumnButtonAction}>
+                     ${onecolumnfeature.buttonText  @ context='html'}
+                  </a>
+				</sly>
+				<sly data-sly-test="${properties.oneColumnButtonAction=='_blank'}">
+                  <a class="c-button" href="${onecolumnfeature.buttonLink}" data-analytics-type="cta-featured-content" data-analytics-value="${onecolumnfeature.title}" target=${properties.oneColumnButtonAction} rel="noopener noreferrer">
+                     ${onecolumnfeature.buttonText  @ context='html'}
+                  </a>
+				</sly>
+               </sly>
+            </div>
+         </div>
+      </sly>
+   </sly>
+</div>

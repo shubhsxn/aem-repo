@@ -1,0 +1,60 @@
+div.column-control.band{
+    > div:first-child{
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0;
+      div.productIntro,div.productLabel {
+          padding-top: 30px;
+          padding-bottom: 80px;
+      }
+      div.productLabel{
+        @media screen and (max-width: $mobile) {
+          padding-bottom: 30px;
+        }
+      }
+
+      .col-8 {
+          padding-left:0px;
+          @media screen and (max-width: $mobile) {
+            padding-left:10px;
+            padding-right:10px;
+            .productIntro  {
+                padding-bottom:0px;
+                padding-top:20px;
+            }
+          }
+      }
+      .col-4 {
+        padding-right:0px;
+        @media screen and (max-width: $mobile) {
+            padding-left:10px;
+            padding-right:10px;
+            .productLabel{
+                padding-top:0px;
+                .det34-product-labels {
+                 margin-top:0px;
+                 padding-top: 15px; 
+                }
+            }
+          }
+    }
+    }
+}
+@media screen and (max-width: $mobile){
+    .productHeader+div.columnControl{
+        div.column-control.band{
+            >div:first-child{
+                .col-8{
+                    padding-left: 0;
+                    padding-right: 0;
+
+                }
+                .col-4{
+                    padding-left: 0;
+                    padding-right: 0;
+
+                }
+            }
+        }
+    }
+}

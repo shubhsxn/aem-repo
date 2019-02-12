@@ -1,0 +1,35 @@
+.atm-search-field {
+  position: relative;
+  display: block;
+
+  input[type="search"] {
+    height: 50px;
+    width: 100%;
+    border: 1px solid $border-secondary;
+    border-radius: 2px;
+    padding: 13px 12px 13px 45px;
+    font-size: $base-font;
+    -webkit-appearance: none;
+
+    +label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      font-size: $font-sm;
+      color: $foundation-primary;
+      background: url("../vectors/search.svg") 16px center no-repeat;
+      padding-left: 45px;
+      background-size: 18px 18px;
+      pointer-events: none;
+      transition: color 300ms ease;
+    }
+
+    &:focus+label,
+    &.has-text+label {
+      color: transparent;
+    }
+  }
+}

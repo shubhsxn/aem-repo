@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:language="tr"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="nt:folder">
+    <all
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="all"
+        sling:message="Hepsi"/>
+    <allContent
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="containerSearch.allContent"
+        sling:message="Bütün İçerikler"/>
+    <button
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="buttonText"
+        sling:message="Kapat"/>
+    <copyright
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="copy"
+        sling:message="en key"/>
+    <goButtonLabel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="goButtonLabel"
+        sling:message="Git"/>
+    <jumpToSection
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="jumpToSection"
+        sling:message="Bölüme Git"/>
+    <loadMore
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="loadMore"
+        sling:message="Daha Fazla Yükle"/>
+    <menu
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="globalHeader.menu"
+        sling:message="Menü"/>
+    <navHeaderTabsSection
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="navHeaderTabs.navHeaderTabsSection"
+        sling:message="NavHeaderTab Section"/>
+    <new
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="new"
+        sling:message="New"/>
+    <next
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="galleryImage.next"
+        sling:message="Sonraki"/>
+    <noReferenceSearchBasePath
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="noReferenceSearch.noReferenceSearchBasePath"
+        sling:message="Please Configure Base Path."/>
+    <ofText
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="containerSearch.ofText"
+        sling:message="of"/>
+    <previous
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="galleryImage.previous"
+        sling:message="Önceki"/>
+    <scrollToTop
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="scrollToTop.backToTop"
+        sling:message="Başa Dön"/>
+</jcr:root>

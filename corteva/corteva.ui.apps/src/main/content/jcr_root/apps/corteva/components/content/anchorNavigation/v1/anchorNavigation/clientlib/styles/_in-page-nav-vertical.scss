@@ -1,0 +1,214 @@
+.nav05-in-page-nav-vertical {
+
+  width: $anchorNav-width;
+  max-height: 80vh;
+
+  overflow-x: visible;
+  overflow-y: auto;
+
+  display: inline-block;
+  background: $base;
+
+  @media print {
+    display: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    .global-nav ~ .band & {
+      top: 59px;
+    }
+    width: 100%;
+    transform: translateX(-5vw);
+    padding: 0;
+    margin-left: 5vw;
+    overflow: visible;
+    top: 5px;
+  }
+  /* Fade-white overlay for scrolling  */
+  &:after {
+    content: "";
+    display: block;
+    background: linear-gradient(to top, $base, rgba(255, 255, 255, 0));
+    width: 100%;
+    height: 40px;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    @media screen and (max-width: $mobile) {
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0)
+      );
+      position: absolute;
+      height: 10px;
+      bottom: -11px;
+    }
+  }
+
+  strong {
+    border-right: $anchorNav-borderWidth solid $foundation-tertiary;
+    display: block;
+    font-family: $brand-font;
+    font-size: $font-xl;
+    line-height: 26px;
+    padding: 6px 0 15px 0;
+    position: sticky;
+    top: 0;
+    color: $foundation-primary;
+    background: $base;
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+    &:after {
+      content: "";
+      display: block;
+      background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+      width: 100%;
+      height: 15px;
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      pointer-events: none;
+    }
+  }
+  a {
+    display: block;
+    width: 100%;
+    font-size: $base-font;
+    color: $foundation-primary;
+    padding: 0 10px 12px 0;
+
+    border-right: $anchorNav-borderWidth solid $foundation-tertiary;
+    transition: border 600ms ease-out, font-weight 100ms 0ms ease-out;
+    transition-delay: 20ms, 0;
+
+    &.active,
+    &:hover {
+      border-color: $brand-primary;
+      transition: border 300ms ease-out;
+      transition-delay: 0, 0;
+    }
+    &:hover {
+      color: $brand-primary;
+      font-weight: bold;
+    }
+    &.active {
+      font-weight: bold;
+    }
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  .select2-container {
+    display: none;
+    @media screen and (max-width: $mobile) {
+      display: inline-block;
+    }
+  }
+}
+
+.inner-nav-wrapper {
+  height: 100%;
+  position: relative;
+
+  nav {
+    display: inline-block;
+  }
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+
+  margin-top: 20px;
+
+  @media screen and (max-width: $mobile) {
+    display: block;
+    margin-top: 0;
+  }
+
+  .sections {
+    width: auto;
+    width: calc(100% - #{$anchorNav-width} - #{$anchorNav-borderWidth} - 100px);
+    margin-left: 100px;
+    display: inline-block;
+    vertical-align: top;
+
+    @media print {
+      grid-column: span 2;
+    }
+    section{
+      margin-bottom: 35px;
+    }
+    h2,h3{
+      margin-bottom: 17px
+    }
+    @media screen and (max-width: $mobile) {
+      display: block;
+      width: auto;
+      padding-top: 15px;
+      margin-left: 0;
+    }
+    section {
+      p {
+        margin: 10px 0;
+        font-size: $base-font;
+        line-height: 30px;
+      }
+      h3 {
+        @extend h4;
+      }
+    }
+  }
+
+
+  .nav-wrapper {
+    width: $anchorNav-width;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
+
+    nav {
+      display: block;
+
+      .global-nav ~ .band & {
+        top: 170px;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      top: 0;
+      position: sticky;
+      .global-nav ~ .band & {
+        top: 60px;
+      }
+    }
+  }
+}
+
+
+/* AEM Sticky issues  */
+.anchorNavigation .inner-nav-wrapper {
+  .nav-wrapper {
+    top: 170px;
+    @media screen and (max-width: $mobile) {
+      top: 60px;
+    }
+  }
+}
+
+.nav05-in-page-nav-vertical {
+  &.js-is-sticky {
+    a {
+      padding: 3px 10px 3px 0;
+    }
+  }
+}

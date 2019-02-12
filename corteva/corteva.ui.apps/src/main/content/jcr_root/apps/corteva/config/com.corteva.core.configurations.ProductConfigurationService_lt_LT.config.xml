@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+	pdpRootPath="/content/corteva/eu/lt/lt/homepage/produktai/paseliu-apsauga"
+	productContentRootPath="/content/corteva/eu/lt/lt/homepage/produktai/paseliu-apsauga"
+	labelFinderPath="/content/corteva/eu/lt/lt/homepage/etikeciu-ieskiklis"/>

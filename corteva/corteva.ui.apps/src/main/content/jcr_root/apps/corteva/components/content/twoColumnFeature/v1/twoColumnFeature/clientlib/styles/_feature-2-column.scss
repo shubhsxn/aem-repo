@@ -1,0 +1,229 @@
+.str06-feature-2-column {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    &.image-on-right .band-content {
+      display: flex;
+      @supports (display: grid) {
+        display: grid;
+      }
+      picture {
+        order: 2;
+        img {
+            box-shadow: $offset-shadow $offset-shadow 40px 0 rgba(0, 0, 0, .2), $offset-gray $offset-gray 0px $foundation-quaternary;
+          }
+      }
+
+    }
+  }
+
+  .band-content {
+    font-size: 0;
+    /* @media screen and (min-width: $tablet) {
+      padding-bottom: $offset-gray;
+    } */
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: min-content;
+      align-items: center;
+      grid-gap: 5vw;
+      grid-gap: 100px;
+    }
+    picture {
+      max-width: 35vw;
+      width: calc(50% - 100px);
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 100px;
+      padding-bottom: 70px;
+      @supports (display: grid) {
+        width: auto;
+        display: block;
+        margin: 0;
+        vertical-align: initial;
+        @media screen and (max-width: $mobile) {
+          padding-bottom: 0;
+        }
+      }
+      img {
+        box-shadow: calc(#{$offset-shadow} * -1) $offset-shadow 40px 0 rgba(0, 0, 0, .2), -$offset-gray $offset-gray 0px $foundation-quaternary;
+        @media print {
+          box-shadow: none;
+        }
+      }
+    }
+    .text {
+      width: calc(50% - 100px);
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 100px;
+      @supports (display: grid) {
+        width: auto;
+        display: block;
+        margin: 0;
+        vertical-align: initial;
+      }
+      /* Text only */
+      &:first-child {
+        width: 100%;
+        >* {
+          width: 50%;
+          display: inline-block;
+          vertical-align: top;
+          @media screen and (max-width: $tablet) {
+            width: 100%;
+            display: block;
+          }
+        }
+        @supports (display: grid) {
+          grid-column: span 2;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+
+          >* {
+            width: auto;
+          }
+        }
+
+      }
+      >div,
+      >p {
+        padding-left: 80px;
+      }
+      .heading {
+        border-left: 5px solid $brand-secondary;
+        align-self: start;
+        margin-bottom: 20px;
+        
+        @media screen and (min-width: $tablet) {
+          padding-left: 75px;
+        }
+
+        h2 {
+          font-size: $heading-m;
+          line-height: 36px;          
+        }
+
+        h3 {
+          font-family: $body-font;
+          font-size: $font-sm;
+          font-weight: bold;
+          padding: 0;
+          margin: 0 0 13px;
+        }
+      }
+      p {
+        margin: 0 0 13px 0;
+        padding-right: 40px;
+        &:first-child,
+        &:last-child {
+          margin: 0;
+        }
+        @media screen and (max-width: $mobile) {
+          line-height: 28px;
+        }
+      }
+      .c-button {
+        margin-top: 40px;
+        display: block;
+        -webkit-appearance: none;
+      }
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    .band-content {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr min-content;
+      grid-gap: 0 100px;
+      justify-items: center;
+      padding-bottom: 0;
+      .text {
+        align-self: start;
+        padding-top: 0;
+      }
+      photo {
+        max-width: 75%;
+      }
+    }
+    @supports (display: grid) {
+      &.image-on-right .band-content {
+        grid-template-columns: 1fr 1fr;
+        picture {
+          grid-column: 2;
+          grid-row: 1;
+          img {
+            box-shadow: $offset-shadow $offset-shadow 40px 0 rgba(0, 0, 0, .2), $offset-gray $offset-gray 0px $foundation-quaternary;
+          }
+        }
+        picture+.text {
+          grid-column: 1;
+          grid-row: 1;
+        }
+      }
+    }
+    .band-content .text .heading h3 {
+      margin-bottom: 10px;
+    }
+    &.image-on-left {
+      .band-content {
+        grid-template-columns: 1.2fr 1fr;
+      }
+    }
+    &.image-on-right {
+      .band-content {
+        grid-template-columns: 1fr 1.2fr;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    .band-content {
+      grid-template-columns: 1fr;
+      grid-row: auto auto;
+      grid-auto-rows: min-content;
+      grid-gap: 40px 24px;
+      overflow: visible;
+      picture {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        img {
+          box-shadow: 5px 5px 40px 0 rgba(0, 0, 0, .2), 18px 18px 0px $foundation-quaternary;
+          height: auto;
+          width: calc(100% - 18px);
+        }
+      }
+      .text,
+      .text:first-child {
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+      .text div,
+      .text p {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .text .heading {
+        grid-row: 1;
+        border: none;
+      }
+    }
+  }
+  @media screen and (min-width: $mobile) and (max-width: 1000px) {
+    .band-content img {
+      box-shadow: calc(#{$offset-shadow} * -0.5) calc(#{$offset-shadow} * 0.5) 40px 0 rgba(0, 0, 0, .2), calc(#{$offset-gray} * -0.5) calc(#{$offset-gray} * 0.5) 0px $foundation-quaternary;
+    }
+    &.image-on-right .band-content img {
+      box-shadow: calc(#{$offset-shadow} * 0.5) calc(#{$offset-shadow} * 0.5) 40px 0 rgba(0, 0, 0, .2), calc(#{$offset-gray} * 0.5) calc(#{$offset-gray} * 0.5) 0px $foundation-quaternary;
+    }
+  }
+}

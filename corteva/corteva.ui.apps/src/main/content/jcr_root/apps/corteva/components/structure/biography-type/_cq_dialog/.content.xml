@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[cq.common.wcm,cq.siteadmin.admin.properties]"
+    mode="edit">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="cq-dialog-content-page">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container"
+                rel="cq-siteadmin-admin-properties-tabs">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+                    type="nav"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <biographytype
+                        cq:showOnCreate="{Boolean}true"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Biography Type"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Biography Type"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <biography-type
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}false"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="Biography Type"
+                                                name="./biographttype"
+                                                required="{Boolean}true"
+                                                value="">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <option1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Executive Bio"
+                                                        value="executivebio"/>
+                                                    <option2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Author Bio"
+                                                        value="authorbio"/>
+                                                    <option3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="General Bio"
+                                                        value="generalbio"/>
+                                                </items>
+                                            </biography-type>
+                                            <ranking
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                cq-msm-lockable="ranking"
+                                                fieldDescription="Use this field to configure a custom sort order in which biographies will be displayed in the Leadership Filter. Enter only numbers (decimals permitted) -- lower numbers display before higher numbers. (Optional)"
+                                                fieldLabel="Ranking"
+                                                name="./ranking"
+                                                renderReadOnly="{Boolean}true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-msm-lockable="ranking"/>
+                                            </ranking>
+                                            <relatedinformation
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}false"
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Related Information"
+                                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <relatedinformation
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                        class="foundation-layout-util-maximized-alt"
+                                                        fieldDescription="Click 'Add Field' to add a related Information below this path."
+                                                        fieldLabel="Related Information"
+                                                        renderReadOnly="{Boolean}true">
+                                                        <field
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="corteva/components/content/contextualpathbrowser"
+                                                            name="./relatedInfo"
+                                                            renderReadOnly="{Boolean}true"
+                                                            contentRootPath="/content/dam/dpagco"/>
+                                                    </relatedinformation>
+                                                </items>
+                                            </relatedinformation>
+                                            <biographyfilter
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                allowBulkEdit="{Boolean}true"
+                                                autocreateTag="{Boolean}true"
+                                                fieldDescription="Select relevant taxonomy tag(s) for this biography page, to enable filtering in the Leadership Filter. The biography will appear under the authored tags when filtering is applied. (Required)"
+                                                fieldLabel="Biography Filter Tag"
+                                                multiple="{Boolean}true"
+                                                name="./cq:biographyTags"
+                                                required="{Boolean}true"
+                                                rootPath="/etc/tags/corteva">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-msm-lockable="cq:biographyTags"/>
+                                            </biographyfilter>
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </biographytype>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

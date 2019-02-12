@@ -1,0 +1,10 @@
+/* Custom styles */
+.con11-timeline{
+	.timelineCard{
+		picture{
+			img.lazyload,img.lazyloading{
+				min-height: 200px;
+			}
+		}
+	}
+}

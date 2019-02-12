@@ -1,0 +1,53 @@
+<!--/*
+   Copyright 2018,SapientRazorfish_; All Rights Reserved.
+   
+      
+   
+       This software is the confidential and proprietary information of SapientRazorfish_,
+   
+   ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+   
+   accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+   
+   */-->
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+		<sly data-sly-test = "${wcmmode.edit && !wcmmode.preview}" class = "aem-helper">
+		Edit Sitemap Component
+	 </sly>
+			<div data-sly-use.sitemapModel = "com.corteva.model.component.models.SitemapGenerationModel"
+			class = "band sitemap" data-rootPath = "${sitemapModel.rootPath}">
+			<div class="band-content">
+				<h1 class = "sitemap-title" data-sly-text.title = "${sitemapModel.title}"></h1>
+				<div class = "sitemap-list">
+			    <ul class = "root-level" data-sly-list.firstLevelChildren = "${sitemapModel.sitemap}">
+				  <li>
+					 <sly data-sly-test.isHidePathOfFirstLevelChildren = "${firstLevelChildren.path != ''}">
+						<a class="first-child" href = "${firstLevelChildren.path}.html">${firstLevelChildren.title}</a>
+					 </sly>
+					 <sly data-sly-test = ${!isHidePathOfFirstLevelChildren}>
+						<div class="first-child">${firstLevelChildren.title}</div>
+					 </sly>
+					 <sly data-sly-call="${iterateChildren @ childList=firstLevelChildren.child, childLevel=firstLevelChildren.level}"></sly>
+					 <template data-sly-template.iterateChildren="${ @ childList, childLevel}">
+						 <sly data-sly-test="{childList}">
+							 <ul class = "child-level-${childLevel}" data-sly-list.nextLevelChildren = "${childList}">
+								 <li>
+									 <sly data-sly-test.isHidePath = "${nextLevelChildren.path != ''}">
+										 <a href = "${nextLevelChildren.path}.html">${nextLevelChildren.title}</a>
+									 </sly>
+									 <sly data-sly-test = ${!isHidePath}>
+										 <div class="children">${nextLevelChildren.title}</div>
+									 </sly>
+									 <sly data-sly-call="${iterateChildren @ childList=nextLevelChildren.child, childLevel=nextLevelChildren.level}"></sly>
+								 </li>
+							 </ul>
+						 </sly>
+					 </template>
+				  </li>
+			   </ul>
+				</div>
+			</div>
+		</div>
+	</sly>
+</div>

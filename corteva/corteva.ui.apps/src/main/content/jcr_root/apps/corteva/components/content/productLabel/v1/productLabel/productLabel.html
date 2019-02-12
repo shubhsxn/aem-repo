@@ -1,0 +1,82 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+ */-->
+
+ <div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+	<sly data-sly-test="${comElement.featureFlagState == 'on'}">
+		<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}"
+			class="aem-helper">Edit Product Label</sly>
+		<sly data-sly-use.productLabel="com.corteva.model.component.models.ProductLabelModel">
+			<div class="det34-product-labels">
+				<sly data-sly-test="${productLabel.pdpSource}">
+					<h3>${'pdp.productLabel.sectionLabel' @ i18n,locale=productLabel.localeForInternationalization}</h3>
+					<sly data-sly-test.hasProduct="${productLabel.productTitle}"/>
+					<ul>
+						<li>
+						<li>
+							<sly data-sly-test=${hasProduct}>
+								<a href="${productLabel.productDocumentBasePath}" class="download product-label" data-analytics-type="product-label" data-analytics-value="${productLabel.productTitle @ context='html'}" download>${'pdp.productLabel.productLabel' @ i18n,locale=productLabel.localeForInternationalization}</a>
+							</sly>
+							<sly data-sly-test=${!hasProduct}>
+								<a href="${productLabel.productDocumentBasePath}" class="download product-label" data-analytics-type="product-label" data-analytics-value="" download>${'pdp.productLabel.productLabel' @ i18n,locale=productLabel.localeForInternationalization}</a>
+							</sly>
+						</li>
+						<li>
+							<sly data-sly-test=${hasProduct}>
+								<a href="${productLabel.productDocumentBasePath}" class="download safety-data-sheet" data-analytics-type="safety-data-sheet" data-analytics-value="${productLabel.productTitle @ context='html'}" download>${'pdp.productLabel.msdsLabel' @ i18n,locale=productLabel.localeForInternationalization}</a>
+							</sly>
+							<sly data-sly-test=${!hasProduct}>
+								<a href="${productLabel.productDocumentBasePath}" class="download safety-data-sheet" data-analytics-type="safety-data-sheet" data-analytics-value="" download>${'pdp.productLabel.msdsLabel' @ i18n,locale=productLabel.localeForInternationalization}</a>
+							</sly>
+						</li>
+					</ul>
+					<h3 class="textInfo">${'pdp.productLabel.supplementalInfoLabel' @ i18n,locale=productLabel.localeForInternationalization}</h3>
+					<p>${'pdp.productLabel.sectionIntroText' @ i18n,locale=productLabel.localeForInternationalization}</p>
+					<ul>
+						<li>
+							<sly data-sly-test=${hasProduct}>
+								<a href="${productLabel.labelFinderPath}" class="internal supplemental-label" data-analytics-type="supplemental-label" data-analytics-value="${productLabel.productTitle @ context='html'}">${'pdp.productLabel.labelFinder' @ i18n,locale=productLabel.localeForInternationalization}</a>
+							</sly>
+							<sly data-sly-test=${!hasProduct}>
+								<a href="${productLabel.labelFinderPath}" class="internal supplemental-label" data-analytics-type="supplemental-label" data-analytics-value="">${'pdp.productLabel.labelFinder' @ i18n,locale=productLabel.localeForInternationalization}</a>
+							</sly>
+						</li>
+					</ul>
+				</sly>
+				<sly data-sly-test="${!productLabel.pdpSource}">
+					<h3>${'pdp.productLabel.sectionLabel' @ i18n,locale=productLabel.localeForInternationalization}</h3>
+					<ul>
+						<sly data-sly-list="${productLabel.productDocItemList}">
+							<li>
+								<a href="${item.productDocumentLink}" class="download" data-analytics-type="product-label" data-analytics-value="${productLabel.productTitle @ context='html'}" download>${item.productDocumentLabel @ context='html'}</a>
+							</li>
+						</sly>
+						<sly data-sly-list="${productLabel.safetyDocItemList}">
+							<li>
+								<a href="${item.safetyDocumentLink}" class="download" data-analytics-type="safety-data-sheet" data-analytics-value="${productLabel.productTitle @ context='html'}" download>${item.safetyDocumentLabel @ context='html'}</a>
+							</li>
+						</sly>
+					</ul>
+					<sly data-sly-test="${comElement.optionalBodyText}">
+						<div class="textInfo">
+						    ${comElement.optionalBodyText @ context='html'}
+						</div>
+					</sly>
+
+					<sly data-sly-test="${!productLabel.hideLabelFinderUrl && 'pdp.productLabel.labelFinder' @ i18n,locale=productLabel.localeForInternationalization}">
+					<ul>
+						<li>
+							<a href="${productLabel.labelFinderPath}" class="internal" data-analytics-type="supplemental-label" data-analytics-value="${productLabel.productTitle @ context='html'}">${'pdp.productLabel.labelFinder' @ i18n,locale=productLabel.localeForInternationalization}</a>
+						</li>
+					</ul>
+					</sly>
+				</sly>
+			</div>
+		</sly>
+	</sly>
+</div>
+

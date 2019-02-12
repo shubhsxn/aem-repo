@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Accordion List Dropdown"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Accordion List"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter Title."
+                                fieldLabel="Title"
+                                maxlength="{Long}100"
+                                name="./title"
+                                required="{Boolean}true"/>
+                            <introCopy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Intro Copy"
+                                name="./introCopy"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <findreplace
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <subsuperscript
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <spellcheck
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <misctools
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                            <chars jcr:primaryType="nt:unstructured">
+                                                <copyright
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#169;"/>
+                                                <trademark
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#8482;"/>
+                                                <registered
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#174;"/>
+                                                <emDash
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#8212;"/>
+                                                <pound
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#163;"/>
+                                                <nbsp
+                                                    jcr:primaryType="nt:unstructured"
+                                                    entity="&amp;#160;"/>
+                                            </chars>
+                                        </specialCharsConfig>
+                                    </misctools>
+                                    <styles
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <styles jcr:primaryType="nt:unstructured">
+                                            <plainSpan
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="defaultSpan"
+                                                text="Default (add span tag)"/>
+                                            <lead
+                                                jcr:primaryType="nt:unstructured"
+                                                cssName="lead"
+                                                text="Lead"/>
+                                        </styles>
+                                    </styles>
+                                    <table
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,subsuperscript#subscript,subsuperscript#superscript,links#modifylink,links#unlink,links#anchor,#image,findreplace#find,findreplace#replace,spellcheck#checktext,misctools#specialchars,misctools#sourceedit,#styles,#paraformat,table#table]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                    ref="paraformat"/>
+                                                <styles
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="styles:getStyles:styles-pulldown"
+                                                    ref="styles"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+								<htmlRules jcr:primaryType="nt:unstructured">
+                                       <docType jcr:primaryType="nt:unstructured">
+                                           <typeConfig
+                                                 jcr:primaryType="nt:unstructured"
+                                                 useSemanticMarkup="{Boolean}true">
+                                                 <semanticMarkupMap
+                                                     jcr:primaryType="nt:unstructured"
+                                                     b="strong"
+													 i="em"/>
+                                            </typeConfig>
+                                        </docType>
+                                </htmlRules>
+                            </introCopy>
+                            <accordionDisplay
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="showhideCheckBox"
+                                defaultChecked="{Boolean}true"
+                                ignoreData="{Boolean}false"
+                                name="./accordionDisplay"
+                                showhide-target=".showhide-target"
+                                text="Display Accordion"
+                                uncheckedValue="false"
+                                value="true"/>
+                            <setAccordion
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="showhide-target"
+                                showhide-target-value="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <firstListItemOpen
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        class="firstListItemOpen"
+                                        name="./firstListItemOpen"
+                                        text="Display First List Item Open"
+                                        value="true"/>
+                                </items>
+                            </setAccordion>
+                            <itemHeaderAssetType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".itemHeaderAssetType-option-listtype-showhide-target"
+                                fieldDescription="Select Item Header Asset Type."
+                                fieldLabel="Item Header Asset Type"
+                                name="./itemHeaderAssetType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <noAsset
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="true"
+                                        text="No Asset"
+                                        value="noAsset"/>
+                                    <icon
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Icon"
+                                        value="icon"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Image"
+                                        value="image"/>
+                                </items>
+                            </itemHeaderAssetType>
+                            <setIcon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="itemHeaderAssetType-option-listtype-showhide-target assetMetadataClass"
+                                assetfieldstobepopulated="\{&quot;imageAltText&quot;:&quot;./altText&quot;}"
+                                showhidetargetvalue="icon">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <backgroundColor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="itemHeaderAssetType-option-listtype-showhide-target"
+                                        fieldLabel="Background Color"
+                                        name="./backgroundColor"
+                                        showhidetargetvalue="icon">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <blue
+                                                jcr:primaryType="nt:unstructured"
+                                                selected="true"
+                                                text="Blue"
+                                                value="blue"/>
+                                            <green
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Green"
+                                                value="green"/>
+                                            <orange
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Orange"
+                                                value="orange"/>
+                                            <gray
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Gray"
+                                                value="gray"/>
+											<maroon
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Maroon"
+                                                value="maroon"/>
+										</items>		
+                                    </backgroundColor>
+                                    <iconList
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        fieldLabel="Icon List">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested=""
+                                            name="./iconList">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <iconImage
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="corteva/components/content/contextualpathbrowser"
+                                                            class="isMandatory"
+                                                            fieldDescription="Select Image Path"
+                                                            fieldLabel="Icon Image"
+                                                            name="./iconImage"
+                                                            required="{Boolean}true"
+                                                            contentRootPath="/content/dam/dpagco"/>
+                                                        <iconAltText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            class="isMandatory"
+                                                            fieldDescription="Enter Icon Alt Text"
+                                                            fieldLabel="Icon Alt Text"
+                                                            maxlength="{Long}100"
+                                                            name="./altText"
+                                                            required="{Boolean}true"/>
+                                                        <itemHeader
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/include"
+                                                            path="/apps/corteva/components/content/commonElements/accordion/itemHeader"/>
+                                                        <itemDetail
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/include"
+                                                            path="/apps/corteva/components/content/commonElements/accordion/itemDetail"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </iconList>
+                                </items>
+                            </setIcon>
+                            <setImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                assetfieldstobepopulated="\{&quot;imageAltText&quot;:&quot;./altText&quot;}"
+                                class="itemHeaderAssetType-option-listtype-showhide-target assetMetadataClass"
+                                showhidetargetvalue="image">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <imageList
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        fieldLabel="Image List">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested=""
+                                            name="./imageList">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <image
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="corteva/components/content/contextualpathbrowser"
+                                                            class="isMandatory"
+                                                            fieldDescription="Select Image Path"
+                                                            fieldLabel="Image"
+                                                            name="./accordionImage"
+                                                            required="{Boolean}true"
+                                                            contentRootPath="/content/dam/dpagco"/>
+                                                        <altText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            class="isMandatory"
+                                                            fieldDescription="Enter Image Alt Text"
+                                                            fieldLabel="Image Alt Text"
+                                                            maxlength="{Long}100"
+                                                            name="./altText"
+                                                            required="{Boolean}true"/>
+                                                        <itemHeader
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/include"
+                                                            path="/apps/corteva/components/content/commonElements/accordion/itemHeader"/>
+                                                        <itemDetail
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/include"
+                                                            path="/apps/corteva/components/content/commonElements/accordion/itemDetail"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </imageList>
+                                </items>
+                            </setImage>
+                            <setNoAsset
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="itemHeaderAssetType-option-listtype-showhide-target"
+                                showhidetargetvalue="noAsset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <noAssetList
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        fieldLabel="No Asset List">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested=""
+                                            name="./noAssetList">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <itemHeader
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/include"
+                                                            path="/apps/corteva/components/content/commonElements/accordion/itemHeader"/>
+                                                        <itemDetail
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/include"
+                                                            path="/apps/corteva/components/content/commonElements/accordion/itemDetail"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </noAssetList>
+                                </items>
+                            </setNoAsset>
+                            <buttonLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/include"
+                                path="/apps/corteva/components/content/commonElements/button/buttontext"/>
+                            <buttonLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/include"
+                                path="/apps/corteva/components/content/commonElements/button/buttonlink"/>
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,32 @@
+.sitemap {
+    a {
+        font-size: 16px;
+    }
+    &-title {
+        margin-bottom: 30px;
+    }
+	&-list {
+        .first-child {
+            font-weight: 700;
+            display: block;
+            margin: 5px 0;
+        }
+        ul {
+            > li {                    
+                > ul {
+                    padding-left: 20px;
+                    padding-bottom: 20px;
+                    display: block;
+                    > li {
+                        line-height: 25px;
+                        list-style: disc;
+                        margin: 5px 0 5px 20px;
+                        ul > li {
+                            list-style: circle;                
+                        }
+                    }
+                }
+            }
+        }
+    }
+}	

@@ -1,0 +1,8 @@
+Dear ${authorName},
+
+<a href= "${payload.link}">${payload.title}</a> was unpublished on ${absoluteDate} ET. 
+
+
+
+\ -------------------------------------------------------------------------------------\
+This is a system-generated email; please do not reply to this email address. 

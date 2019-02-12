@@ -1,0 +1,30 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="${'com.corteva.model.component.models.CommonElementsModel' @ feature='/navSearch'}" class="feature-flag nav-search-wrap" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+            Edit Search Header
+        </sly>
+        <sly data-sly-use.search="com.corteva.model.component.models.NavSearchModel">
+			<sly data-sly-test="${search.searchFormAction}">
+            <form class="search" method="get" action="${search.searchFormAction}" data-autocomplete-url="${search.autoCompleteUrl}" data-suggestions-limit="${search.maximumSuggestion}" data-minchars ="${search.minimumCharacter}">
+                <input type="search" id="top-search" name="q" class="top-search" placeholder="${search.searchBarText}" autocomplete="off">
+                <input type="hidden" id="search-country" name="country" value=""/>
+                <label for="top-search" class="submit-search">${search.searchBarText}</label>
+                <button type="submit" class="submit-search" title="${search.searchBarText}" disabled></button>
+                <input type="reset" class="reset-search" title="Clear search form" tabindex="-1"/>
+            </form>
+			</sly>
+        </sly>
+    </sly>
+</div>
+
+
+
+

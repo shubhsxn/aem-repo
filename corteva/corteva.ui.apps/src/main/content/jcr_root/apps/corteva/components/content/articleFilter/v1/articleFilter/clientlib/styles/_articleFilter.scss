@@ -1,0 +1,180 @@
+#news-media{
+    main{
+        display:grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        .con18-article-feed{
+            width:100%;
+            @media screen and (min-width: $mobile) {
+				padding-right: rem(80px);
+			}
+        }
+    }
+    .chosen-container{
+        min-width: 160px;
+        @media screen and (min-width: $tablet) {
+          min-width: 125px;
+        }
+        @media screen and (min-width: $desktop) {
+          min-width: 160px;
+        }
+    }
+}
+.no-result{
+  padding: 0;
+  h3, h2{
+    font-weight: 700;
+    font-size: $heading-s;
+  }
+  h2{
+    line-height: rem(36px);
+  }
+}
+.con18-article-feed {
+    min-width: 300px;
+    @media screen and (max-width: $tablet) {
+        width: '100%';
+        display: block;
+    }
+   .loader {
+      border: 10px solid $foundation-quaternary;
+      border-top: 10px solid $brand-primary; /* Blue */
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 2s linear infinite;
+      margin: 0 auto;
+  }
+
+
+
+  .c-button {
+    margin: get-spacing(xxxlarge) auto 0;
+    display: inline-block;
+    position: relative;
+    left: 40%;
+    
+    @supports (max-width: max-content) {
+      display: block;
+      max-width: max-content;
+      width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+      width: -moz-max-content;
+      width: -webkit-max-content;
+      position: static;
+    }
+  }
+
+  .item {
+    border-bottom: 1px solid $border-secondary;
+    padding: get-spacing(xxlarge) 0;
+    font-size: 0;
+    &.row {
+      margin-bottom: 0;
+    }
+    &:first-child{
+      padding-top:0;
+    }
+    @media screen and (max-width: $mobile) {
+      padding: rem(24px) 0;
+    }
+
+    .article-info {
+      @media screen and (min-width: $tablet) {
+        padding-left: get-spacing(xxxlarge);
+
+        picture img {
+          display:none;
+        }
+      }
+    }
+
+    .article-image {
+      display:none;
+
+      @media screen and (min-width: $tablet) {
+        display:block;
+      }
+
+    }
+
+    picture img {
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+    }
+
+    picture {
+      grid-column: 1;
+      grid-row: span 3;
+      display: block;
+      @media screen and (max-width: $tablet) {
+        width: 100%;
+        grid-row: 3;
+        margin-bottom: get-spacing(medium);
+      }
+    }
+    @media screen and (min-width: $tablet) {
+      picture ~ .eyebrow,
+      picture ~ h3,
+      picture ~ p,
+      piocture ~ .domaij {
+        grid-column: 2 / span 1;
+      }
+    }
+    .eyebrow {
+      display: block;
+      font-weight: bold;
+      font-size: $font-m;
+      line-height: get-spacing(large);
+      color: $foundation-primary;
+      margin-bottom: get-spacing(xxsmall);
+      width: 100%;
+
+      @media screen and (max-width: $tablet) {
+        font-size: $font-sm;
+      }
+
+    }
+    h3 {
+      margin: 0 0 15px 0;
+    }
+    h3 a {
+      font-weight: 700;
+      font-size: $heading-s;
+      line-height: 30px;
+      vertical-align: middle;
+      display: inline-block;
+      @media screen and (max-width: $tablet) {
+        font-size: $font-xl;
+      }
+      &.external:after {
+        content: "";
+        background-size: contain;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 1ch;
+        background-image: url(../vectors/link-out.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 1ch;
+        height: 1em;
+        margin-top: -8px;
+      }
+    }
+    .domain {
+      display: block;
+      font-size: $font-m;
+      line-height: get-spacing(large);
+      font-weight: bold;
+      color: $brand-primary;
+      margin: 0 0 get-spacing(large) 0;
+    }
+    p {
+      font-size: $font-m;
+      line-height: 26px;
+      @media screen and (max-width: $tablet) {
+        font-size: $font-sm;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,39 @@
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}"
+    data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+            Edit Crop List
+        </sly>
+        <div class="band white det3-crop-list">
+            <div class="band-content">
+                <header>
+                    <h2>${properties.title @ context='html'}</h2>
+                    <p class="subhead">${properties.introCopy @ context='html'}</p>
+                </header>
+                <sly data-sly-test.activeClass="${properties.firstListItemOpen ? 'active' : ''}" />
+                <div class="det01-accordion-list ${properties.backgroundColor} icons collapse crop-list-accordion">
+                    <div data-sly-use.cropList="com.corteva.model.component.models.CropListModel">
+                        <sly data-sly-list.productBean="${cropList.productList}">
+                            <sly data-sly-test.cropImage="${productBean.imageRenditionBean.desktopImagePath}"></sly>
+                            <sly data-sly-test.hideClass="${productBean.subProductTagTitleList.size > 0 ? '' : 'hide-accordion'}"></sly>
+                            <sly data-sly-test.bgColorClass="${cropImage ? 'has-image' : ''}"></sly>
+                            <div class="item ${bgColorClass} ${productBeanList.first && hideClass=='' ? activeClass : ''}">
+                                <h3 class="${hideClass}" data-analytics-type="crop-list" data-analytics-value="${productBean.productTagTitle}">${productBean.productTagTitle}</h3>
+
+                                <sly data-sly-test="${cropImage}">
+                                    <img class="lazyload" data-src="${productBean.imageRenditionBean.desktopImagePath}" alt="${productBean.altText}"/>
+                                </sly>
+
+                                <div class="item-content">
+                                    <sly data-sly-list="${productBean.subProductTagTitleList}">
+                                        <p>${item}</p>
+                                    </sly>
+                                </div>
+                            </div>
+                        </sly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </sly>
+</div>

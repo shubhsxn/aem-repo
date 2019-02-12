@@ -1,0 +1,125 @@
+.nav01-breadcrumbs {
+  padding: 0 $content-padding-desktop;
+
+  background: $brand-primary;
+  height: 59px;
+  color: $base;
+  @media screen and (max-width: $mobile) {
+    padding: 0 5vw;
+  }
+  @media print {
+    background: transparent;
+    padding: 0;
+  }
+  .band-content {
+    height: 100%;
+    position: relative;
+    padding: 0;
+  }
+  .breadcrumb-links {
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    flex-basis: 20px;
+    align-content: space-around;
+    width: 65%;
+    max-width: 130ch;
+    @media screen and (max-width: $tablet) {
+      max-width: 130ch;
+    }
+    @media screen and (min-width: $tablet) {
+      overflow: hidden;
+    }
+    @media print {
+      color: $foundation-primary;
+    }
+    a {
+      color: $base;
+      display: block;
+      margin: 0 10px 0 10px;
+      font-family: $body-font;
+      font-size: $font-m;
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      min-width: 20px;
+      position: relative;
+      transition: all 400ms 0ms ease;
+      @media print {
+        color: $foundation-primary;
+      }
+      @media screen and (max-width: $mobile) {
+        margin: 0 20px 0 0;
+      }
+      /* Last BC link */
+      &:nth-last-child(1) {
+        flex-shrink: 0;
+        font-weight: 700;
+        pointer-events: none;
+      }
+      &:nth-last-child(2) {
+        flex-shrink: 1;
+      }
+      /* If there's more than 3 links, the earliest ones should shrink the most aggressively */
+      &:nth-last-child(n + 4) {
+        flex-shrink: 100;
+        max-width: 10px;
+      }
+      /* First link never shrinks though */
+      &:first-child {
+        flex-shrink: 0;
+        width: auto;
+        max-width: 100ch;
+        margin-left: 0px;
+      }
+
+      /* Reveal full link on hover */
+      &:hover {
+        flex-shrink: 0;
+        max-width: 100%;
+      }
+    }
+  }
+
+  /* Mobile */
+  @media screen and (max-width: $mobile) {
+    .social {
+      display: none;
+    }
+
+    .breadcrumb-links {
+      width: 100%;
+      font-size: 0;
+      a {
+        display: none;
+      }
+      a:nth-last-child(2) {
+        display: block;
+        vertical-align: middle;
+        font-size: $font-m;
+        max-width: initial;
+        width: auto;
+        flex-shrink: 0;
+        &:before {
+          content: "";
+          width: 25px;
+          height: 14px;
+          background: url(../vectors/white-carot.svg) left center no-repeat;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+@media screen {
+  html.js .nav01-breadcrumbs {
+    transition: background 400ms 200ms ease;
+    background: $base;
+  }
+  html.ready .nav01-breadcrumbs{
+    background: $brand-primary;
+  }
+}

@@ -1,0 +1,161 @@
+.con15-media-filter {
+    fieldset {
+        display: block;
+        padding: 7px 0 0 0;
+        @media screen and (min-width: $tablet) {
+            display: inline-block;
+            padding: 0 0 0 7px;
+        }
+        @supports (display: grid) {
+            padding: 0;
+        }
+        @media screen and (device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : portrait) {
+            &:nth-of-type(1){
+                .form-dropdown-filter + .chosen-container{
+                    .chosen-single{
+                      width: 97%;
+                    }
+                }
+            }
+            &.month-filter{
+                .form-dropdown-filter + .chosen-container{
+                    .chosen-single{
+                      width: 95%;
+                    }
+                }
+            }
+        }
+    }
+    margin-bottom: get-spacing(xxxlarge);
+    margin-top: rem(28px);
+    @supports (display: grid) {
+        display: grid;
+        grid-template-columns: min-content;
+        grid-auto-columns: min-content;
+        grid-auto-flow: column;
+        align-items: center;
+        grid-gap: get-spacing(small);
+    }
+    @media screen and (max-width: $mobile) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, min-content);
+        grid-gap: get-spacing(small);
+        label {
+            grid-column: span 2;
+        }
+        fieldset {
+            display: block;
+            &:nth-of-type(1) {
+                grid-column: span 2;
+            }
+        }
+    }
+    label {
+        font-weight: bold;
+        color: $foundation-primary;
+        max-width: 140px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .select2-container {
+        min-width: 160px;
+    }
+}
+
+select.form-dropdown-filter {
+    width: 100%;
+    appearance: textfield;
+    border: 1px solid $border-primary;
+    border-radius: 2px;
+    padding: rem(12px) rem(30px) rem(12px) rem(24px);
+    background: $base;
+    color: $brand-primary;
+    box-shadow: none;
+    position: relative;
+    background: $base url("../vectors/carot-down.svg") right 18px center no-repeat;
+    @media screen and (max-width: $mobile)and (orientation: potrait) {
+        max-width: 400px;
+    }
+    &:focus {
+        outline: 2px solid $brand-primary;
+    }
+    + label {
+        display: none;
+    }
+    /* Re-style Chosen.js dropdowns */
+    ~ {
+        .chosen-container .chosen-single {
+            height: 50px;
+            background: none;
+            border: 1px solid $border-primary;
+            border-radius: 2px;
+            width: 100%;
+            padding: rem(12px) rem(30px) rem(12px) rem(20px);
+            color: $brand-primary;
+            font-size: $font-m;
+            font-weight: 700;
+            line-height: rem(26px);
+            box-shadow: none;
+            * {
+                font-weight: bold;
+                font-weight: 700;
+            }
+            &:after {
+                content: "";
+                height: 10px;
+                width: 6px;
+                background: transparent url("../vectors/blue-carot.svg") center center no-repeat;
+                background-size: contain;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%) rotate(90deg);
+                transform-origin: center center;
+                transition: transform 150ms ease-in;
+            }
+        }
+        .chosen-with-drop .chosen-single:after {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        .chosen-container .chosen-results li {
+            @include padding(large);
+            height: 59px;
+            font-size: $font-m;
+            color: $foundation-primary;
+            width: 100%;
+            transition: background 200ms ease-out;
+            color: $foundation-primary;
+            border-bottom: 1px solid $border-primary;
+            &:first-child {
+                border-top: 1px solid $border-primary;
+            }
+            &:hover,
+            &.highlighted {
+                background: $foundation-quaternary;
+            }
+            &.result-selected {
+                font-weight: 700;
+            }
+        }
+        .chosen-container .chosen-drop {
+            box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
+            padding: 0;
+        }
+        .chosen-container .chosen-results {
+            padding: 0;
+            margin: 0;
+        }
+        @media screen and (-webkit-min-device-pixel-ratio: 2) {
+            .chosen-container .chosen-search-input {
+                display: none;
+            }
+        }
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            .chosen-container .chosen-search-input {
+                display: none;
+            }
+        }
+    }
+}

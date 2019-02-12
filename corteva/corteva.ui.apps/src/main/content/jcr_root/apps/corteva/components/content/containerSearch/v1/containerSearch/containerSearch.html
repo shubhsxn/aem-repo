@@ -1,0 +1,78 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag nav-search" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+            Edit Container Search
+        </sly>
+        <sly data-sly-use.search="com.corteva.model.component.models.SearchContainerModel">
+            <div class="con07-container-search">
+                <div class="band con07-container-search_filters">
+                    <div class="band-content">
+                        <h1>${properties.searchTitleText @ context = 'html'}</h1>
+                        <span class="num-results">
+                            <span class="results-count"></span> ${properties.resultCountText}
+                        </span>
+                        <form class="search-filters" type="GET" action="${search.searchUrl}" data-autocomplete-url="${search.autoCompleteUrl}" data-suggestions-limit="${search.maximumSuggestion}" data-minchars ="${search.minimumCharacter}">
+                            <fieldset class="search">
+                                <label for="searchInput">${properties.searchLabel}:</label>
+                                <input id="searchInput" required type="search" name="searchInput" class="search-field" placeholder="${properties.searchBarText}" autocomplete="off" />
+                                <input type="reset" class="reset" title="Clear search form" tabindex="-1" />
+                                <button type="submit" class="submit submit--search" title="Submit search" ></button>
+                            </fieldset>
+
+                            <fieldset class="filter">
+                                <label for="filter">${properties.filterLabel}:</label>
+                                <select id="filter" name="filter" class="form-dropdown">
+                                    <option value="">${'containerSearch.allContent' @i18n,locale=comElement.localeForInternationalization}</option>
+                                    <sly data-sly-list.obj="${search.filterOptions}">
+                                        <option value="${obj['value']}">${obj['key']}</option>
+                                    </sly>
+
+                                </select>
+                            </fieldset>
+
+                            <fieldset class="sort">
+                                <label for="sort">${properties.sortLabel}:</label>
+                                <select id="sort" name="sort" class="form-dropdown">
+                                    <sly data-sly-list.obj="${search.sortOptions}">
+                                        <option value="${obj['value']}">${obj['key']}</option>
+                                    </sly>
+                                </select>
+                               
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="band con07-container-search_results">
+                    <div class="band-content">
+                        <div class="loader search-loader"></div>
+                        <div class="search-results-wrap">
+                        </div>
+                        <div class="no-search-results hide">
+                            <em class="icon-search"></em>
+                            ${properties.noResultText @context = 'html'}
+                        </div>
+                    </div>
+                </div>
+                <!-- CON06 PAGINATION -->
+               <div class="c-con06-pagination__wrapper hide" data-paginationSeparator="${'containerSearch.ofText' @i18n,locale=comElement.localeForInternationalization}">
+                    <div class="container">
+                        <div class="row">
+                            <ul class="pagination">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </sly>
+    </sly>
+</div>
+
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    searchUrl="https://stage-sp1004f97a.guided.ss-omtrdc.net/"
+    sortOption="Merkityksellisyys###m_DuPontSort=relevance,Viimeksi muokattu päivämäärä###m_DuPontSort=date"
+    filterOption="Artikkeli###q1=Artikkeli;x1=contentType,Tietoja Cortevasta###q1=Tietoja+Cortevasta;x1=contentType,Innovaatio###q1=Innovaatio;x1=contentType,Kestävyys###q1=Kest%C3%A4vyys;x1=contentType,Ura###q1=Ura;x1=contentType,Tapahtuma###q1=Tapahtuma;x1=contentType,UKK###q1=UKK;x1=contentType,Tekniset tiedot###q1=Tekniset+tiedot;x1=contentType,Tuote###q1=Tuote;x1=contentType,Biografia###q1=Biografia;x1=contentType,Media###q1=Media;x1=contentType,Juridiset tiedot###q1=Juridiset+tiedot;x1=contentType"
+    autoCompleteUrl="https://content.atomz.com/autocomplete/sp10/04/f9/7a-stage/"
+    minCharacterLength="3"
+    maxSuggestionLength="5"
+
+/>

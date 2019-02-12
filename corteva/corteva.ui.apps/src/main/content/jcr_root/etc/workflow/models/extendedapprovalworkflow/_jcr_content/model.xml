@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}false"
+    jcr:primaryType="cq:WorkflowModel"
+    jcr:uuid="aa155593-381b-4509-9490-51181f68187d"
+    sling:resourceType="cq/workflow/components/model"
+    description="No Description"
+    title="Extended Approval Workflow">
+    <metaData
+        cq:lastModified="{Long}1537355383425"
+        cq:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"/>
+    <nodes jcr:primaryType="nt:unstructured">
+        <node0
+            jcr:primaryType="cq:WorkflowNode"
+            title="Start"
+            type="START">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0>
+        <node1
+            jcr:primaryType="cq:WorkflowNode"
+            description="send email to the reviewer group"
+            title="send email to the reviewer"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.corteva.core.workflow.EmailProcessStep"
+                PROCESS_ARGS="emailTemplate=/etc/notification/email/corteva/reviewerreviewnotification;receiverRole=reviewer"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node1>
+        <node2
+            jcr:primaryType="cq:WorkflowNode"
+            description="review the page and take next steps"
+            title="review the page and take next steps"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.corteva.core.workflow.ParticipantStepImpl"
+                PROCESS_ARGS="role=reviewer"/>
+        </node2>
+        <node3
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_SPLIT"
+            type="OR_SPLIT">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node3>
+        <node4
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_JOIN"
+            type="OR_JOIN">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node4>
+        <node5
+            jcr:primaryType="cq:WorkflowNode"
+            description="approve and send email to the publisher group"
+            title="approve and send email to the publisher group"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.corteva.core.workflow.EmailProcessStep"
+                PROCESS_ARGS="emailTemplate=/etc/notification/email/corteva/revieweracceptnotification;receiverRole=publisher"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node5>
+        <node6
+            jcr:primaryType="cq:WorkflowNode"
+            description="review the page and take next steps"
+            title="review the page and take next steps"
+            type="DYNAMIC_PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                DYNAMIC_PARTICIPANT="com.corteva.core.workflow.ParticipantStepImpl"
+                PROCESS_ARGS="role=publisher"/>
+        </node6>
+        <node7
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_SPLIT"
+            type="OR_SPLIT">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node7>
+        <node8
+            jcr:primaryType="cq:WorkflowNode"
+            title="OR_JOIN"
+            type="OR_JOIN">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node8>
+        <node9
+            jcr:primaryType="cq:WorkflowNode"
+            description="Approve publish request and publish page"
+            title="Approve publish request and publish page"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.corteva.core.workflow.AbsoluteTimeProcessStep"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node9>
+        <node10
+            jcr:primaryType="cq:WorkflowNode"
+            description="waiting for scheduled time"
+            title="waiting for scheduled time"
+            type="PARTICIPANT">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PARTICIPANT="admin"
+                timeoutHandler="com.adobe.granite.workflow.console.timeout.autoadvance.AbsoluteTimeAutoAdvancer"
+                timeoutMillis="0"/>
+        </node10>
+        <node11
+            jcr:primaryType="cq:WorkflowNode"
+            description="activate the page since it has been approved"
+            title="Activate the page"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.day.cq.wcm.workflow.process.ActivatePageProcess"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node11>
+        <node12
+            jcr:primaryType="cq:WorkflowNode"
+            description="Send email to the initiator regarding the page publish"
+            title="Send email to the initiator regarding the page publish"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.corteva.core.workflow.EmailProcessStep"
+                PROCESS_ARGS="emailTemplate=/etc/notification/email/corteva/publishacceptnotification"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node12>
+        <node13
+            jcr:primaryType="cq:WorkflowNode"
+            description="Reject publish request and notify the initator"
+            title="Reject publish request and notify the initator"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.corteva.core.workflow.EmailProcessStep"
+                PROCESS_ARGS="emailTemplate=/etc/notification/email/corteva/publishrejectnotification"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node13>
+        <node14
+            jcr:primaryType="cq:WorkflowNode"
+            description="Reject publish request and notify the initator"
+            title="Reject publish request and notify the initator"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.corteva.core.workflow.EmailProcessStep"
+                PROCESS_ARGS="emailTemplate=/etc/notification/email/corteva/reviewerrejectnotification"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node14>
+        <node15
+            jcr:primaryType="cq:WorkflowNode"
+            title="End"
+            type="END">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node15>
+    </nodes>
+    <transitions jcr:primaryType="nt:unstructured">
+        <node0_x0023_node1
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node0"
+            rule=""
+            to="node1">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node0_x0023_node1>
+        <node1_x0023_node2
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node1"
+            rule=""
+            to="node2">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node1_x0023_node2>
+        <node2_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node2"
+            to="node3">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node2_x0023_node3>
+        <node3_x0023_node5
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node3"
+            rule=""
+            to="node5">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node3_x0023_node5>
+        <node5_x0023_node6
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node5"
+            rule=""
+            to="node6">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node5_x0023_node6>
+        <node6_x0023_node7
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node6"
+            to="node7">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node6_x0023_node7>
+        <node7_x0023_node9
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node7"
+            rule=""
+            to="node9">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node7_x0023_node9>
+        <node9_x0023_node10
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node9"
+            rule=""
+            to="node10">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node9_x0023_node10>
+        <node10_x0023_node11
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node10"
+            rule=""
+            to="node11">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node10_x0023_node11>
+        <node11_x0023_node12
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node11"
+            rule=""
+            to="node12">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node11_x0023_node12>
+        <node12_x0023_node8
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node12"
+            to="node8">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node12_x0023_node8>
+        <node7_x0023_node13
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node7"
+            rule=""
+            to="node13">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node7_x0023_node13>
+        <node13_x0023_node8
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node13"
+            to="node8">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node13_x0023_node8>
+        <node8_x0023_node4
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node8"
+            to="node4">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node8_x0023_node4>
+        <node3_x0023_node14
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node3"
+            rule=""
+            to="node14">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node3_x0023_node14>
+        <node14_x0023_node4
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node14"
+            to="node4">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node14_x0023_node4>
+        <node4_x0023_node15
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node4"
+            to="node15">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node4_x0023_node15>
+    </transitions>
+</jcr:root>

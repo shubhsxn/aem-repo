@@ -1,0 +1,76 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}">Edit column control Component</sly>
+
+<sly data-sly-test="${properties.pageMargin=='true'}">
+   <sly data-sly-test.className="${'band'}" />
+</sly>
+<div class="column-control container-xl ${className} ${(wcmmode.edit) ? 'edit-mode' : 'view-mode'}">
+		<div data-sly-test="${ properties.coltype == '8-4-col'}" >
+			<div data-sly-resource="${ @path='8-4-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-8"></div>
+			<div data-sly-resource="${ @path='8-4-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-4"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '4-8-col'}" >
+			<div data-sly-resource="${ @path='4-8-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-4"></div>
+			<div data-sly-resource="${ @path='4-8-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-8"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '4-4-4-col'}" >
+			<div data-sly-resource="${ @path='4-4-4-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-4"></div>
+			<div data-sly-resource="${ @path='4-4-4-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-4"></div>
+			<div data-sly-resource="${ @path='4-4-4-col-3', resourceType='/libs/foundation/components/parsys'}" class="col-4"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '6-6-col'}" class="row column-control-6">
+			<div data-sly-resource="${ @path='6-6-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-6"></div>
+			<div data-sly-resource="${ @path='6-6-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-6"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '3-3-3-3-col'}" >
+			<div data-sly-resource="${ @path='3-3-3-3-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+			<div data-sly-resource="${ @path='3-3-3-3-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+			<div data-sly-resource="${ @path='3-3-3-3-col-3', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+			<div data-sly-resource="${ @path='3-3-3-3-col-4', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '3-9-col'}" >
+			<div data-sly-resource="${ @path='3-9-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+			<div data-sly-resource="${ @path='3-9-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-9"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '9-3-col'}" >
+			<div data-sly-resource="${ @path='9-3-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-9"></div>
+			<div data-sly-resource="${ @path='9-3-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '3-3-6-col'}" >
+			<div data-sly-resource="${ @path='3-3-6-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+			<div data-sly-resource="${ @path='3-3-6-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+			<div data-sly-resource="${ @path='3-3-6-col-3', resourceType='/libs/foundation/components/parsys'}" class="col-6"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '6-3-3-col'}" >
+			<div data-sly-resource="${ @path='6-3-3-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-6"></div>
+			<div data-sly-resource="${ @path='6-3-3-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+			<div data-sly-resource="${ @path='6-3-3-col-3', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '3-6-3-col'}" >
+			<div data-sly-resource="${ @path='3-6-3-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+			<div data-sly-resource="${ @path='3-6-3-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-6"></div>
+			<div data-sly-resource="${ @path='3-6-3-col-3', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+		</div>
+
+		<div data-sly-test="${ properties.coltype == '3-8-1-col'}" >
+			<div data-sly-resource="${ @path='3-8-1-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-3"></div>
+			<div data-sly-resource="${ @path='3-8-1-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-8"></div>
+			<div data-sly-resource="${ @path='3-8-1-col-3', resourceType='/libs/foundation/components/parsys'}" class="col-1"></div>
+		</div>
+</div>

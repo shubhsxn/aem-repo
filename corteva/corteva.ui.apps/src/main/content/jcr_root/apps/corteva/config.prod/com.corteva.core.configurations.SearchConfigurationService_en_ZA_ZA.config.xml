@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    searchUrl="https://sp10056bbc.guided.ss-omtrdc.net/"
+    sortOption="Relevance###m_DuPontSort=relevance,Last Modified Date###m_DuPontSort=date"
+    filterOption="Career###q1=Career;x1=contentType,Event###q1=Event;x1=contentType,Article###q1=Article;x1=contentType,Technical Documentation###q1=Technical+Documentation;x1=contentType,FAQ###q1=FAQ;x1=contentType,About Corteva###q1=About+Corteva;x1=contentType,Biography###q1=Biography;x1=contentType,Innovation###q1=Innovation;x1=contentType,Legal###q1=Legal;x1=contentType,Media###q1=Media;x1=contentType,Sustainability###q1=Sustainability;x1=contentType,Product###q1=Product;x1=contentType"
+    autoCompleteUrl="https://sp10056bb1.guided.ss-omtrdc.net/?do=ac&amp;site=suggest-za"
+	minCharacterLength="3"
+    maxSuggestionLength="5"
+
+/>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <corteva-form-referrer-list/>
+    <jcr:content jcr:primaryType="nt:unstructured"/>
+    <global_locationslist/>
+    <contact_reason jcr:primaryType="nt:unstructured">
+        <es_mx/>
+        <ua_uk/>
+        <hu_hu/>
+        <cn/>
+        <fr/>
+        <de_de/>
+        <it_it/>
+        <ru_ru/>
+        <pt_br/>
+        <ro_ro/>
+        <pl_pl/>
+        <id/>
+        <en_us/>
+        <ja/>
+    </contact_reason>
+    <choose_business jcr:primaryType="nt:unstructured">
+        <en_us/>
+        <de_de/>
+        <it_it/>
+        <ru_ru/>
+        <pt_br/>
+        <ro_ro/>
+        <pl_pl/>
+        <id/>
+        <es_mx/>
+        <ua_uk/>
+        <hu_hu/>
+        <cn/>
+        <ja/>
+        <ca/>
+        <fr/>
+    </choose_business>
+</jcr:root>

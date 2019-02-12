@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    searchUrl="https://sp10056bc0.guided.ss-omtrdc.net/"
+    sortOption="fontosság###m_DuPontSort=relevance,Utolsó módosítás dátuma###m_DuPontSort=date"
+    filterOption="A Corteva-ról###q1=A+Corteva-r%C3%B3l;x1=contentType,Innováció###q1=Innov%C3%A1ci%C3%B3;x1=contentType,Fentarthatóság###q1=Fentarthat%C3%B3s%C3%A1g;x1=contentType,Karrier###q1=Karrier;x1=contentType,Esemény###q1=Esem%C3%A9ny;x1=contentType,GYIK###q1=GYIK;x1=contentType,Technikai Dokumentáció###q1=Technikai+Dokument%C3%A1ci%C3%B3;x1=contentType,Termék###q1=Term%C3%A9k;x1=contentType,Biográfia###q1=Biogr%C3%A1fia;x1=contentType,Média###q1=M%C3%A9dia;x1=contentType,Jogi Közlemény###q1=Jogi+K%C3%B6zlem%C3%A9ny;x1=contentType,Cikk###q1=Cikk;x1=contentType"
+    autoCompleteUrl="https://content.atomz.com/autocomplete/sp10/05/6b/c0/"
+    minCharacterLength="3"
+    maxSuggestionLength="5"
+
+/>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Tiles"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Tile Settings"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <viewType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-custom-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".tileSelection-option-listtype-showhide-target"
+                                fieldDescription="Select the Tile Type."
+                                fieldLabel="Select the Tile Type"
+                                name="./viewType"
+                                value="">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <brandLogo
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Brand Logo"
+                                        value="brandLogo"/>
+                                    <cropTypeIcon
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Crop Type Icon"
+                                        value="cropTypeIcon"/>
+                                    <impact
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Impact Tile"
+                                        value="impactTile"/>
+                                    <impactExpanded
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Impact Expanded Tile"
+                                        value="impactExpandedTile"/>
+                                </items>
+                            </viewType>
+                            <setTileImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                assetfieldstobepopulated="\{&quot;iconAltText&quot;:&quot;./iconAltText&quot;, &quot;logoAltText&quot;:&quot;./logoAltText&quot;, &quot;imageAltText&quot;:&quot;./altText&quot;}"
+                                class="tileSelection-option-listtype-showhide-target foundation-layout-util-vmargin assetMetadataClass"
+                                showhidecustomtargetvalue="brandLogo, cropTypeIcon, impactExpandedTile">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/image/smartimage"/>
+                                </items>
+                            </setTileImage>
+                            <setTileBrandLogo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="tileSelection-option-listtype-showhide-target foundation-layout-util-vmargin"
+                                showhidecustomtargetvalue="brandLogo">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <altText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/logo/logoAltText"/>
+                                </items>
+                            </setTileBrandLogo>
+                            <setTileCropIcon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="tileSelection-option-listtype-showhide-target foundation-layout-util-vmargin"
+                                showhidecustomtargetvalue="cropTypeIcon">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <bgColor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Select the Background Color."
+                                        fieldLabel="Background Color"
+                                        name="./bgColor"
+                                        value="">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <blue
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Blue"
+                                                value="blue"/>
+                                            <orange
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Orange"
+                                                value="orange"/>
+                                            <green
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Green"
+                                                value="green"/>
+											<maroon
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Maroon"
+                                                value="maroon"/>	
+                                        </items>
+                                    </bgColor>
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        class="isMandatory"
+                                        fieldDescription="Provide Title for Icon."
+                                        fieldLabel="Icon Title"
+                                        maxlength="{Long}25"
+                                        name="./iconTitle"
+                                        required="{Boolean}true"/>
+                                    <altText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/icon/iconAltText"/>
+                                    <linkUrl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="corteva/components/content/contextualpathbrowser"
+                                        fieldDescription="Provide the Destination Link."
+                                        fieldLabel="Link URL"
+                                        name="./linkUrlCropIcon"
+                                        contentRootPath="/content"/>
+                                    <linkAction
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Choose Target Action for Link."
+                                        fieldLabel="Link Action"
+                                        name="./linkActionCropIcon">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <option1
+                                                jcr:primaryType="nt:unstructured"
+                                                selected="{Boolean}true"
+                                                text="Open in same window"
+                                                value="_self"/>
+                                            <option2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Open in new window"
+                                                value="_blank"/>
+                                        </items>
+                                    </linkAction>
+                                    <linkStyle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Link Style"
+                                        fieldLabel="Link Style"
+                                        name="./linkStyleCropIcon">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <internal
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Internal Link"
+                                                value="internal"/>
+                                            <external
+                                                jcr:primaryType="nt:unstructured"
+                                                text="External Link"
+                                                value="external"/>
+                                            <download
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Download Link"
+                                                value="download"/>
+                                        </items>
+                                    </linkStyle>
+                                </items>
+                            </setTileCropIcon>
+                            <setTileImpact
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="tileSelection-option-listtype-showhide-target foundation-layout-util-vmargin"
+                                showhidecustomtargetvalue="impactTile">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        class="isMandatory"
+                                        fieldDescription="Enter Title"
+                                        fieldLabel="Title"
+                                        maxlength="{Long}120"
+                                        name="./impactTitle"
+                                        required="{Boolean}true"/>
+                                </items>
+                            </setTileImpact>
+                            <setTileImpactExpanded
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="tileSelection-option-listtype-showhide-target foundation-layout-util-vmargin"
+                                showhidecustomtargetvalue="impactExpandedTile">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <altText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/image/alttext"/>
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        class="isMandatory"
+                                        fieldDescription="Enter Title"
+                                        fieldLabel="Title"
+                                        maxlength="{Long}80"
+                                        name="./impactExpandedTitle"
+                                        required="{Boolean}true"/>
+                                    <textPlacement
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radiogroup"
+                                        name="./textPlacement"
+                                        text="Text Placement"
+                                        value="">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <right
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                name="./textPlacement"
+                                                text="Right"
+                                                value="image-on-left"/>
+                                            <left
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                checked="{Boolean}true"
+                                                name="./textPlacement"
+                                                text="Left"
+                                                value="image-on-right"/>
+                                        </items>
+                                    </textPlacement>
+                                </items>
+                            </setTileImpactExpanded>
+                            <setTileImpactCommon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="tileSelection-option-listtype-showhide-target foundation-layout-util-vmargin"
+                                showhidecustomtargetvalue="impactTile, impactExpandedTile">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <bgColor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Select the Background Color."
+                                        fieldLabel="Background Color"
+                                        name="./impactBgColor"
+                                        value="">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <white
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White"
+                                                value="white invert"/>
+                                            <blue
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Blue"
+                                                value="blue"/>
+											<maroon
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Maroon"
+                                                value="maroon"/>
+                                        </items>
+                                    </bgColor>
+                                    <eyebrowLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Enter Eyebrow Label"
+                                        fieldLabel="Eyebrow Label"
+                                        maxlength="{Long}25"
+                                        name="./eyebrowLabel"/>
+                                    <displayPublishDate
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        class="isMandatoryCheck"
+                                        name="./displayPublishDate"
+                                        text="Display Publish Date"
+                                        value="true"/>
+                                    <publishDate
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/datepicker"
+                                        class="isMandatory isMandatoryCheckInp"
+                                        displayedFormat="MM/DD/YYYY"
+                                        fieldDescription="Enter Publish Date"
+                                        fieldLabel="Publish Date"
+                                        name="./publishDate"
+                                        required="{Boolean}true"
+                                        storedFormat="YYYY-MM-DD"
+                                        storedValue="YYYY-MM-DD "
+                                        type="date"/>
+                                    <linkLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        class="isMandatory"
+                                        fieldDescription="Enter Link Label."
+                                        fieldLabel="Link Label"
+                                        maxlength="{Long}25"
+                                        name="./linkLabel"
+                                        required="{Boolean}true"/>
+                                </items>
+                            </setTileImpactCommon>
+                            <linkSection
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="tileSelection-option-listtype-showhide-target foundation-layout-util-vmargin js-page-populate"
+                                fieldstobepopulated="\{&quot;cq:lastModified&quot;:&quot;./publishDate&quot;}"
+                                showhidecustomtargetvalue="brandLogo, impactTile, impactExpandedTile">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <linkUrl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/link/linkUrl"/>
+                                    <linkAction
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/link/linkAction"/>
+                                    <linkStyle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/link/linkStyle"/>
+                                </items>
+                            </linkSection>
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

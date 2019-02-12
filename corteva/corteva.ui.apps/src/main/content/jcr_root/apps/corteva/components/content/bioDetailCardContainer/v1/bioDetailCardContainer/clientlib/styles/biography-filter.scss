@@ -1,0 +1,102 @@
+.con08-biography-filter {
+
+  h2 {
+    margin: 0 0 20px;
+  }
+
+  form.filter {
+    margin-bottom: -20px;
+    @media screen and (max-width: $mobile) {
+      margin: 0 0 20px;
+    }
+    label:not(.hide) {
+      color: $foundation-primary;
+      font-size: $font-m;
+      line-height: 20px;
+      font-weight: bold;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    fieldset {
+      width: 250px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 25px;
+      @media screen and (max-width: $mobile) {
+        display: block;
+        width: 100%;
+        margin: 12px 0 0;
+      }
+    }
+  }
+
+  .items {
+    display: flex;
+    flex-wrap: wrap;    
+    padding-top: 0;
+
+    margin-left: -10px;
+    margin-right: -10px;
+    
+    @media screen and (min-width: $tablet) {
+      padding-top: 20px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction:column;
+      flex-grow: 1;
+      margin: 10px;
+      margin-bottom:40px;
+      
+      /* 2 items per row default */
+      width: calc(100% / 2 - 20px );
+      
+      min-width: calc(100% / 2 - 20px);
+      max-width: calc(100% / 2 );
+
+      /* 3 items per row ~ tablet */
+      @media screen and (min-width: $mobile) {
+        margin-top: 80px;
+        margin-bottom: 10px;
+        width: calc(100% / 3 - 40px );
+        min-width: calc(100% / 3 - 40px); 
+        max-width: calc(100% / 3 );       
+      }      
+
+      /* 4 items per row ~ xlarge */
+      @media screen and (min-width: $desktop) {
+        width: calc(100% / 4 - 40px);
+        max-width: calc(100% / 4 - 40px);
+        min-width: calc(100% / 4 - 40px);
+      }
+
+      picture {
+        /* force reflow in  IE; prevents large bottom space on img */
+        min-height:1%;
+      }         
+    }
+
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .chosen-container{
+      input.chosen-search-input{
+        display: none;
+      }
+    }
+  }
+
+}
+.three .item {
+    /* margin-bottom: 80px; */
+    width: calc(33.33333% - 40px) !important;
+    min-width: calc(33.33333% - 40px) !important;
+    max-width: 33.33333% !important;
+ @media screen and (max-width: $mobile) {
+	 width: calc(50% - 40px) !important;
+    min-width: calc(50% - 40px) !important;
+    max-width: 50% !important;
+}
+}

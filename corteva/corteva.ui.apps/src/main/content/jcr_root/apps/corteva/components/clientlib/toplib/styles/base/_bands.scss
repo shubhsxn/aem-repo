@@ -1,0 +1,58 @@
+.band {
+  padding: $band-padding-desktop;
+  padding: $band-padding-desktop $content-padding-desktop;
+
+  @media print {
+    padding: rem(40px) 0;
+  }
+
+  &.no-top {
+    padding-top: 0;
+  }
+
+  &.no-bottom {
+    padding-bottom: 0;
+  }
+    
+  &.no-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &.white {
+    background: $base;
+    color: $foundation-primary;
+  }
+  /* A white band followed by a white band should have a top border */
+  &.white + .band.white {
+    border-top: 1px solid $border-secondary;
+  }
+
+  &.negative {
+    background: $foundation-primary;
+    color: $base;
+  }
+  &.negative + band.negative {
+    border-top: 1px solid $border-secondary;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding-left: $content-padding-mobile;
+    padding-right: $content-padding-mobile;
+    padding-top: $band-padding-mobile;
+    padding-bottom: $band-padding-mobile;
+  }
+
+  .band-content {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 0;
+    @media print {
+      max-width: none;
+      page-break-before: avoid;
+    }
+    @media screen and (max-width: $mobile) {
+      max-width: 90vw;
+    }
+  }
+}

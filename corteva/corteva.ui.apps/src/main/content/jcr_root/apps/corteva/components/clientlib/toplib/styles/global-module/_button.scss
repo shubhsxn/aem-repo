@@ -1,0 +1,62 @@
+a.c-button,
+.c-button {
+    background: $brand-primary;
+    color: $base;
+    font-family: $body-font;
+    font-size: $font-m;
+    font-weight: bold;
+    padding: rem(21px) rem(38px);
+    border-radius: 3px;
+    line-height: rem(18px);
+    display: inline-block;
+    border: $button-skew-border solid $brand-primary;
+    appearance: button;
+    @media screen and (max-width: $mobile) {
+        font-size: $font-s;
+        padding: rem(16px) rem(38px);
+    }
+    &:hover {
+        background: $hover-state;
+        border-color: $hover-state;
+    }
+    &.invert {
+        background: $base;
+        color: $brand-primary;
+    }
+    &.secondary {
+        padding: rem(19px) rem(38px);        
+        background: transparent;
+        border: 2px solid $brand-primary;
+        color: $brand-primary;
+        &:hover {
+            color: $hover-state;
+        }
+        &.invert {
+            border: 2px solid $base;
+            color: $base;
+        }
+        @media screen and (max-width: $mobile) {
+            padding: rem(14px) rem(38px);        
+        }
+    }
+    &.extra-padding {
+      margin-top: rem(12px);
+      margin-bottom: rem(32px);
+    }
+}
+a.c-button{
+    appearance: none;
+}
+.con06-label-finder .sidebar form .c-button {
+    padding: rem(21px) rem(38px);
+    @media screen and (max-width: $mobile) {
+        font-size: $font-s;
+        padding: rem(16px) rem(38px);
+    }
+    &.secondary {
+        padding: rem(19px) rem(38px);        
+        @media screen and (max-width: $mobile) {
+            padding: rem(14px) rem(38px);        
+        }
+    }
+}

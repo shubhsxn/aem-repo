@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2019-01-10T15:25:49.789+05:30"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/corteva/settings/wcm/template-types/blank-page"
+        jcr:description="Leadership Landing Page Template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Leadership Landing Page Template"
+        status="enabled"/>
+</jcr:root>

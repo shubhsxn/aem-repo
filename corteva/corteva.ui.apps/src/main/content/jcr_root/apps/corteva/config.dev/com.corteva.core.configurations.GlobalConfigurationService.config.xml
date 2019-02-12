@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    rootPath="http://www.corteva.com/"
+	addThisScript="//s7.addthis.com/js/300/addthis_widget.js#pubid=amitsinghbiz84"
+    host.prefix="10.226.141.196:4502"
+    countrySelectorRootPath="/content/corteva"
+	captchaSiteKey="6LfAgFgUAAAAALiJFyS8TZsYfz2KKh2wLSPm5iuA"
+    captchaSecretKey="6LfAgFgUAAAAAB5uJMuHv1ZK0OypBjkZiq81kMjg"
+    dispatcherHosts="[10.226.141.196:80]"
+	company="corteva-commercial"
+    />

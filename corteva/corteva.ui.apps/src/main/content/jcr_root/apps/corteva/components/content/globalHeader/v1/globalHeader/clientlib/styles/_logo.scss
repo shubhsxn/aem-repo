@@ -1,0 +1,62 @@
+.global-nav .logo {
+  display: block;
+  max-width: $content-width;
+  font-size: $base-font;
+  color: $brand-primary;
+  width: 80vw;
+  margin: 0 auto;
+  align-self: end;
+  min-height: 42px;
+
+  @media screen and (min-width: $mobile) {
+    min-height: 90px;
+  }
+
+  @supports (display: grid) {
+    min-height: inherit;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  svg, img {
+    width: 140px;
+    @media screen and (min-width: $mobile) {
+       width: 230px;
+       margin-top: 8px;
+    }
+  }
+
+  @supports (display: grid) {
+    width: 230px;
+    padding: 0;
+    margin: 0;
+    transform: none;
+    svg, img {
+      width: 100%;
+      margin-top: 8px;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 140px;
+    height: 28px;
+    display: block;
+    margin: 0 auto;
+    transform: none;
+    font-size: 0;
+  }
+}
+
+html.js .global-nav .logo {
+  transition: opacity 400ms ease-in, filter 400ms ease-in;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+html.ready .global-nav .logo {
+  opacity: 1;
+  filter: none;
+  z-index: 2;
+}

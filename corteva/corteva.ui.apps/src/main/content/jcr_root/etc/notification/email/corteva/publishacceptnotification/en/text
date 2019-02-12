@@ -1,0 +1,7 @@
+Dear ${authorName},
+
+<a href= "${payload.link}">${payload.title}</a> was published on ${absoluteDate} ET.
+
+
+\ -------------------------------------------------------------------------------------\
+This is a system-generated email; please do not reply to this email address. 

@@ -1,0 +1,83 @@
+.ba-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.ba-slider img {
+  width: 100%;
+  display: block;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ba-slider .resize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.ba-slider .handle {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -2px;
+  background: $base;
+  cursor: ew-resize;
+}
+
+.ba-slider .handle:before {
+  position: absolute;
+  content: '';
+  z-index: 1;
+  top: 50%;
+  width: 10px;
+  height: 80px;
+  margin: -49px 0 0 -4px;
+  color: $base;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  line-height: 64px;
+  background: $base;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 601px) {
+  .ba-slider .handle:before {
+    margin: -40px 0 0 -4px;
+  }
+}
+
+.ba-slider:hover .circle-arrows {
+  transform: scale(1.3);
+}
+
+.circle-arrows {
+  margin: -20px 0 0 -21px;
+  z-index: 3;
+  top: 48%;
+  padding: 10px;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 601px) {
+  .circle-arrows {
+    margin: -16px 0 0 -21px;
+  }
+}
+
+.ba-slider .handle.ba-draggable:after {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  line-height: 50px;
+  font-size: 30px;
+}

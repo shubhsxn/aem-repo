@@ -1,0 +1,3 @@
+#base=js
+
+dist/nav-dropdown.js

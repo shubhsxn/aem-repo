@@ -1,0 +1,57 @@
+.det29-product-technical-specs {
+  .specs {
+    >li {
+      border-bottom: 1px solid $border-secondary;
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+
+      @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+      }
+
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .term {
+        flex-basis: 260px;
+        font-weight: bold;
+        font-size: $font-m;
+        line-height: 30px;
+
+        @media screen and (max-width: $mobile) {
+          flex-basis: auto;
+          margin-bottom: 7px;
+        }
+      }
+
+      .details {
+        width: calc(100% - 260px);
+        font-size: $base-font;
+        line-height: 30px;
+
+        @media screen and (max-width: $mobile) {
+          width: auto;
+          font-size: $font-m;
+          line-height: 26px;
+        }
+
+        ol {
+          list-style-type: decimal;
+          list-style-position: outside;
+          padding-left: 15px;
+        }
+
+        p {
+          margin-top: -4px;
+        }
+      }
+    }
+  }
+}

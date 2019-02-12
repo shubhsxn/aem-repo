@@ -1,0 +1,160 @@
+$submit-padding-y: get-spacing(medium);
+
+.repsearch {
+    .results-wrapper {
+        @include margin-top(large);
+    }
+}
+
+.findRep {
+  .component-body {
+    @include padding-top(collosal);
+
+    @media screen and (max-width: $mobile) {
+      @include padding-top(xlarge);
+    }
+  }
+
+  .header {
+    .title {
+      @include margin-bottom(large);
+    }
+
+    .desc {
+      @include margin-bottom(large);
+    }
+
+    @media screen and (max-width: $mobile) {
+      .title {
+        @include margin-bottom(xxsmall);
+      }
+
+      .desc {
+        @include margin-bottom(large);
+      }
+    }
+  }
+
+  .results-wrapper {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      @include margin-bottom(xlarge);
+      @include padding-left(0); 
+      @include padding-right(0);
+      flex-basis: 33.33%;
+        li{
+          @include padding-right(12px);
+        }
+
+      @media screen and (max-width: $tablet) {
+        flex-basis: 50%;
+      }
+
+      @media screen and (max-width: $mobile) {
+        flex-basis: 100%;
+      }
+    }
+
+    .results-row {
+      margin-bottom: 0;
+    }
+
+    .phone-link {
+      color: $foundation-primary;
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .load-more-button{
+        @include padding(mediumlarge xlarge);
+        display: none;
+      }
+    }
+  }
+
+  .results-error {
+    display: none;
+  }
+}
+
+.find-rep-form {
+  @include margin-bottom(xxxlarge);
+    
+  .row {
+    margin-bottom: 5px;
+    .no-pad-left {
+      position: relative;
+      .reset-search {
+        background: url("../vectors/close-black.svg") center center no-repeat;
+        position: absolute;
+        display: inline-block;
+        top: 50%;
+        right: 25px;
+        width: 18px;
+        height: 18px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .location-input-label {
+    @include margin-bottom(xsmall);
+    display: block;
+    font-weight: bold;
+    font-size: $font-m;
+    text-transform: capitalize;
+  }
+
+  .location-input {
+    height: 53px;
+    font-size: $font-m;
+    padding: calc(#{$submit-padding-y} - 1px);
+    padding-right: calc(2.5 * #{$submit-padding-y});
+    border: 1px solid $border-secondary;
+    border-radius: 2px;
+    outline: none;
+    
+    &::-ms-clear {
+        display: none;
+    }
+     
+    &.invalid {
+      color: $invalid-color;
+      border: 1px solid $invalid-color;
+    }
+  }
+
+  .invalid-location-error {
+    display: none;
+    color: $invalid-color;
+    font-size: $font-m;
+    font-weight: bold;
+  }
+
+  .submit-button {
+    @include padding(medium xlarge);
+    height: 52px;
+    border: none;
+    text-transform: capitalize;
+    &::after{
+      height: 52px;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    @include margin-bottom(xlarge);
+
+    .col-submit-button {
+      @include margin-top(small);
+      padding-left: 0;
+    }
+  }
+}
+

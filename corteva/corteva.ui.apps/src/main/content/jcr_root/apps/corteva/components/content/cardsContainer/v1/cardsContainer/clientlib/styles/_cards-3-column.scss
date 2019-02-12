@@ -1,0 +1,103 @@
+div.band.con02-cards-3-column {
+  overflow: hidden;
+  padding-bottom: 0;
+  .cards {
+    max-width: inherit;
+    margin: 40px 0 0 0;
+  }
+
+  .cards > .aem-Grid {
+    font-size: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    max-width: $content-width;
+    padding-bottom: $band-padding-desktop; /* So that background color extends to bottom of band, padding is moved from band to here */
+    margin: 0 auto;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: $band-padding-mobile;
+    }
+
+    > .det02-card-primary-content,
+    > .det03-card-related,
+    > .det09-card-cta,
+    > .experienceFragments {
+	    width: calc(33.333% - #{$gap});
+      margin-right: $gap;
+      text-align: left;
+    }
+
+    &:before {
+      content: "";
+      width: 200vw;
+      height: calc(100% - 40px);
+      background: $brand-primary;
+      position: absolute;
+      left: -100vw;
+      bottom: 0;
+      z-index: 0;
+      @media screen and (min-width: $mobile) {
+        height: calc(100% - 100px);
+      }
+    }
+    /* This code for IE */
+    > .experienceFragments  {
+      display: inline-block;
+      vertical-align: top;
+
+      .det09-card-cta {
+        width: 100%;
+        margin: 0;
+      }
+
+      @media screen and (max-width: $mobile) {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        @supports (display: grid) {
+          margin: 0;
+        }
+      }
+    }
+    /* Grid is required to make cards have same height */
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: minmax(430px, min-content);
+      grid-gap: $gap;
+
+      > .det02-card-primary-content,
+      > .det03-card-related,
+      > .det09-card-cta,
+	    > .experienceFragments {
+        width: 100%;
+        height: 100%;
+      }
+      @media screen and (max-width: $tablet) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+    }
+  }
+  &.green .cards > .aem-Grid:before {
+    background-color: $authrable-color-green;
+  }
+  &.blue .cards > .aem-Grid:before {
+    background-color: $authrable-color-blue;
+  }
+  &.orange .cards > .aem-Grid:before {
+    background-color: $brand-tertiary;
+  }
+  &.grey .cards > .aem-Grid:before {
+    background-color: $brand-secondary;
+  }
+  .atm01-header-v1__wrapper{
+    margin-bottom: 42px;
+    p{
+      margin-top: 14px;
+    }
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 42px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="${'com.corteva.model.component.models.CommonElementsModel' @ feature='/globalfooter'}" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+	<sly data-sly-test="${comElement.featureFlagState == 'on'}">
+		<footer class="band">
+			<div class="band-content">
+				<sly data-sly-use.footer="com.corteva.model.component.models.FooterElementsModel">
+					<div class="footer-col-left">	
+							<a class="logo" href="${footer.logoUrl @ extension='html'}">
+								<img src="${footer.logoImage.desktopImagePath}" alt="${footer.logoImgAltText}">
+							</a>
+					<sly data-sly-test="${footer.socialSel=='yes'}">
+						<nav class="social">
+							<p>${footer.socialText}</p>
+								<sly data-sly-list="${footer.anchorLinksContainer}">
+									<a href="${item.iconLink}" class="${item.iconLabel}" target="_blank" rel="noopener noreferrer"><img src="${item.iconImage}" alt="${item.iconAlt}" /></a>
+								</sly>
+						</nav>
+					</sly>
+				</div>
+				<div class="footer-col-right">
+					<div class="primary">
+						<sly data-sly-resource="${'primarylinks' @ resourceType='corteva/components/content/linkList/v1/linkList'}" />
+					</div>
+					<div class="secondary">
+						<sly data-sly-resource="${'secondrylinks' @ resourceType='corteva/components/content/linkList/v1/linkList'}" />
+					</div>
+					<div class="copyright">${comElement.bodyText @ context='html'}</div>
+				</div>
+				</sly>
+			</div>
+		</footer>
+	</sly>
+</div>

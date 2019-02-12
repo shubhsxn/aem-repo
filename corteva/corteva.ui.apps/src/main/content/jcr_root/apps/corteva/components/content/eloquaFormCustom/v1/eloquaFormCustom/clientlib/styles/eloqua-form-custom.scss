@@ -1,0 +1,109 @@
+.custom-form {
+  @media screen and (min-width: $tablet) {
+    style + div {
+        display: inline-block;
+        width: 60%;
+        margin-left: 8%;
+        vertical-align: top;
+        form {
+          width: 100%;
+          margin: 0;
+        }
+    }
+  }
+  form.elq-form {
+    font-size: $base-font;
+    position: relative;
+    margin-top: 0;
+
+    input:not([type="checkbox"]):not([type="submit"]), select, textarea {
+      font-size: $base-font;
+      outline: none;
+      padding: 2%;
+      border: 1px solid $border-secondary;
+      background: transparent;
+      border-radius: 0;
+      -webkit-appearance: none;
+      height: inherit;
+
+      &:focus {
+        border-color: $border-focus;
+      }
+      &.LV_invalid_field {
+        border-color: $invalid-color;
+      }
+    }
+
+    input[type="radio"]{
+      -webkit-appearance: radio !important;
+      float: left;
+      width: 40px;
+    }
+
+    label, .checkbox-span {
+      margin-top: 15px;
+    }
+    .checkbox-span {
+        display: inline-block;
+    }
+
+    .submit-button {
+      margin-top: 31px;
+    }
+    
+    select:not([multiple]) {
+      background: url("../vectors/carot-down.svg") 98% center no-repeat;
+      background-size: 10px auto;
+      padding: 1.5%;
+    }
+
+    .LV_validation_message.LV_valid {
+      display: none;
+    }
+    .LV_validation_message {
+      position: static;
+    }
+    .LV_invalid {
+      color: $invalid-color;
+      font-weight: bold;
+      font-size: $font-sm;
+      line-height: 16px;
+      margin: -30px 0 0;
+    }
+    
+    [type="submit"] {
+      background: $brand-primary;
+      color: $base;
+      font-family: $body-font;
+      font-size: $font-m;
+      font-weight: bold;
+      padding: 23px 37px;
+      border-radius: 3px;
+      line-height: 14px;
+      height: inherit;
+
+      @media screen and (max-width: $mobile) {
+        font-size: $font-s;
+      }
+
+      &:hover {
+        background: $hover-state;
+      }
+    }
+    [type="checkbox"] {
+      justify-self: center;
+      width: auto;
+    }
+    [type="checkbox"] + label {
+      border: none;
+      font-size: $base-font;
+      line-height: 30px;
+    }
+  }
+
+}
+
+.elq-form .radio-option .inner {
+  float: left;
+  margin-top: -5px;
+}

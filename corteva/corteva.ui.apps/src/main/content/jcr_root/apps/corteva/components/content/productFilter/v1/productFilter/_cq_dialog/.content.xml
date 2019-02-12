@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Product Filter"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Product Filter Settings"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+							<productListTags
+								jcr:primaryType="nt:unstructured"
+								sling:resourceType="cq/gui/components/common/tagspicker"
+								allowBulkEdit="{Boolean}true"
+								fieldLabel="Select tags to identify the list Products that will appear in this instance of the Product Filter by default. Product Detail Pages with any of the following taxonomy tag criteria will be displayed in this instance of the Product Filter"
+								fieldDescription="Select tags to identify the list Products that will appear in this instance of the Product Filter by default. Product Detail Pages with any of the following taxonomy tag criteria will be displayed in this instance of the Product Filter"
+								name="./productListTags"
+								required="{Boolean}true"
+								rootPath="/etc/tags/corteva"/>
+							<variationType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-custom-dropdown-showhide variationType"
+                                cq-dialog-dropdown-showhide-target=".variationType-option-listtype-showhide-target"
+                                fieldDescription="Select filters to display to the user (recommend no more than 3 filters):"
+                                fieldLabel="Show Optional Filters to User"
+                                name="./variationType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <showFilters
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Show Filters"
+                                        value="showFilters"/>
+                                    <hideFilters
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Hide Filters"
+                                        value="hideFilters"/>
+                                </items>
+                            </variationType>
+							<filters
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="variationType-option-listtype-showhide-target foundation-layout-util-vmargin"
+                                showhidecustomtargetvalue="showFilters">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <productTypeFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./productTypeFilter"
+                                        text="Show Product Type filter"
+                                        value="true"/>
+									<productTypeSequentialFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./productTypeSequentialFilter"
+                                        text="Show Product Sub-Type sequential filter"
+                                        value="true"/>
+									<productTypeSubFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./productTypeSubFilter"
+                                        text="Show Product Sub-Type filter"
+                                        value="true"/>
+									<productTypeSubSequentialFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./productTypeSubSequentialFilter"
+                                        text="Show Pests/Weeds/Diseases sequential filter"
+                                        value="true"/>
+									<cropFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./cropFilter"
+                                        text="Show Crop filter"
+                                        value="true"/>
+									<stateFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./stateFilter"
+                                        text="Show State/Province filter"
+                                        value="true"/>
+									<pestsFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./pestsFilter"
+                                        text="Show Pests filter"
+                                        value="true"/>
+									<weedsFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./weedsFilter"
+                                        text="Show Weeds filter"
+                                        value="true"/>
+									<diseaseFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./diseaseFilter"
+                                        text="Show Diseases filter"
+                                        value="true"/>
+									<useSiteFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./useSiteFilter"
+                                        text="Show Use Site filter"
+                                        value="true"/>
+									<marketFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+                                        name="./marketFilter"
+                                        text="Show Market filter"
+                                        value="true"/>
+									<productNameFilter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										uncheckedValue="false"
+										defaultChecked="{Boolean}true"
+                                        name="./productNameFilter"
+                                        text="Show Product Name filter"
+                                        value="true"/>
+                                </items>
+                            </filters>
+						</items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

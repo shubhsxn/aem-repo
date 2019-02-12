@@ -1,0 +1,71 @@
+.det34-product-labels {
+    border-top: 5px solid $brand-secondary;
+    padding-top: 15px;
+    grid-column-start: 2;
+    font-size: $font-s;
+    margin-top: 20px;
+    h3,
+    summary {
+        font-size: $font-xl;
+        line-height: 26px;
+        margin-bottom: 13px;
+        font-weight: 700;
+        font-family: $brand-font;
+        color: $foundation-primary;
+        @media screen and (max-width: $mobile) {
+            font-size: $font-l;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+    }
+    ul {
+        margin: 20px 0;
+    }
+    li {
+        margin-bottom: 20px;
+    }
+
+    .textInfo {
+        border-top: solid 1px #a9b3bd;
+        padding-top: 30px;
+        @media screen and (max-width: $mobile) {
+            padding-top: 17px;
+        }
+    }
+
+    a {
+        font-size: $font-m;
+        line-height: 20px;
+        font-weight: bold;
+        display: block;
+        position: relative;
+        &:after {
+          content: "";
+          background: transparent url(../vectors/hyperlink-arrow-positive.svg) center right no-repeat;
+          width: 20px;
+          height: 20px;
+          margin-left: 8px;
+          padding-right: 0;
+          background: transparent url(../vectors/hyperlink-arrow-positive.svg) center right no-repeat;
+          position: absolute;
+        }
+        &.internal {
+           &:after {
+            background-size: 17px 10px;
+            margin-bottom: -5px;
+          }
+        }
+        &.external {
+           &:after {
+            background-image: url("../vectors/link-out.svg");
+            margin-bottom: -1px
+          }
+        }
+        &.download {
+          &:after {
+            background-image: url("../vectors/download-positive.svg");
+            margin-bottom: -2px;
+          }
+        }
+    }
+}

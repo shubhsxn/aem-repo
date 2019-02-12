@@ -1,0 +1,49 @@
+.c-hro01 picture img {
+	height: 600px !important;
+}
+
+.c-hro01 {
+	padding-top: 7vh !important;
+}
+
+
+input[name="minLengthCheck"] + coral-tooltip {display:none !important;}
+
+.coral-Icon--textStyle:before {
+	visibility: hidden;
+}
+
+.coral-Icon--textStyle .coral-Icon--undefined:before {
+
+	content: "\f367" !important;
+}
+
+.message-container {
+	display:block !important;
+}
+
+.coral-Popover--datepicker, .coral-Popover--datepicker.is-focused{
+    z-index: 10011;
+}
+
+.anchor-linklabel-hidden{
+	display: none !important;
+}
+.con11-timeline .items span{
+	font-size: $font-m;
+}
+
+coral-dialog .coral-RichText-editable table{
+	width: 100%
+}
+
+#OverlayWrapper .cq-Overlay > .cq-Overlay > .cq-Overlay{
+	min-height:60px !important;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}

@@ -1,0 +1,106 @@
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+<sly data-sly-test="${comElement.featureFlagState == 'on'}">
+<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" >
+   Edit Country Selector Component          
+</sly>
+<sly data-sly-use.pageMeta="com.corteva.model.component.models.PageMetaModel" />
+<sly data-sly-use.countrySelector="${'com.corteva.model.component.models.CountrySelectorModel' @ pagePath=currentPage.path}">
+   <sly data-sly-test="${properties.viewSelector=='accordian'}">
+      <div class="band white det31-country-selector-list">
+         <div class="band-content">
+            <div class="det01-accordion-list icons collapse">
+               <sly data-sly-list.regionData="${countrySelector.regionRelatedData}">
+                  <div class="item continent">
+                     <div class="icon ${regionData.regionId}"></div>
+                     <h3>${regionData.regionTitle @ context='html'}</h3>
+                     <div class="item-content">
+                        <ul class="countries">
+                           <sly data-sly-list.countryData="${regionData.countryBeanList}">
+                              <sly data-sly-test="${countryData.languageCount==1}" >
+                                 <sly data-sly-list.languageData="${countryData.languageBeanList}">
+                                    <li>
+                                       <a href="${languageData.languageLink}" data-analytics-type="country-selector" data-analytics-value="${countryData.countryCode}">
+                                       <span class="flag-icon flag-icon-${countryData.countryCode}"></span>
+                                       ${countryData.counrtyTitle}</a>
+                                    </li>
+                                 </sly>
+                              </sly>
+                              <sly data-sly-test="${countryData.languageCount>1}" >
+                                 <li>
+                                    <span class="flag-icon flag-icon-${countryData.countryCode}"></span> ${countryData.counrtyTitle}
+                                    <ul class="languages">
+                                       <sly data-sly-list.languageData="${countryData.languageBeanList}">
+                                          <li>
+                                             <a href="${languageData.languageLink}" data-analytics-type="country-selector" data-analytics-value=":${languageData.LanguageTitle}">${languageData.LanguageTitle}</a>
+                                          </li>
+                                       </sly>
+                                    </ul>
+                                 </li>
+                              </sly>
+                           </sly>
+                        </ul>
+                     </div>
+                  </div>
+               </sly>
+            </div>
+         </div>
+      </div>
+   </sly>
+   <sly data-sly-test="${properties.viewSelector=='dropdown'}">
+      <div class="band det31-country-selector-dropdown">
+         <div class="band-content">
+            <!-- ATM01 MODULE HEADER V1 -->
+            <div class="atm01-header-v1__wrapper ">
+               <h2>
+                  ${properties.title @ context='html'}       
+               </h2>
+               ${properties.introText @ context='html'}
+            </div>
+            <form>
+               <fieldset>
+                  <label for="regions" class="hide">regions</label>
+                  <select class="form-dropdown regions" id="regions">
+                     <option value="0" selected="selected">Select Region</option>
+                     <sly data-sly-list.regionData="${countrySelector.regionRelatedData}">
+                        <option value="${regionDataList.count}">${regionData.regionTitle}</option>
+                     </sly>
+                  </select>
+               </fieldset>
+               <!-- Dropdowns for countries/languages within each region -->
+               <fieldset>
+                  <label for="countries" class="hide">countries</label>
+                  <select id="countries" class="form-dropdown countries disabled active" disabled>
+                     <option selected="selected">Select Country</option>
+                  </select>
+                  <!-- A <select> for every region -->
+                  <sly data-sly-list.regionData="${countrySelector.regionRelatedData}">
+                     <label for="region-${regionDataList.count}" class="hide">countries</label>
+                     <select class="form-dropdown countries" id="region-${regionDataList.count}">
+                        <option value="0" selected="selected">Select Country</option>
+                        <sly data-sly-list.countryData="${regionData.countryBeanList}">
+                           <sly data-sly-test="${countryData.languageCount==1}" >
+                           	<sly data-sly-list.languageData="${countryData.languageBeanList}">
+                              <option value="${languageData.languageLink}" class="flag-icon flag-icon-${countryData.countryCode}" data-country-code="${countryData.countryCode}" data-analytics-type="country-selector" data-analytics-value="">${countryData.counrtyTitle}</option>
+                           </sly>
+                           </sly>
+                           <sly data-sly-test="${countryData.languageCount>1}" >
+                              <sly data-sly-list.languageData="${countryData.languageBeanList}">
+                                 <option value="${languageData.languageLink}" class="flag-icon flag-icon-${countryData.countryCode}" data-country-code="${countryData.countryCode}" data-analytics-type="country-selector" data-analytics-value=":${languageData.LanguageTitle}">${countryData.counrtyTitle} - ${languageData.LanguageTitle}</option>
+                              </sly>
+                           </sly>
+                        </sly>
+                     </select>
+                  </sly>
+               </fieldset>
+               <a class="unstyle" href="#">
+               <button class="c-button">
+               ${'goButtonLabel' @i18n,locale=countrySelector.localeForInternationalization}
+               </button>
+               </a>
+            </form>
+         </div>
+      </div>
+   </sly>
+</sly>
+</sly>
+</div>

@@ -1,0 +1,78 @@
+.rightRailRte {
+  border-top: 5px solid $brand-secondary;
+  padding-top: 15px;
+  grid-column-start: 2;
+  min-width: 300px;
+
+  .det16-rich-text-field {
+    h3 {
+      border: none !important;
+    }
+  }
+
+  h3:first-child {
+    font-size: $font-xl;
+    line-height: 26px;
+    border-bottom: 1px solid $border-secondary;
+    padding-bottom: 13px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: $font-l;
+      line-height: 24px;
+    }
+  }
+
+  p {
+    font-size: $base-font;
+    line-height: 30px;
+
+    @media screen and (max-width: $mobile) {
+      font-size: $font-m;
+      line-height: 26px;
+    }
+  }
+
+  .download-link a,
+  .print {
+    font-size: $base-font;
+    font-weight: bold;
+
+    &:after {
+      content: "";
+      background: url("../vectors/download-icon.svg") center center no-repeat;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 1ch;
+    }
+
+    &.print:after {
+      background: url("../vectors/print-icon.svg") center center no-repeat;
+      width: 16px;
+    }
+  }
+
+  a span.download-link {
+    font-size: $base-font;
+    font-weight: bold;
+
+    &:after {
+      content: "";
+      background: url("../vectors/download-icon.svg") center center no-repeat;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 1ch;
+    }
+
+  }
+
+  .band {
+    &.det16-rich-text-field {
+      padding: 0;
+    }
+  }
+
+}

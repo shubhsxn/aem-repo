@@ -1,0 +1,51 @@
+.con14-cards-2-column {
+  background: $foundation-tertiary;
+
+  .cards > .aem-Grid {
+    font-size: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+    display: block;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+    }
+ 
+    > div {
+      background: $foundation-tertiary;
+      display: block;
+      margin-bottom: 0;
+      float: left;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 0 .75rem;
+      min-height: 1px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: $mobile) {
+        padding-right: 20px;
+      }
+
+      @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-grow: 1;
+        flex-basis: 50%;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        width: 50%;
+        max-width: 50%;
+        min-width: 50%;
+      }
+
+      > .aem-Grid,
+        .feature-flag,
+        .primaryCard {
+        display: block;
+        height: 100%;
+        @media screen and (min-width: $tablet) {
+          display: flex;
+        }
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,14 @@
+.con12-tiles-4-col {
+  background-color: $foundation-tertiary;
+
+  .band-content {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 20px;
+    }
+  }
+
+}

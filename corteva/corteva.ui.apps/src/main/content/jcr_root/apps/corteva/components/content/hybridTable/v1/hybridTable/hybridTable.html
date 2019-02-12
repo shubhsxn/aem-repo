@@ -1,0 +1,24 @@
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper"> Edit Hybrid Component </sly>
+        <sly data-sly-use.hybridTable="com.corteva.model.component.models.HybridTableModel">
+            <div class="band hybrid-table-container ${hybridTable.paddingOptions}" data-hybrid-csv="${hybridTable.tableData}" data-new-keyword="${'new' @i18n,locale=comElement.localeForInternationalization}">
+                <div class="hybrid-table-bg"></div>
+                <div class="band-content">
+                    <div id="hybrid-title-band" class="hybrid-title-band">
+                        <sly data-sly-test="${properties.cropIconTile}">
+                            <picture>
+                                <source srcset="${item.imageRenditionBean.desktopImagePath @ context='uri'}" media="(min-width: 1200px)">
+                                <source srcset="${item.imageRenditionBean.tabletImagePath @ context='uri'}" media="(min-width: 992px)">
+                                <source srcset="${item.imageRenditionBean.mobileImagePath @ context='uri'}" media="(max-width: 991px)"> 
+                                <img src="${hybridTable.cropIconTile.desktopImagePath @ context='uri'}" class="title-icon" alt="title-icon" /> 
+                             </picture>
+                        </sly>
+                        <h2>${hybridTable.tableTitle}</h2> 
+                    </div>
+                    <div class='table-container'></div>
+                </div>
+            </div>
+        </sly>
+    </sly>
+</div>

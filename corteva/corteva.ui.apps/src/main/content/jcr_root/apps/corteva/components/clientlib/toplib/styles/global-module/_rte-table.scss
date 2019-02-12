@@ -1,0 +1,7 @@
+body table, body table th, body table td {
+  border: 1px solid #000;
+}
+
+body table[border="0"], body table[border="0"] th, body table[border="0"] td {
+  border: none;
+}

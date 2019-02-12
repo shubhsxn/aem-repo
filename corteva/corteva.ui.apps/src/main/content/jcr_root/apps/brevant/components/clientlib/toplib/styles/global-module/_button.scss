@@ -1,0 +1,148 @@
+.c-hro3__wrapper .carousel-cell .text > a {
+    width: auto;
+}
+
+@mixin transform-button($angle) {
+    transform-origin: bottom left;
+    -ms-transform: skew($angle, 0deg);
+    -webkit-transform: skew($angle, 0deg);
+    transform: skew($angle, 0deg);
+    @if($angle !=0deg) {
+        border: none;
+        border-radius: 0 3px 3px 0;
+    }
+}
+
+a.c-button,
+.c-button {
+    height: rem(60px);
+    position: relative;
+    z-index: 0;
+    border-radius: 3px 0 0 3px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    &.small {
+        font-size: $font-s;
+        line-height: rem($font-m);
+        @include padding(medium xlarge medium xlarge);
+        height: rem(44px);
+        &:after {
+            top: -2px;
+            height: rem(44px);
+        }
+    }
+    &:hover,
+    &:hover:after {
+        transition: all .2s ease-in-out;
+        background: $hover-state;
+        border-color: $hover-state;
+    }
+    &:focus,
+    &:focus:after {
+        transition: all .2s ease-in-out;
+        outline: none;
+        background: $hover-state;
+        border-color: $hover-state;
+    }
+    &.invert {
+        border: $button-skew-border solid $base;
+        &:after {
+            background: $base;
+            color: $brand-primary;
+        }
+        &:hover{
+            background: $base;
+            &:after {
+                background: $base;
+                color: $hover-state;
+                transition: all .2s ease-in-out;
+            }
+        }
+    }
+    &.secondary {
+        border-right: none;
+        &:after {
+            background: transparent;
+            border: 2px solid $brand-primary;
+            border-left: none;
+            top: -2px;
+        }
+        &:hover {
+            transition: all .2s ease-in-out;
+            border: 2px solid $hover-state;
+            border-right: none;
+            background: transparent;
+        }
+        &:hover:after {
+            transition: all .2s ease-in-out;
+            color: $hover-state;
+            border: 2px solid $hover-state;
+            border-left: none;
+        }
+        &:focus {
+            transition: all .2s ease-in-out;
+            border: 2px solid $hover-state;
+            border-right: none;
+            background: transparent;
+        }
+        &:focus:after {
+            transition: all .2s ease-in-out;
+            color: $hover-state;
+            border: 2px solid $hover-state;
+            border-left: none;
+        }
+        &.invert {
+            border-right: none;
+            &:after {
+                border: 2px solid $base;
+                border-left: none;
+                color: $base;
+                top: -2px;
+                background: transparent;
+            }
+            &:hover {
+                transition: all .2s ease-in-out;
+                color: $hover-state;
+                border: 2px solid $hover-state;
+                border-right: none;
+            }
+            &:hover:after {
+                transition: all .2s ease-in-out;
+                color: $hover-state;
+                border: 2px solid $hover-state;
+                border-left: none;
+            }
+        }
+    }
+    &.extra-padding {
+        @include margin-top(mediumsmall);
+        @include margin-bottom(xlarge);
+    }
+    .gbl05-light-navigation & {
+        background: $brand-primary;
+        border: $button-skew-border;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 2px;
+        width: 100%;
+        height: rem(60px);
+        z-index: -1;
+        background: $brand-primary;
+        @include transform-button($button-angle);
+    }
+    &:disabled {
+        background: $border-secondary;
+        border: $button-skew-border solid $border-secondary;
+        &:after {
+            background: $border-secondary;
+        }
+    }
+    .det31-country-selector-dropdown & {
+        &:after {
+            height: 50px;
+        }
+    }
+}

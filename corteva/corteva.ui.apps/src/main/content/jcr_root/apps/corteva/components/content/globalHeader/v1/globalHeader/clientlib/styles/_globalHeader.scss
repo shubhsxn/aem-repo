@@ -1,0 +1,59 @@
+/** styles styles needs to be overridden here **/
+body {
+  padding-top: 65px;
+  @media screen and (min-width: $mobile) {
+    padding-top: 168px;
+  }
+  @supports (display: grid) {
+    padding-top: 0;
+  }
+  &.stuck {
+    padding-top: 0;
+  }
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  z-index: 101;
+  width: 100%;
+  .stuck & {
+    position: relative;
+  }
+  @supports (position: -o-sticky) {
+    position: -o-sticky;
+  }
+  @supports (position: -webkit-sticky) {
+    position: -webkit-sticky;
+  }
+  @supports (position: -moz-sticky) {
+    position: -moz-sticky;
+  }
+  @supports (position: -ms-sticky) {
+    position: -ms-sticky;
+  }
+  @supports (position: sticky) {
+    position: sticky;
+  }
+  
+  .global-nav {
+  	position: relative;
+  }
+  &.active {
+    z-index: inherit;
+  }
+  .flag-icon {
+    margin-right: 5px;
+    @media screen and (min-width: $mobile) {
+      line-height: inherit;
+    }
+  }
+}
+
+.hero + .aem-wrap--rich-text .band{
+  padding-top: 50px;
+}
+
+.aem-wrap--rich-text + .countrySelector .det31-country-selector-list{
+  padding-top: 50px;
+}

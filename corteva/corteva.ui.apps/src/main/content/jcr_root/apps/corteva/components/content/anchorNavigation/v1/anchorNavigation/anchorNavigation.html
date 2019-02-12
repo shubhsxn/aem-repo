@@ -1,0 +1,32 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+            Edit Anchor Navigation
+        </sly>
+
+		
+		<sly data-sly-test="${comElement.viewType == 'anchorNavContainer'}">
+			<sly data-sly-include="anchorLinksContainer.html"/>
+		</sly>	
+		  
+		
+		<sly data-sly-test="${comElement.viewType == 'timeline'}">
+			<sly data-sly-include="timelineNavigation.html"/>
+		</sly>
+    
+		<sly data-sly-test="${comElement.viewType == 'inPageNavigation'}">
+			<sly data-sly-include="inPageNavigation.html"/>
+		</sly>
+		
+	</sly>
+  
+</div> 
+

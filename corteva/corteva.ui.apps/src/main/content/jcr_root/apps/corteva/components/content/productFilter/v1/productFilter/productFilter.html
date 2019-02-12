@@ -1,0 +1,121 @@
+<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">Edit Product Filter </sly>
+	
+	<sly data-sly-use.productFilterModel="com.corteva.model.component.models.ProductFilterModel">
+	
+	<div class="band white con06-label-finder">
+		<div class="band-content">
+		<main class="reverse">
+				<sly data-sly-test.productFilter = "${productFilterModel.productList}">
+				<section class="search-results">
+						<sly data-sly-test = "${!productFilter.hideFilters}">
+								<p class="results-num"><span class="result-count">${productFilter.productList.size}</span> ${'product.label.productsFound' @i18n,locale=productFilterModel.localeForInternationalization}</p>
+							</sly>
+					<div class="no-result hide"> 
+							<h2>${'product.label.noProductMatch' @i18n,locale=productFilterModel.localeForInternationalization} </h2>
+							<p class="type"> ${'product.label.noProductMatchDetail' @i18n,locale=productFilterModel.localeForInternationalization} </p>
+					</div>
+					
+					<div class="result" data-url="${productFilterModel.servletPath}" data-pagesize = "10">						
+						<sly data-sly-list = "${productFilter.productList}">
+								<sly data-sly-test = "${itemList.index < 10 }"> 
+									<div class="search-result-item" data-searchtags="${item.productTypeTags}">
+									<a class="title" title="${item.productAnalyticsName @context='html'}" data-analytics-type="product-finder-link" data-analytics-value="${item.productAnalyticsName @context='html'}" href="${item.productPath}">${item.productName @context='html'}</a>
+									<div class="product-type">
+										<sly data-sly-test.productTypeSize = "${item.productTypeTags.size}">
+											<sly data-sly-list = "${item.productTypeTags}">
+												<p class="type">${item}
+													<sly data-sly-test = "${itemList.count < productTypeSize }"> 
+														<span class="pipe">|</span>
+													</sly>
+												</p>
+											</sly>
+										</sly>
+									</div>
+									<p class="description">${item.description @context='html'}</p>
+									</div>
+								</sly>
+						</sly>
+					</div>
+					<sly data-sly-test = "${productFilter.productList.size > 10}">
+						<a href="${productFilterModel.paginationUrl}" class="c-button secondary loadmore-btn">
+						${'product.label.loadMore' @i18n,locale=productFilterModel.localeForInternationalization}
+						</a>
+					</sly>
+				</section>
+				
+			</sly>
+				<sly data-sly-test = "${!productFilter.hideFilters}">
+				<div class="sidebar">
+					<button class="c-button filters-show">${'product.label.filterProduct' @i18n,locale=productFilterModel.localeForInternationalization}</button>
+					<form class="product-label-finder" action="" method="GET">
+					<sly data-sly-list.filterKey = "${productFilter.filters}">
+							<sly data-sly-test = "${productFilter.filters[filterKey].filterMap}">
+								<fieldset>
+							<sly data-sly-test.i18Key = "product.filter.${filterKey}">
+								<label for="${filterKey}">${i18Key@i18n,locale=productFilterModel.localeForInternationalization}</label>
+									</sly>
+								<select name="dropdown" class="form-dropdown filterKey" id="${filterKey}">
+									<sly data-sly-test.i18SelectKey = "product.select.${filterKey}">
+										<option value="">
+										${i18SelectKey @i18n,locale=productFilterModel.localeForInternationalization}
+									</option>
+									</sly>
+								<sly data-sly-list.filterMapKey = "${productFilter.filters[filterKey].filterMap}">
+									<option value="${filterMapKey}" data-analytics-type="${productFilter.filters[filterKey].dataAnalyticsType}" data-analytics-value="${productFilter.filters[filterKey].filterMap[filterMapKey]}" >
+										${productFilter.filters[filterKey].filterMap[filterMapKey]}
+									</option>
+								</sly>
+								</select>
+								<sly data-sly-test ="${productFilter.filters[filterKey].hasSequantialFilters}">
+									<sly data-sly-test.childFilters ="${productFilter.filters[filterKey].childFilters}">
+										<sly data-sly-list.childFilterMapKey = "${childFilters}">
+											<sly data-sly-test = "${childFilters[childFilterMapKey].filterMap.size > 0}">
+												<span class="childfilter">
+													<label for="${childFilterMapKey}" class="hide">${childFilterMapKey}</label>
+													<select name="dropdown" class="form-dropdown childFilterMapKey" id="${childFilterMapKey}">
+															<sly data-sly-test.i18Key = "product.select.${childFilterMapKey}"></sly>
+															<sly data-sly-test.i18SelectKey = "${childFilters[childFilterMapKey].dataAnalyticsType == 'product-sub-type-filter' ? 'product.select.productTypeSeqFilter' : i18Key}">
+																	<option value="">
+																	${i18SelectKey @i18n,locale=productFilterModel.localeForInternationalization}
+																</option>
+															</sly>
+															<sly data-sly-list.childFilterMapKeyDropDown = "${childFilters[childFilterMapKey].filterMap}">
+																<option value="${childFilterMapKeyDropDown}" data-analytics-type="${childFilters[childFilterMapKey].dataAnalyticsType}" data-analytics-value="${childFilters[childFilterMapKey].filterMap[childFilterMapKeyDropDown]}">
+																	${childFilters[childFilterMapKey].filterMap[childFilterMapKeyDropDown]}
+																</option>
+															</sly>
+														</select>
+													</span>
+												</sly>
+										</sly>
+								</sly>
+							</sly>
+						
+						</fieldset>
+					</sly>
+				</sly>
+				<sly data-sly-test = "${productFilter.showProductNameFilter}">
+						
+							<fieldset class="product-filter-border">
+								<label>${'product.filter.productNameFilter' @i18n,locale=productFilterModel.localeForInternationalization}</label>
+								<span class="atm-search-field">							
+								
+								<input type="search" name="searchs" maxlength="50" class="search-products" id="searchs"/>
+								<label class="search-label" for="searchs">${'product.select.productNameFilter' @i18n,locale=productFilterModel.localeForInternationalization}</label>
+								
+								</span>
+							</fieldset>
+						</sly>
+					<button class="c-button filters-done" type="submit">${'product.label.applyFilter' @i18n,locale=productFilterModel.localeForInternationalization}</button>
+					<button class="c-button secondary reset-filter" type="reset">${'product.label.clearAllFilter' @i18n,locale=productFilterModel.localeForInternationalization}</button>
+			
+					</form>
+				</div>
+			</sly>
+		
+			</main>
+		
+		
+		</div>
+		</div>
+	</sly>

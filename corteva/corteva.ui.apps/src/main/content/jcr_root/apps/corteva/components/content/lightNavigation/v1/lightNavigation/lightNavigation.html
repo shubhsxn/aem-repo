@@ -1,0 +1,45 @@
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+	   <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+				<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" >
+						Edit Light Navigation           
+				</sly>
+		  <div class="gbl05-light-navigation">
+				<div class="band-content">
+				<sly data-sly-use.globalNav="com.corteva.model.component.models.GlobalNavigationModel"/>
+				   <a href="${globalNav.logoUrl @ extension='html'}" class="logo"  title="${comElement.logoAltText}">
+						<img src="${comElement.imagePath.desktopImagePath @ context='uri'}" alt="${comElement.logoAltText}" title="${comElement.logoAltText}">
+				   </a>
+				   <div class="header-text">
+				   	<h2>${properties.headertxt @ context='html'}</h2>
+				   	<button>${'globalHeader.menu' @i18n,locale=comElement.localeForInternationalization}</button>
+				   </div>
+				</div>
+				 <sly data-sly-test="${properties.navLinksDisplay=='true'}">
+				 <sly data-sly-test=${comElement.buttonLink}>
+						<sly data-sly-test="${comElement.buttonAction=='_self'}">
+						 <a href="${comElement.buttonLink}" target="${comElement.buttonAction}" class="c-button">${comElement.buttonText}</a>
+						</sly>
+				</sly>		
+						<sly data-sly-test="${comElement.buttonAction=='_blank'}">
+				<sly data-sly-test=${comElement.buttonLink}>		
+						 <a href="${comElement.buttonLink}" target="${comElement.buttonAction}" rel="noopener noreferrer" class="c-button">${comElement.buttonText}</a>
+						</sly>
+				</sly>		
+						<nav>
+							<div class="band-content">        
+							  <sly data-sly-use.links="com.corteva.model.component.models.LinkListModel">	
+								 <sly data-sly-list="${links.navigationLinks}">	
+								 <sly data-sly-test="${item.linkAction=='_self'}">
+									<a href="${item.linkUrl}" target="${item.linkAction}" data-analytics-type="global-navigation" data-analytics-value="${item.linkLabel}">${item.linkLabel}</a> 
+								 </sly>
+								 <sly data-sly-test="${item.linkAction=='_blank'}">
+									<a href="${item.linkUrl}" target="${item.linkAction}" rel="noopener noreferrer" data-analytics-type="global-navigation" data-analytics-value="${item.linkLabel}">${item.linkLabel}</a> 
+								 </sly>
+								</sly> 
+							  </sly>
+							</div>
+						</nav>
+				</sly>
+			</div>
+	  </sly>
+</div>

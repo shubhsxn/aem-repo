@@ -1,0 +1,46 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+        	Edit Breadcrumb
+        </sly>
+        <div class="band nav01-breadcrumbs">
+            <div class="band-content">
+                <div class="breadcrumb-links" data-sly-use.breadcrumb="com.adobe.cq.wcm.core.components.models.Breadcrumb"
+            data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+            data-sly-list.navItem="${breadcrumb.items}">
+            <sly data-sly-test="${!navItemList.last}">
+                <a href="${navItem.page.path @ extension='html'}" data-analytics-type="global-breadcrumb">
+                    ${navItem.page.navigationTitle || navItem.page.pageTitle || navItem.page.name}
+                    </a> </sly>
+                    <sly data-sly-test="${!navItemList.last}">/</sly>
+                    <sly data-sly-test="${navItemList.last}"><a>${navItem.page.navigationTitle || navItem.page.pageTitle || navItem.page.name}</a></sly>
+
+
+                </div>
+                
+                <!--/*
+                Removed for now. It will get implemented in future.
+                <div class="breadcrumb-icons">
+                    <a href="" class="email-icon"></a>
+                    <a href="" class="print-icon"></a>
+                    <a href="" class="download-icon"></a>
+                </div>
+                */-->
+                
+            </div>
+        </div>
+
+       
+
+
+        
+    </sly>
+</div>

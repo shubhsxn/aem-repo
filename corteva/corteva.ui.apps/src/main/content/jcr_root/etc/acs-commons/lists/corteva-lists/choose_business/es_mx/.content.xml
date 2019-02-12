@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        cq:lastModified="{Date}2018-01-24T16:32:12.379+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/acs-commons/templates/utilities/genericlist"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Business List"
+        sling:resourceType="acs-commons/components/utilities/genericlist">
+        <list
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <item
+                jcr:created="{Date}2018-01-07T12:21:37.691+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-07T12:22:23.587+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Todas"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="All"/>
+            <item_1499637426
+                jcr:created="{Date}2018-01-07T12:21:41.033+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-07T12:22:47.944+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Dow AgroSciences"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="Dow AgroSciences"/>
+            <item_739034298
+                jcr:created="{Date}2018-01-07T12:21:42.688+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-07T12:23:08.760+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="DuPont"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="DuPont"/>
+            <item_852768999
+                jcr:created="{Date}2018-01-07T12:23:19.305+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-07T12:23:41.192+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Pioneer"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="Pioneer"/>
+        </list>
+    </jcr:content>
+</jcr:root>

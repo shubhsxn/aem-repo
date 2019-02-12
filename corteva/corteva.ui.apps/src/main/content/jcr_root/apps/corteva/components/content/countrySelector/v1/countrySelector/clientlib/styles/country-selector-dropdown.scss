@@ -1,0 +1,107 @@
+.det31-country-selector-dropdown {
+    background: $foundation-primary;
+    color: $base;
+    $gap: 20px;
+    .atm01-header-v1__wrapper h2,
+    .atm01-header-v1__wrapper p {
+        color: $base;
+    }
+    form {
+        display: flex;
+        fieldset {
+            margin-right: $gap;
+            margin-bottom: $gap;
+            flex-grow: 1;
+            width: 100%;
+        }
+        @media screen and (max-width: $mobile) {
+            flex-wrap: none;
+            flex-direction: column;
+            fieldset {
+                margin-right: 0;
+            }
+        }
+        /*  Adjust button to be more flexible  */
+        .c-button {
+            height: 50px;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            @media screen and (max-width: $mobile) {
+                width: 100%;
+            }
+        }
+        @supports (display: grid) {
+            display: grid;
+            grid-template-columns: 1fr 1fr min-content;
+            align-items: center;
+            grid-gap: $gap;
+            flex-grow: 0;
+            fieldset {
+                margin: 0;
+            }
+            @media screen and (max-width: $mobile) {
+                grid-template-columns: 1fr;
+            }
+        }
+        .countries,
+        .countries+.select2-container {
+            display: none;
+        }
+        .countries.active,
+        .countries.active+.select2-container {
+            display: block;
+        }
+        :disabled {
+            background:grey; opacity: 1;
+        }
+    }
+    /* Style the flag icons in the chosen results */
+    .select2-container .select2-results li.flag-icon {
+        background-size: 25px 14.5px;
+        background-position: 17px center;
+        padding-left: 55px;
+        background-repeat: no-repeat;
+    }
+    .select2-container .select2-selection__rendered.flag-icon {
+        background-size: 25px 14.5px;
+        background-position: 17px center;
+        padding-left: 55px;
+        background-repeat: no-repeat;
+        color: $foundation-primary;
+        font-weight: normal !important;
+        font-size: $font-m;
+        &:before {
+            position: absolute;
+        }
+    }
+    .select2-container .select2-results {
+        max-height: 600px;
+    }
+    .chosen-disabled {
+        opacity: 1 !important;
+    }
+    .chosen-disabled a {
+        color: $border-secondary !important;
+    }
+    .chosen-disabled a:after{
+        background: url("../vectors/gray-carot.svg") center center no-repeat !important;
+    }
+    .c-button:disabled {
+        background: $border-secondary;
+        border: $button-skew-border solid $border-secondary
+    }
+    fieldset + fieldset {
+        .select2-selection__rendered {
+            &.flag-icon {
+                line-height: normal;
+                width: 100%;
+            }            
+        }
+    }
+}

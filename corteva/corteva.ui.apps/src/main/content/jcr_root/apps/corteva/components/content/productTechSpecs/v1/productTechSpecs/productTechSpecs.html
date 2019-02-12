@@ -1,0 +1,69 @@
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+            Edit Product Technical Specs Component
+        </sly>
+		<sly data-sly-use.productTechSpecs="com.corteva.model.component.models.ProductTechnicalSpecsModel">
+            <sly data-sly-test.youtubeApi="${productTechSpecs.youtubeApi}" />
+            <sly data-sly-test.youtubeKey="${productTechSpecs.youtubeKey}" />
+            <div class="youtube-info" data-youtube-api="${youtubeApi}" data-youtube-key="${youtubeKey}"></div>
+            <div data-analytics-type="technical-specs" class="band white det29-product-technical-specs" data-closetext="${'buttonText' @i18n,locale=productTechSpecs.localeForInternationalization}">
+                <div class="band-content">
+                    <header>
+                        <h2>${'pdp.technical.specs.title' @i18n,locale=productTechSpecs.localeForInternationalization}</h2>
+                    </header>
+                    
+                    <ul class="specs" data-analytics-type="technical-specs">
+                        <sly data-sly-list.specsItem="${productTechSpecs.productSpecsItemList}">
+                            <li>
+                                <div class="term">${specsItem.sectionLabel @i18n,locale=productTechSpecs.localeForInternationalization}</div>
+                                <div class="details rte">
+                                    ${specsItem.sectionDetail @ context='html'}
+                                    <sly data-sly-test.image="${specsItem.mediaType == 'image'}">
+                                        <picture data-sly-test="${specsItem.desktopImageUrl.desktopImagePath}">                
+                                            <source data-srcset="${specsItem.desktopImageUrl.desktopImagePath}" media="(min-width: 1200px)">
+                                            <source data-srcset="${specsItem.desktopImageUrl.tabletImagePath}" media="(min-width: 992px)">                                    
+                                            <source data-srcset="${specsItem.desktopImageUrl.mobileImagePath}" media="(max-width: 991px)">                                    
+                                            <img class="lazyload" data-src="${specsItem.desktopImageUrl.desktopImagePath}" alt="${specsItem.imgAltText}">                                        
+                                        </picture>   
+                                    </sly>
+                                    <sly data-sly-test.youtube="${specsItem.mediaType == 'youtubevideo'}">
+                                        <div data-sly-test.youtubeid="${specsItem.videoId}" class="det04-card-related-full-width youtube-video-wrapper-related">
+                                            <div class="multimedia">
+                                                <a href="#" class="com04-video" data-analytics-type="video" data-analytics-value="play" data-analytics-video-name="${specsItem.vidTitle}" data-analytics-video-id="${specsItem.videoId}" data-videoid="${specsItem.videoId}">
+                                                    <span data-sly-test="${specsItem.thumbnailImage.desktopImagePath}" class="video-listing">
+                                                        <img class="lazyload" data-src="${specsItem.thumbnailImage.desktopImagePath}" alt="${specsItem.vidAltText}">
+                                                    </span>
+                                                </a>
+                                            </div>                                        
+                                        </div>
+                                    </sly>
+                                    <sly data-sly-test.scene7="${specsItem.mediaType == 'scene7video'}">
+                                        <div data-sly-test.scene7url="${specsItem.videoUrl}" class="det04-card-related-full-width scene7-video-wrapper">
+                                            <div class="multimedia">
+                                                    <a href="#" class="com04-video" data-analytics-type="video" data-analytics-value="play" data-analytics-video-name="${specsItem.vidTitle}" data-analytics-video-id="${specsItem.videoUrl}" data-videoid="${specsItem.videoUrl}">
+                                                        <span data-sly-test="${specsItem.thumbnailImage.desktopImagePath}" class="video-listing">
+                                                            <img class="lazyload" data-src="${specsItem.thumbnailImage.desktopImagePath}" alt="${specsItem.vidAltText}">
+                                                        </span>
+                                                </a>
+                                            </div>                                                
+                                        </div>
+                                    </sly>
+                                    <sly data-sly-test="${youtube || scene7}">
+                                        <div data-sly-test="${youtubeid || scene7url}" class="product-video-text-container">
+                                            <h3 class="product-video-title">${specsItem.vidTitle}</h3>
+                                            <div class="product-video-description">
+                                                <p>${specsItem.vidDesc} </p>
+                                                <button class="close-bottom c-button secondary">Close</button>
+                                            </div>
+                                        </div>                                        
+                                    </sly>                           
+                                </div>
+                            </li>
+                        </sly>
+                    </ul>
+                </div>                
+            </div>
+        </sly>
+	</sly>
+</div>

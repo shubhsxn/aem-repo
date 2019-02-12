@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Corteva Downloadable File Metadata"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[cq.common.wcm]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container"
+        class="cq-dialog-content-page">
+        <items jcr:primaryType="nt:unstructured">
+            <section
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                data-title="The title for the file"
+                                fieldLabel="File Title"
+                                name="./downloadFileTitle"
+                                required="{Boolean}true">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    metaType="text"/>
+                            </title>
+                            <desc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                data-title="The description for file."
+                                fieldLabel="File Description"
+                                name="./downloadFileDescription"
+                                required="{Boolean}true">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    metaType="text"/>
+                            </desc>
+                            <linkLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                data-title="The cta link label for file ."
+                                fieldLabel="CTA Link Label"
+                                name="./downloadCtalinklabel">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    metaType="text"/>
+                            </linkLabel>
+                            <altText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                data-title="The alt text for downloadable file ."
+                                fieldLabel="Downloadable File ALT Text "
+                                name="./downloadFilealttext"
+                                required="{Boolean}true">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    metaType="text"/>
+                            </altText>
+                            <cqTags
+                                cq:showOnCreate="{Boolean}true"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/common/tagspicker"
+                                allowCreate="{Boolean}true"
+                                cq-msm-lockable="cq:tags"
+                                fieldLabel="Tags"
+                                metaType="tags"
+                                name="./cq:tags"
+                                rootPath="/etc/tags/corteva"/>
+                            <jpeg
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                defaultValue=" "
+                                fieldLabel="Jpeg Image"
+                                name="./downloadJpegImg">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    metaType="custom"/>
+                            </jpeg>
+                            <expirationDate
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                data-title="The expiration date for file."
+                                displayedFormat="YYYY-MM-DD HH:mm"
+                                fieldLabel="Expiration Date"
+                                name="./downloadExpirationDate"
+                                required="{Boolean}true"
+                                type="datetime">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    metaType="datepicker"
+                                    typeHint="Date"/>
+                            </expirationDate>
+                            <displayDate
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                data-title="The display (upload) date for file."
+                                displayedFormat="YYYY-MM-DD HH:mm"
+                                fieldLabel="Custom Display Date"
+                                name="./downloadDisplayDate"
+                                required="{Boolean}true"
+                                type="datetime"
+                                value="today">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    metaType="datepicker"
+                                    typeHint="Date"/>
+                            </displayDate>
+                            <product
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Product"
+                                name="./downloadFileProduct">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    metaType="text"/>
+                            </product>
+                            <seo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                data-title="The SEO Keywords for downloadable file."
+                                fieldLabel="SEO Keywords"
+                                name="./downloadSeoKeywords"
+                                required="{Boolean}true">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    metaType="text"/>
+                            </seo>
+                        </items>
+                    </columns>
+                </items>
+            </section>
+        </items>
+    </content>
+</jcr:root>

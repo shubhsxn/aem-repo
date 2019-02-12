@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:language="ja"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="nt:folder">
+    <all
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="all"
+        sling:message="すべて"/>
+    <allContent
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="containerSearch.allContent"
+        sling:message="すべてのコンテンツ"/>
+	<ofText      
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="containerSearch.ofText"
+        sling:message="of"/>
+    <button
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="buttonText"
+        sling:message="閉じる"/>
+    <copyright
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="copy"
+        sling:message="en key"/>
+    <goButtonLabel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="goButtonLabel"
+        sling:message="見る"/>
+    <jumpToSection
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="jumpToSection"
+        sling:message="セクションを見る"/>
+    <loadMore
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="loadMore"
+        sling:message="もっと見る"/>
+    <menu
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="globalHeader.menu"
+        sling:message="メニュー"/>
+    <navHeaderTabsSection
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="navHeaderTabs.navHeaderTabsSection"
+        sling:message="ナビゲーション"/>
+    <next
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="galleryImage.next"
+        sling:message="次へ"/>
+    <noReferenceSearchBasePath
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="noReferenceSearch.noReferenceSearchBasePath"
+        sling:message="ベースパスを設定してください"/>
+    <previous
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="galleryImage.previous"
+        sling:message="Previous"/>
+    <scrollToTop
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="scrollToTop.backToTop"
+        sling:message="Back To Top"/>
+</jcr:root>

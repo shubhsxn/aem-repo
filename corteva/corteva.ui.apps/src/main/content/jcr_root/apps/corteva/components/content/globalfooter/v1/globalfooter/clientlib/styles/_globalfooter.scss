@@ -1,0 +1,42 @@
+@media print {
+  footer {
+    .band-content {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      align-items: center;
+      grid-gap: 0px 61px;
+     }
+    .logo {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
+    .primary {
+      grid-column: 3 / span 4;
+      grid-row: 1;
+    }
+    .secondary {
+      grid-column: 3 / span 4;
+      grid-row: 2;
+    }
+    .social {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 2;
+    }
+    .copyright {
+      grid-column: 3 / span 4;
+      grid-row: 3;
+    }
+  }
+}
+footer {
+  .copyright p{
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    a{
+      font-family: $body-font;
+    }
+  }
+}

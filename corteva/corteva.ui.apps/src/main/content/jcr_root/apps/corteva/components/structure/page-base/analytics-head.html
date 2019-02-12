@@ -1,0 +1,53 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+  ~   This software is the confidential and proprietary information of SapientRazorfish_,
+  ~  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  ~  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+ <sly data-sly-use.pageMeta="com.corteva.model.component.models.PageMetaModel" />
+ <sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page" />
+ <sly data-sly-use.articleModel="com.corteva.model.component.models.ArticleHeaderModel" />
+ <script>
+  var digitalData = {
+		country: '${pageMeta.country @ context="unsafe"}',
+		language: '${pageMeta.language @ context="unsafe"}',
+	   	pageTemplate: '${page.templateName @ context="unsafe"}',
+        company: '${pageMeta.company @ context="unsafe"}',
+		environment: '${pageMeta.environment @ context="scriptString"}',
+		category: '${pageMeta.category @ context="unsafe"}',
+		subcategory: '${pageMeta.subcategory @ context="unsafe"}',
+		pageName: '${currentPage.name @ context="unsafe"}',
+       	productCategory: '${pageMeta.productCategory @ context="unsafe"}',
+		cropCategory: '${pageMeta.cropCategory @ context="unsafe"}',
+        productTypeTags: '${pageMeta.productTypeTags @ context="unsafe"}',
+        productName: '${pageMeta.productName @ context="unsafe"}',
+		productId: '${pageMeta.pdpProductId @ context="unsafe"}',
+        contentType: '${pageMeta.contentType @ context="unsafe"}'
+   }
+  </script>
+  </sly>
+  <sly data-sly-test="${articleModel.articleType}">
+	  <script type="application/ld+json">
+		{
+ 		 "@context": "${pageMeta.seoSchema @ context="unsafe"}",
+ 		 "@type": "${pageMeta.seoArticle @ context="unsafe"}",
+ 		 "headline": "${properties.pageTitle @ context="unsafe"}",
+ 	 	 "datePublished": "${articleModel.customDisplayDate @ context="unsafe"}",	
+ 	 	 "description": "${properties.shortDescription @ context="unsafe"}",
+  		 "image": {
+  		  	"@type": "${pageMeta.seoImageObject @ context="unsafe"}",
+		    "url": "${pageMeta.articleHeaderImagePath||pageMeta.globalHeaderLogoPath @ context='uri'}"
+ 			},
+ 	    "author": "${properties.author||pageMeta.brandName @ context="unsafe"}",
+ 	 	 "publisher": {
+ 	 	  	"@type": "${pageMeta.seoOrganisation @ context="unsafe"}",
+ 	  		 "logo": {
+ 	     		"@type": "${pageMeta.seoImageObject @ context="unsafe"}",
+  	    		"url": "${pageMeta.globalHeaderLogoPath @ context="uri"}"
+ 	  			 },
+   			 "name": "${pageMeta.brandName @ context="unsafe"}"
+ 			 }
+		}
+  	</script>
+  </sly>
+

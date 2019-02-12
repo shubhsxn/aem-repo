@@ -1,0 +1,228 @@
+.str02-gallery-video-player {
+  .atm01-header-v1__wrapper {
+    text-align: left;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 14px;
+    }
+  }
+
+  .description {
+    font-size: $base-font;
+    line-height: 30px;
+    margin: 33px 0 0 0;
+    width: 100%;
+    @media screen and (max-width: $mobile) {
+      max-height: 60px;
+      padding-bottom: 30px;
+      text-overflow: ellipsis;
+      overflow-x: hidden;
+      overflow-y: visible;
+      white-space: nowrap;
+      transition: max-height 500ms ease;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 23px;
+      margin-top: 23px;
+
+      &.no-content {
+        text-overflow: inherit;
+        white-space: inherit;
+        max-height: inherit;
+        &:after {
+          content: "";
+        }
+      }
+
+      &:after {
+        content: "Show More";
+        background: transparent url("../vectors/carot-down.svg") right center no-repeat;
+        padding-right: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        color: $brand-primary;
+        z-index: 3;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      &.active {
+        max-height: 100%;
+        white-space: normal;
+        overflow: visible;
+
+        &:after {
+          content: "Show Less";
+          bottom: 0;
+          background-image: url("../vectors/carot-up.svg");
+        }
+      }
+    }
+  }
+
+  #video-container,.youtube-video-container {
+    margin-top: 38px;
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-top: 56.25%;
+    
+    @media screen and (max-width: $mobile) {
+      margin-top: 0;
+    }
+    iframe, video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    video{
+      height: auto;
+      object-fit: cover;
+    }
+    /* Custom play button overlay */
+    &.ready:before {
+      content: "";
+      width: 80px;
+      height: 80px;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      pointer-events: none;
+      background: white url("../vectors/play-arrow.svg") 54% center no-repeat;
+      background-size: 20px auto;
+      border-radius: 50%;
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.7);
+      transition: all 400ms ease;
+    }
+    &:hover:before {
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.7), 0 0 30px 10px rgba(0,0,0,.4);
+    }
+
+    &.playing:before {
+      opacity: 0;
+    }
+  }
+
+
+
+  .more-videos {
+    height: auto;
+    min-height: 267px;
+    background: $foundation-quaternary;
+    width: 100vw;
+    margin-left: -$content-padding-desktop;
+    padding: 0 $content-padding-desktop;
+    margin-top: 50px;
+
+    @media screen and (max-width: $mobile) {
+      margin-left: -5vw;
+      padding: 0;
+      .band-content {
+        width: 100vw;
+        padding: 0 5vw;
+      }
+    }
+    .band-content {
+      margin: 0 auto;
+      max-width: $content-width;
+      height: 100%;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+
+    }
+
+    a {
+      display: inline-block;
+      vertical-align: top;
+      border-top: 5px solid transparent;
+      padding: 30px 0;
+      margin-right: 15px;
+      height: 100%;
+      max-width: 31%;
+      white-space: normal;
+      position: relative;
+
+      @media screen and (max-width: $mobile) {
+        max-width: 200px;
+        margin-right: 10px;
+        padding: 30px 0 45px;
+      }
+
+      &.active {
+        border-top: 5px solid $brand-primary;
+      }
+
+      span.video-listing{
+        display: inline-block;
+        position: relative;
+        margin-bottom: 15px;
+        /* Custom play button overlay */
+        &:before{
+          content: "";
+          width: 30px;
+          height: 30px;
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: calc(50% - 15px);
+          transform: translateX(-50%);
+          z-index: 2;
+          pointer-events: none;
+          background: white url("../vectors/play-arrow.svg") 54% center no-repeat;
+          background-size: 10px auto;
+          border-radius: 50%;
+          box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.7);
+          transition: all 400ms ease;
+        }
+
+        &:hover:before {
+          box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.7), 0 0 30px 10px rgba(0,0,0,.4);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        z-index: 1;
+        @media screen and (max-width: $mobile){
+          min-width: 200px;
+          min-height: 104px;
+        }
+      }
+
+      @media screen and (max-width: $mobile) {
+         &.active:before {
+          top: calc(25% - 15px);
+        }
+      }
+
+  }
+
+    .title {
+      font-family: $brand-font;
+      color: $foundation-primary;
+      font-size: $font-l;
+      line-height: 24px;
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+    .desc{
+      display:none;
+    }
+  }
+  &.youtube-video-wrapper-gallery{
+    .description{
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+	<sly data-sly-test="${comElement.featureFlagState == 'on'}">
+		<div data-sly-test="${wcmmode.edit || wcmmode.design}">
+			Configure Hero Image Component
+		</div>
+		<sly data-sly-test="${comElement.viewType=='herol1'}">
+			<sly data-sly-include="herol1.html" />
+		</sly>
+		<sly data-sly-test="${comElement.viewType=='herol2'}">
+			<sly data-sly-include="herol2.html" />
+		</sly>
+	</sly>
+</div>

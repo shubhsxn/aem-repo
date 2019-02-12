@@ -1,0 +1,76 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+	<sly data-sly-test="${comElement.featureFlagState == 'on'}">
+		<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+			Edit Tiles Component
+		</sly>
+		<div data-sly-use.tiles="com.corteva.model.component.models.TilesModel" data-sly-unwrap>
+			<sly data-sly-test="${comElement.viewType == 'brandLogo'}">
+				<sly data-sly-test="${comElement.linkAction=='_self'}">
+					<a href="${comElement.linkUrl}" data-analytics-type="cta-brand-logo" class="det-10-brand-logo ${comElement.linkStyle}" target="${comElement.linkAction}"
+					   style="background-image: url(${comElement.imagePath.desktopImagePath @ context='uri'})" title="${comElement.logoAltText}"></a>
+				</sly>
+				<sly data-sly-test="${comElement.linkAction=='_blank'}">
+					<a href="${comElement.linkUrl}" data-analytics-type="cta-brand-logo" class="det-10-brand-logo ${comElement.linkStyle}" target="${comElement.linkAction}" rel="noopener noreferrer"
+					   style="background-image: url(${comElement.imagePath.desktopImagePath @ context='uri'})" title="${comElement.logoAltText}"></a>
+				</sly>
+			</sly>
+			<sly data-sly-test="${comElement.viewType == 'cropTypeIcon'}">
+				<div class="item ${tiles.bgColor} custom-6-tiles-crop-icon">
+					<sly data-sly-test=${tiles.linkUrlCropIcon}>
+						<sly data-sly-test="${tiles.linkActionCropIcon=='_self'}">
+							<a class="${tiles.linkStyleCropIcon}" data-analytics-type="cta-crop-type" data-analytics-value="${comElement.iconTitle @ context = 'html'}" href="${tiles.linkUrlCropIcon}" target="${tiles.linkActionCropIcon}" >
+								<img class="lazyload" data-src="${comElement.imagePath.desktopImagePath @ context='uri'}" alt="${comElement.iconAltText}"/>
+								<strong>${comElement.iconTitle @ context = 'html'}</strong>
+							</a>
+						</sly>
+						<sly data-sly-test="${tiles.linkActionCropIcon=='_blank'}">
+							<a class="${tiles.linkStyleCropIcon}" data-analytics-type="cta-crop-type" data-analytics-value="${comElement.iconTitle @ context = 'html'}" href="${tiles.linkUrlCropIcon}" target="${tiles.linkActionCropIcon}" rel="noopener noreferrer">
+								<img class="lazyload" data-src="${comElement.imagePath.desktopImagePath @ context='uri'}" alt="${comElement.iconAltText}"/>
+								<strong>${comElement.iconTitle @ context = 'html'}</strong>
+							</a>
+						</sly>
+					</sly>
+					<sly data-sly-test=${!tiles.linkUrlCropIcon}>
+						<img class="lazyload" data-src="${comElement.imagePath.desktopImagePath @ context='uri'}" alt="${comElement.iconAltText}"/>
+						<strong>${comElement.iconTitle @ context = 'html'}</strong>
+					</sly>
+				</div>
+			</sly>
+			<sly data-sly-test="${comElement.viewType == 'impactTile' || comElement.viewType == 'impactExpandedTile'}">
+				<div class="det05-tile-impact ${comElement.viewType == 'impactExpandedTile' ? 'det06-tile-impact-expanded' : ''} ${tiles.impactBgColor} ${tiles.textPlacement}">
+					<sly data-sly-test="${comElement.linkAction=='_self'}">
+						<a class="${comElement.linkStyle}" data-analytics-type="cta-tile" data-analytics-value="${comElement.viewType == 'impactTile' ? tiles.impactTitle : tiles.impactExpandedTitle}" href="${comElement.linkUrl}" target="${comElement.linkAction}" >
+					</sly>
+					<sly data-sly-test="${comElement.linkAction=='_blank'}">
+						<a class="${comElement.linkStyle}" data-analytics-type="cta-tile" data-analytics-value="${comElement.viewType == 'impactTile' ? tiles.impactTitle : tiles.impactExpandedTitle}" href="${comElement.linkUrl}" target="${comElement.linkAction}" rel="noopener noreferrer" >
+					</sly>
+					<sly data-sly-test="${comElement.viewType == 'impactExpandedTile'}">
+						<picture>
+							<source srcset="${comElement.imagePath.desktopImagePath}" media="(min-width: 1200px)">
+
+							<source srcset="${comElement.imagePath.tabletImagePath}" media="(min-width: 992px)">
+
+							<source srcset="${comElement.imagePath.mobileImagePath}" media="(max-width: 991px)">
+
+							<img class="" src="${comElement.imagePath.desktopImagePath}" alt="${comElement.altText}">
+						</picture>
+					</sly>
+					<sly data-sly-test="${tiles.eyebrowLabel}">
+						<span class="eyebrow">${tiles.eyebrowLabel} ${ !tiles.displayPublishDate ? '' : '. {0}' @format = [tiles.publishDate]}</span>
+					</sly>
+					<span class="title">${comElement.viewType == 'impactTile' ? tiles.impactTitle : tiles.impactExpandedTitle}</span>
+					<span class="label">${comElement.linkLabel}</span>
+					</a>
+				</div>
+			</sly>
+		</div>
+	</sly>
+</div>

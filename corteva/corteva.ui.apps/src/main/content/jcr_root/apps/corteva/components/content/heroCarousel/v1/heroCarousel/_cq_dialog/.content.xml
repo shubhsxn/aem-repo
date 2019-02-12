@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Hero Carousel Details"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <slides
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                fieldLabel="Slides"
+                                maxItems="4">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested=""
+                                    name="./heroSlides">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container"
+											assetfieldstobepopulated="\{&quot;imageAltText&quot;:&quot;./altText&quot;}"
+											class="assetMetadataClass">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <penelTitle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Fill the Panel Title"
+                                                    fieldLabel="Panel Title"
+                                                    maxlength="{Long}45"
+                                                    name="./panelTitle"
+                                                    required="{Boolean}true"/>
+                                                <eyebrowLabel
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Fill the Eyebrow Label"
+                                                    fieldLabel="Eyebrow Label"
+                                                    maxlength="{Long}30"
+                                                    name="./eyebrowLabel"/>
+                                                <alttext
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Image Alt-Text"
+                                                    fieldLabel="Alt-Text"
+                                                    name="./altText"/>
+                                                <imageSrc
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="corteva/components/content/contextualpathbrowser"
+                                                    fieldDescription="Select Image Path"
+                                                    fieldLabel="Image "
+                                                    name="./imageSrc"
+                                                    required="{Boolean}true"
+                                                    contentRootPath="/content/dam/dpagco"/>
+                                                <mobImage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="corteva/components/content/contextualpathbrowser"
+                                                    fieldDescription="Select Mobile Image Path"
+                                                    fieldLabel="Mobile Image"
+                                                    name="./mobImage"
+                                                    required="{Boolean}true"
+                                                    contentRootPath="/content/dam/dpagco"/>
+                                                <buttonlink
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="corteva/components/content/contextualpathbrowser"
+                                                    fieldDescription="Link the button  to the appropriate page"
+                                                    fieldLabel="Button Link"
+                                                    name="./buttonLink"
+                                                    required="{Boolean}true"
+                                                    contentRootPath="/content"/>
+                                                <buttontext
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Enter Text for CTA Button"
+                                                    fieldLabel="Button Text"
+                                                    name="./buttonText"
+                                                    required="{Boolean}true"/>
+                                                <buttonAction
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldDescription="Choose Target Action for Button."
+                                                    fieldLabel="Button Action"
+                                                    name="./buttonAction">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <option1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Open in same window"
+                                                            value="_self"/>
+                                                        <option2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Open in new window"
+                                                            value="_blank"/>
+                                                    </items>
+                                                </buttonAction>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </slides>
+                        </items>
+                    </column>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

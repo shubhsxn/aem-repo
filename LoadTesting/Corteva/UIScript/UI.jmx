@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="filename">Search_UI.csv</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">Search,FIlter</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">delvmplagcoweb.sapient.com</stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_Journeys" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3600</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">true</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_HomePage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+String homePageUrl=&quot;https://www.pp.corteva.com/&quot;;
+
+WDS.sampleResult.sampleStart();
+
+	//Launch the home page
+	WDS.browser.get(homePageUrl);
+
+	//Check if the section below COO has the text &quot;We are building on our heritage to address the challenges of tomorrow.&quot; -- 
+	//if the header is changed - script needs to be updated accordingly
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.col.s12.m12.l12&gt;p&quot;),&quot;We are building on our heritage to address the challenges of tomorrow.&quot;));
+	
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_ BlogPage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+//Get the location of the blog menu link
+WebElement blogMenuElement = WDS.browser.findElement(By.cssSelector(&quot;.main&gt;ul&gt;li&gt;a[data-analytics-value=&apos;Blog&apos;]&quot;));
+
+
+//start transaction
+WDS.sampleResult.sampleStart();
+
+	//Click on blog menu item
+	blogMenuElement.click();
+	
+	//get the location of the header in the blog page
+	WebElement blogPageHeader = WDS.browser.findElement(By.cssSelector(&quot;.band-content&gt;header&gt;h1&quot;));
+	
+	//Check if the header has the text &quot;Our Perspective&quot; -- if the header is changed - script needs to be updated 
+	//accordingly
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;header&gt;h1&quot;),&quot;Our Perspective&quot;));
+
+//End transaction
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_SelectArticle" enabled="false">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+import org.openqa.selenium.WebElement;
+
+Random rand = new Random();
+
+WebElement filterSelector1 =WDS.browser.findElement(By.cssSelector(&quot;#topicfilter_dropdown_chosen &gt; a&quot;));
+
+WDS.sampleResult.sampleStart();
+
+	filterSelector1.click();
+	
+	WDS.browser.findElement(By.cssSelector(&quot;#topicfilter_dropdown_chosen &gt; div &gt; ul &gt; li:nth-child(3)&quot;)).click();
+	
+	
+	/////// Article Filter 2 (Year)
+	
+	WebElement filterSelector2 =WDS.browser.findElement(By.cssSelector(&quot;#years_dropdown_chosen &gt; a&quot;));
+	filterSelector2.click();
+	
+	List dropDownList2 = WDS.browser.findElements(By.cssSelector(&quot;#years_dropdown_chosen &gt; div &gt; ul &gt; li:nth-child(n)&quot;));
+	
+	//for (WebElement element: dropDownList2){
+	//      WDS.log.info(element.getText());
+	//}
+	
+	int randomListItem2 = rand.nextInt(dropDownList2.size());
+	String selectedValue =dropDownList2.get(randomListItem2).getText();
+	WDS.log.info(&quot;selected value =&quot; + selectedValue);
+	dropDownList2.get(randomListItem2).click();
+	
+	///////Article Filter 3(Month)
+	
+	WebElement filterSelector3 =WDS.browser.findElement(By.cssSelector(&quot;#month_dropdown_chosen &gt; a&quot;));
+	filterSelector3.click();
+	
+	List dropDownList3 = WDS.browser.findElements(By.cssSelector(&quot;#month_dropdown_chosen &gt; div &gt; ul &gt; li:nth-child(n)&quot;));
+	
+	//for (WebElement element: dropDownList3){
+	//      WDS.log.info(element.getText());
+	//}
+	//Random rand = new Random();
+	int randomListItem3 = rand.nextInt(dropDownList3.size());
+	String selectedValue =dropDownList3.get(randomListItem3).getText();
+	WDS.log.info(&quot;selected value =&quot; + selectedValue);
+	dropDownList3.get(randomListItem3).click();
+
+WDS.sampleResult.sampleEnd();
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1835498982">articlePagesList&quot;:[]</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">20</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Click_Article_LInk" enabled="false">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.WebElement;
+
+
+
+//.no-result&gt;h3
+
+try{
+	WebElement resultsAvailability = WDS.browser.findElement(By.cssSelector(&quot;.no-result&gt;h3&quot;));
+
+	String resultString = resultsAvailability.getText();
+
+	WDS.log.info(&quot;Result string = &quot; + resultString);
+
+	if(resultString.equals(&quot;No Result&quot;)){
+
+		WDS.log.error(&quot;No results found&quot;);
+	}
+
+}
+
+catch(Exception e){
+
+	WDS.sampleResult.sampleStart();
+
+	WebElement link = WDS.browser.findElement(By.cssSelector(&quot;#news-media &gt; div &gt; main &gt; div &gt; div:nth-child(1) &gt; h3 &gt; a&quot;));
+	link.click();
+	WDS.sampleResult.sampleEnd();
+	
+	
+}
+Thread.sleep(1000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_OurImpact" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions actions = new Actions(WDS.browser);
+
+WebElement ourImpactMenuElement = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;));
+
+//Mouse hover on the top menu	
+actions.moveToElement(ourImpactMenuElement).perform();
+
+WebElement ourImpactLink = WDS.browser.findElement(By.cssSelector(&quot;.subnav&gt;ul&gt;li:nth-child(1)&gt;a[data-analytics-value=&apos;Our Impact&apos;]&quot;));
+
+waitForObject.until(ExpectedConditions.visibilityOf(ourImpactLink));
+
+WDS.sampleResult.sampleStart();
+
+		ourImpactLink.click();
+
+		//Verify the page loaded properly
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;Enriching Lives Across the World&quot;));
+
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_OurImpact_OurInnovation" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions actions = new Actions(WDS.browser);
+
+WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;));
+
+WebElement ourInnovationLink = WDS.browser.findElement(By.cssSelector(&quot;nav.main &gt; ul &gt; li:nth-child(2) &gt; div &gt; div &gt; div &gt; nav &gt; div &gt; ul &gt; li:nth-child(2) &gt; a&quot;));
+
+actions.moveToElement(topMenu).perform();
+
+waitForObject.until(ExpectedConditions.visibilityOf(ourInnovationLink));
+
+WDS.sampleResult.sampleStart();	
+
+	ourInnovationLink.click();
+	
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.col.s12.m12.l12&gt;h2&quot;),&quot;What makes us different?&quot;));
+
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_OurImpact_OurSustainability" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+
+WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;));
+
+WebElement ourSustainabilityLink = WDS.browser.findElement(By.cssSelector(&quot;nav.main &gt; ul &gt; li:nth-child(2) &gt; div &gt; div &gt; div &gt; nav &gt; div &gt; ul &gt; li:nth-child(3) &gt; a&quot;));
+
+actions.moveToElement(topMenu).perform();
+
+waitForObject.until(ExpectedConditions.visibilityOf(ourSustainabilityLink));
+	
+WDS.sampleResult.sampleStart();
+	
+	ourSustainabilityLink.click();
+	
+	//.band-content&gt;h1
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.col.s12.m12.l12&gt;h2&quot;),&quot;Related Sustainability Articles&quot;));
+
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurMerger" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions actions = new Actions(WDS.browser);
+
+WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+WebElement ourMergerLink = WDS.browser.findElement(By.cssSelector(&quot;.featured&gt;a&quot;));
+
+actions.moveToElement(topMenu).perform();
+waitForObject.until(ExpectedConditions.visibilityOf(ourMergerLink));
+
+WDS.sampleResult.sampleStart();
+			
+	ourMergerLink.click();	
+
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;About DowDuPont&quot;));
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurMission" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions actions = new Actions(WDS.browser);
+
+
+WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+
+WebElement ourMissionLink = WDS.browser.findElement(By.xpath(&quot;html/body/div[1]/div/div[1]/div/div/div/div/nav[2]/ul/li[1]/div/div/div/nav/div/ul/li[1]/a&quot;));
+
+actions.moveToElement(topMenu).perform();
+waitForObject.until(ExpectedConditions.visibilityOf(ourMissionLink));
+
+WDS.sampleResult.sampleStart();
+
+	ourMissionLink.click();
+	
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;A Commitment to Growing Progress&quot;));
+
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(2000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurHistory" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions actions = new Actions(WDS.browser);
+
+WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+WebElement ourHistoryLink = WDS.browser.findElement(By.cssSelector(&quot;.subnav&gt;ul:nth-child(3)&gt;li:nth-child(3)&gt;a&quot;));
+
+actions.moveToElement(topMenu).perform();
+waitForObject.until(ExpectedConditions.visibilityOf(ourHistoryLink));
+	
+WDS.sampleResult.sampleStart();
+	
+	ourHistoryLink.click();
+	
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;Our History&quot;));
+
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurDiversity" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions actions = new Actions(WDS.browser);
+
+WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+
+WebElement ourDiversityLink =  WDS.browser.findElement(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(4) &gt; a:nth-child(1)&quot;));
+
+actions.moveToElement(topMenu).perform();
+waitForObject.until(ExpectedConditions.visibilityOf(ourDiversityLink));
+	
+
+WDS.sampleResult.sampleStart();
+	
+	ourDiversityLink.click();
+	
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;Diversity and Inclusion&quot;));
+
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurLeadership" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions actions = new Actions(WDS.browser);
+
+
+//Get the location of the elements 
+WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+WebElement ourLeadershipLink = WDS.browser.findElement(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;));
+
+//Hover over the menu and clink on the link
+actions.moveToElement(topMenu).perform();
+waitForObject.until(ExpectedConditions.visibilityOf(ourLeadershipLink));
+
+WDS.sampleResult.sampleStart();
+
+	ourLeadershipLink.click();
+
+	//Verify if the page loaded properly
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.filter&gt;label&quot;),&quot;Corteva&apos;s Leadership Team&quot;));
+
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_BioDetails_FilterByLocation" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import java.util.List;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+Random rand = new Random();
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+//Click on the drop down
+WebElement countrySelector =WDS.browser.findElement(By.cssSelector(&quot;.chosen-container&quot;));
+waitForObject.until(ExpectedConditions.elementToBeClickable(By.cssSelector(&quot;.chosen-container&quot;)));
+countrySelector.click();
+
+//Choose an element from the drop down at random
+List dropDownList = WDS.browser.findElements(By.cssSelector(&quot;.chosen-drop .chosen-results .active-result&quot;));
+int randomListItem = rand.nextInt(dropDownList.size());
+String selectedValue =dropDownList.get(randomListItem).getText();
+//WDS.log.info(&quot;selected location =&quot; + selectedValue);
+
+WDS.sampleResult.sampleStart();
+
+	dropDownList.get(randomListItem).click();
+
+	//Verify if the selected item is opened properly
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.chosen-container&quot;),selectedValue));
+
+WDS.sampleResult.sampleEnd();
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_BioDetails_ChooseALeader" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import java.util.List;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.Actions;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions scrollThePage = new Actions(WDS.browser);
+
+
+List executiveSelector = WDS.browser.findElements(By.cssSelector(&quot;.item.det15-card-executive-bio&gt;h3&quot;));
+WDS.log.info(&quot;totalLeaders=&quot; + executiveSelector.size());
+List visibleLeaders = new ArrayList();
+
+//WDS.sampleResult.sampleStart();
+
+for (WebElement element: executiveSelector){
+	//WDS.log.info(&quot;First Element =&quot; + element.getText());
+	boolean displaySelector = element.isDisplayed();
+	//WDS.log.info(&quot;DisplaySelector=&quot; + displaySelector);
+	if(displaySelector == true)
+		{
+			//WDS.log.info(&quot;Visible elements = &quot; + element.getText());
+			visibleLeaders.add(element);
+			
+		}
+	else {
+		int index = executiveSelector.indexOf(element);
+		//WDS.log.info(&quot;element not visible &amp; removed index = &quot; + index);
+	}
+}
+
+for (WebElement newElementList: visibleLeaders){
+	WDS.log.info(&quot;Visible elemtns  =&quot; + newElementList.getText());
+}
+
+Random rand = new Random();
+int randomLeaderList = rand.nextInt(visibleLeaders.size());
+String selectedNames =visibleLeaders.get(randomLeaderList).getText();
+WDS.log.info(&quot;selected leader =&quot; + selectedNames);
+
+WDS.sampleResult.sampleStart();
+
+visibleLeaders.get(randomLeaderList).click();
+
+for(String handle:WDS.browser.getWindowHandles())
+    {
+       WDS.log.info(handle);
+       WDS.browser.switchTo().window(handle);
+//      String actualTitle = WDS.browser.getTitle();
+//       WDS.log.info(&quot;Now in page &quot;+ actualTitle);
+ }
+ 
+waitForObject.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(&quot;.sidebar&gt;picture&gt;img&quot;)));
+
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_BioDetails_DownloadBio" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import java.util.List;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.Actions;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions scrollThePage = new Actions(WDS.browser);
+Random rand = new Random();
+
+
+
+//Get the location of the image to download
+WebElement downloadImage= WDS.browser.findElement(By.cssSelector(&quot;.aside.downloads&gt;a&quot;));
+
+String imageURL = downloadImage.getAttribute(&quot;href&quot;);
+
+WDS.sampleResult.sampleStart();
+
+	WDS.browser.get(imageURL);
+
+	//Verify if the image has loaded in the page
+	waitForObject.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(&quot;html&gt;body&gt;img&quot;)));
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+
+//Close the browser that was opeend to download the bio
+WDS.browser.close();
+
+
+//Get the control back to the open window
+for(String handle:WDS.browser.getWindowHandles())
+    {
+       WDS.log.info(handle);
+       WDS.browser.switchTo().window(handle);
+ }
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_ Search" enabled="true">
+          <stringProp name="WebDriverSampler.script">//import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WDS.sampleResult.sampleStart();
+
+WDS.browser.findElement(By.id(&quot;top-search&quot;)).sendKeys(new String[]{&quot;${Search}&quot;});
+WDS.browser.findElement(By.id(&quot;top-search&quot;)).sendKeys(new Keys[]{Keys.ENTER});
+
+//.band-content&gt;h1
+
+waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;Search Results&quot;));
+
+WDS.sampleResult.sampleEnd();
+Thread.sleep(1000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-507610754">Search Results</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Search Facet" enabled="true">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WDS.sampleResult.sampleStart();
+
+WebElement filterSelector =WDS.browser.findElement(By.cssSelector(&quot;#filter_chosen &gt; a&quot;));
+filterSelector.click();
+
+WDS.browser.findElement(By.cssSelector(&quot;#filter_chosen &gt; div &gt; ul &gt; li:nth-child(${FIlter})&quot;)).click();
+
+waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.card.det13-card-search-result&quot;)));
+
+WDS.sampleResult.sampleEnd();
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-507610754">Search Results</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Click_SearchFilter_LInk" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.*;
+import java.util.Random;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+int numberOfOpenWindows = 0;
+
+//WDS.browser.executeScript(&quot;window.scrollBy(0,250)&quot;, &quot;&quot;);
+
+String searchResult = WDS.browser.findElement(By.xpath(&quot;/html/body/div[1]/div/div[3]/div/div/div[2]/div/div[2]/div[1]/a&quot;));
+
+String resultUrl = searchResult.getAttribute(&quot;href&quot;);
+
+WDS.log.info(&quot;resultUrl = &quot; + resultUrl);
+
+WDS.sampleResult.sampleStart();
+
+searchResult.click();
+
+if(${FIlter}==3){
+	WDS.log.info(&quot;Filter Num = &quot; + ${FIlter});
+	
+	numberOfOpenWindows = WDS.browser.getWindowHandles().size();
+
+	//WDS.log.info(&quot;Number of windows=&quot;+ numberOfOpenWindows);
+
+	if(numberOfOpenWindows &gt; 1){
+		for(String handle:WDS.browser.getWindowHandles())
+    		{
+       		WDS.log.info(&quot;Number of windows=&quot;+ WDS.browser.getWindowHandles().size());
+       		WDS.browser.switchTo().window(handle);
+ 			}
+	}
+}
+waitForObject.until(ExpectedConditions.urlToBe(resultUrl));
+ 
+WDS.sampleResult.sampleEnd(); 
+
+//Close the browser that was opened new
+if(numberOfOpenWindows &gt; 1){
+WDS.browser.close();
+//Get the control back to the open window
+for(String handle:WDS.browser.getWindowHandles())
+    {
+       WDS.log.info(handle);
+       WDS.browser.switchTo().window(handle);
+ }
+}
+
+
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Careers" enabled="false">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+
+//String HomepageUrl=&quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage.html&quot;;
+  String HomepageUrl=&quot;https://www.pp.corteva.com/&quot;;
+
+WDS.browser.get(HomepageUrl);
+
+WDS.sampleResult.sampleStart();
+
+WDS.browser.findElement(By.xpath(&quot;/html/body/div[1]/div[1]/div[4]/div[2]/div/div/div/footer/div/div[1]/div/nav/a[3]&quot;)).click();
+
+WDS.sampleResult.sampleEnd();
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Investors" enabled="false">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+
+//String HomepageUrl=&quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage.html&quot;;
+  String HomepageUrl=&quot;https://www.pp.corteva.com/&quot;;
+
+WDS.browser.get(HomepageUrl);
+
+WDS.sampleResult.sampleStart();
+
+WDS.browser.findElement(By.xpath(&quot;/html/body/div[1]/div[1]/div[4]/div[2]/div/div/div/footer/div/div[1]/div/nav/a[4]&quot;)).click();
+
+WDS.sampleResult.sampleEnd();
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Product&amp;Services" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+//Get the location of the element
+WebElement productServicesLink = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul &gt; li:nth-child(3) &gt; a&quot;));
+
+
+WDS.sampleResult.sampleStart();
+
+	productServicesLink.click();
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;Products &amp; Services&quot;));
+	
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_MediaCenter_News&amp;Media" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WebElement mediaCenterLink = WDS.browser.findElement(By.cssSelector(&quot;.main&gt;ul&gt;li:nth-child(5)&gt;a&quot;));
+
+
+WDS.sampleResult.sampleStart();
+
+	mediaCenterLink.click();
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;Media Center&quot;));
+
+WDS.sampleResult.sampleEnd();
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_MediaKit" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WDS.sampleResult.sampleStart();
+
+WDS.browser.findElement(By.xpath(&quot;/html/body/div[1]/div/div[4]/div/div/div/div[1]/nav/div/a[2]&quot;)).click();
+
+//.band-content&gt;p:nth-child(8)
+
+waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;p:nth-child(8)&quot;),&quot;The other common types of COOs are hired specifically to help the CEO:&quot;));
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_MediaAssets" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WDS.sampleResult.sampleStart();
+
+WDS.browser.findElement(By.xpath(&quot;/html/body/div[1]/div/div[4]/div/div/div/div[1]/nav/div/a[3]&quot;)).click();
+
+//.nav05-in-page-nav-vertical&gt;strong
+
+waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.nav05-in-page-nav-vertical&gt;strong&quot;),&quot;Assets&quot;));
+
+
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_MediaContacts" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+//Get the location of the element
+WebElement mediaContactsLink =WDS.browser.findElement(By.xpath(&quot;html/body/div[1]/div/div[4]/div/div/div/div[1]/nav/div/a[2]&quot;));
+
+WDS.sampleResult.sampleStart();
+
+	mediaContactsLink.click();
+
+	//Verify if the page loaded properly
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h2&gt;strong&quot;),&quot;Media Contacts&quot;));
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_MediaExecutives" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WebElement mediaExecutiveLink = WDS.browser.findElement(By.xpath(&quot;html/body/div[1]/div/div[4]/div/div/div/div[1]/nav/div/a[3]&quot;));
+
+WDS.sampleResult.sampleStart();
+
+	mediaExecutiveLink.click();
+	waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.item.det15-card-executive-bio:nth-child(1)&quot;)));
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+//Thread.sleep(72000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

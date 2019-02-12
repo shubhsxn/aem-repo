@@ -1,0 +1,19 @@
+@media print {
+  body{
+    padding: rem(20px);
+    margin: 0 auto;
+    width: 1024px;
+    -webkit-print-color-adjust: exact;
+  }
+  .c-hro01,
+  .nav01-breadcrumbs,
+  .con11-timeline,
+  footer,
+  .con12-tiles-4-col,
+  .div.band.con02-cards-3-column,
+  div.band.con02-cards-3-column.orange,
+  div.band.con02-cards-3-column.green,
+  .con13-tiles-6-col {
+    background: white !important;
+  }
+}

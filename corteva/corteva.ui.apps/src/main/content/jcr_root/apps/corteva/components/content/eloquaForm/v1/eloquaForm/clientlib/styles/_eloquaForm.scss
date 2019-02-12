@@ -1,0 +1,71 @@
+.band.frm01-form {
+  padding: 100px 0;
+  @media screen and (max-width: $mobile) {
+    padding: 50px 0;
+  }
+  form { 
+      margin-top: 0px; 
+      background: $base; 
+      padding: $eloqua-form-padding;
+  }
+  &.blue{  
+    background: $authrable-color-blue;
+  }
+  &.maroon{
+      background: $authrable-color-maroon;
+      .text {
+          color: $base;
+          p {
+            color: $base;
+          }
+      }
+  }
+  &.green{
+      background: $authrable-color-green;
+  }
+  &.orange{
+      background: $authrable-color-orange;
+  }
+  .innerWidth {
+max-width: 1024px; margin: 0 auto;
+  }
+  .api-error {
+    color: $error-color;
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  	p {
+      color: $error-color;
+      margin-bottom: 0;
+  	}
+  }
+  form {
+    margin-top:25px;
+    fieldset { 
+      select {
+        appearance: textfield;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        
+        @media screen and (max-width: $mobile) {
+          option:first-child {
+            display: none;
+          }
+        }
+      }
+      input:not([type="checkbox"]).hide {
+        display: none;
+      }
+      .g-recaptcha {
+        @media screen and (max-width: $mobile) {
+        transform:scale(0.9);-webkit-transform:scale(0.9);
+        transform-origin:0 0;-webkit-transform-origin:0 0;
+        }
+      }
+    }
+    @media screen and (max-width: $mobile) {
+      margin-top:0px;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.con09-anchor-links-container {
+  padding: 0;
+  margin: 0;
+  border-bottom: 5px solid $foundation-tertiary;
+  height: rem(60px);
+  background: $base;
+  position: sticky;
+  top: -1px;
+  z-index: 12;
+
+  @media print {
+    display: none;
+  }
+
+  .band-content {
+    height: rem(60px);
+    max-width: 100%;
+  }
+
+  nav {
+    max-width: rem(1024px);
+    margin: 0 auto;
+    align-content: start;
+    position: relative;
+    margin-bottom: rem(-5px);
+    height: rem(77px);
+    width: 100%;
+    overflow: hidden;
+
+    &:hover {
+      overflow: auto;
+    }
+
+
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    @media screen and (max-width: $mobile) {
+      padding-left: 5vw;
+      overflow-x: scroll;
+      /* has to be scroll for mobile, not auto */
+    }
+
+    a {
+      border-bottom: 5px solid transparent;
+      padding: rem(22px) 0;
+      line-height: rem(20px);
+      height: rem(65px);
+      font-size: $font-m;
+      font-family: $body-font;
+      color: $brand-primary;
+      font-weight: 700;
+      margin-top: rem(-5px);
+      margin-right: rem(28px);
+      display: inline-block;
+      overflow: visible;
+      vertical-align: top;
+
+      &:last-child {
+        margin-right: rem(40px);
+      }
+
+      &:hover {
+        color: $hover-state;
+      }
+
+      &.active {
+        border-bottom: 5px solid $brand-primary;
+        color: $foundation-primary;
+      }
+    }
+
+    /* Jump to: */
+    span {
+      display: inline-block;
+      height: 65px;
+      margin-top: -5px;
+      padding: 22px 1vw 22px 0;
+      margin-right: 2%;
+      pointer-events: none;
+      color: $foundation-primary;
+      line-height: rem(20px);
+      font-size: $font-m;
+      font-family: $body-font;
+      font-weight: 700;
+      white-space: nowrap;
+      border-bottom: rem(5px) solid transparent;
+    }
+  }
+  &.bands{
+    nav{
+      span{
+        display: none;
+      }
+    }
+  }
+  &.jump-bands{
+    nav{
+      max-width: rem(1240px);
+      span{
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.stuck .jumper-container {
+  padding-top: rem(60px);
+
+  .con09-anchor-links-container {
+    position: fixed;
+    left: 0;
+    width: 100%;
+  }
+
+  @supports (position: sticky) {
+    padding-top: 0;
+
+    .con09-anchor-links-container {
+      position: sticky;
+    }
+  }
+}

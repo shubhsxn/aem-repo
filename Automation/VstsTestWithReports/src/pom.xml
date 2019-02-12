@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>agco.framework</groupId>
+	<artifactId>Allure</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>Allure Corteva</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.corteva.com</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- <aspectj.version>1.8.13</aspectj.version> -->
+		<aspectj.version>1.9.0</aspectj.version>
+	</properties>
+	
+
+   <!-- Added to handle getAttribute -->
+	<repositories>
+	    <repository>
+	        <id>jitpack.io</id>
+	        <url>https://jitpack.io</url>
+	    </repository>
+	</repositories>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.11.0</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
+	    <dependency>
+	        <groupId>io.qameta.allure</groupId>
+	        <artifactId>allure-testng</artifactId>
+	        <version>2.9.0</version>
+	        <scope>test</scope>
+	    </dependency>	
+
+	    
+	    <!-- Verify whether below dependency is required later-->
+	    <dependency>
+			<groupId>ru.yandex.qatools.ashot</groupId>
+			<artifactId>ashot</artifactId>
+			<version>1.5.4</version>
+		</dependency>
+		
+		  <!-- Verify whether below extentreport is really required later-->
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+				
+		<!-- Added below dependency to handle wait.until(ExpectedConditions. on mobile device. 
+		Looks like it not working. Please delete it. Note:  No other uses of this dependency
+		
+		<dependency>
+      		<groupId>com.google.guava</groupId>
+     		 <artifactId>guava</artifactId>
+     		 <version>21.0</version>
+        </dependency>
+        
+        -->
+        
+        <!-- Added Appium dependecny as guava dependency is not handling wait , getAttribute Etc...(Not sire whther this works)
+
+        <dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		-->  
+		
+		<!-- Added to handle getAttribute -->
+		<dependency>
+    		<groupId>com.github.appium</groupId>
+   			<artifactId>java-client</artifactId>
+    		<version>b10f52148f</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.20</version>            
+            <configuration>
+                <argLine>
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                </argLine>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjweaver</artifactId>
+                    <version>${aspectj.version}</version>
+                </dependency>                
+            </dependencies>
+        </plugin>   
+        <!--     
+        <plugin>
+	        <groupId>io.qameta.allure</groupId>
+	        <artifactId>allure-maven</artifactId>
+	        <version>2.9</version>
+        </plugin> 
+        -->         
+    </plugins>
+</build>
+</project>

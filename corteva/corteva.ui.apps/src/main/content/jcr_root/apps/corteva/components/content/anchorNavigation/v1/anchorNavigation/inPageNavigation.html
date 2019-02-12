@@ -1,0 +1,30 @@
+<sly data-sly-use.links="com.corteva.model.component.models.AnchorLinksNavigationModel">
+<sly data-sly-test.localeLang="${links.localeForInternationalization}" />
+<div class="band">
+  <div class="band-content">
+      <nav class="nav05-in-page-nav-vertical">
+          <select name="" class="form-dropdown" id="GENERATE-ID"> 	
+         <option value="-1">      
+              ${'jumpToSection' @i18n,locale=localeLang}      
+          </option>
+            <sly data-sly-list="${links.anchorLinksContainer}">
+            <option value="${itemList.index}">
+                    ${item.anchorLinkLabel}  
+            </option>
+            </sly>   
+      	</select>
+         <label class="hide" for="GENERATE-ID">${'jumpToSection' @i18n,locale=localeLang}</label>
+          <strong>${properties.label}</strong>
+        </nav>    
+      	
+         <sly data-sly-list="${links.anchorLinksContainer}">
+             <section id="${item.anchorNodeName @ context='html'}" data-title="${item.anchorNodeName}">
+             <h2>${item.anchorLinkLabel @ context='html'}</h2>
+              <sly data-sly-resource="${item.anchorNodeName @ resourceType='wcm/foundation/components/responsivegrid'}"/>
+          	</section>
+          </sly>
+
+     </div>
+  </div>
+  <div data-sly-resource="${'scrollToTop' @ resourceType='corteva/components/content/scrollToTop/v1/scrollToTop'}" ></div>
+</sly>

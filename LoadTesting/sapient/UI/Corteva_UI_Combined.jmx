@@ -1,0 +1,1642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Corteva UI Combined" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="filename">Search_UI.csv</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">Search,FIlter</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_StaticPages_HomePage" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3622</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">DIRECT</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_HomePage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.Support.UI;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser, 10);
+
+String testUrl = &quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage.html&quot;;
+WDS.sampleResult.sampleStart();
+try{
+WDS.browser.get(testUrl);
+waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.aem-Grid.aem-Grid--12.aem-Grid--default--12&quot;)));
+}
+catch(Exception e){
+	WDS.log.error(&quot;Home Page took longer to load&quot;);
+}
+WDS.sampleResult.sampleEnd();
+Thread.sleep(720000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">720000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_Article_Filter" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3622</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_HomePage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+
+WDS.sampleResult.sampleStart();
+//String HomepageUrl=&quot;http://delvmplcmsweb02.sapient.com/content/corteva/corporate/our-homepage.html&quot;;
+  String HomepageUrl=&quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/our-homepage.html&quot;;
+
+
+WDS.browser.get(HomepageUrl);
+
+WDS.sampleResult.sampleEnd();
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="738185615">Our-Homepage</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_ BlogPage" enabled="true">
+          <stringProp name="WebDriverSampler.script">//import org.apache.commons.io.FileUtils;
+import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+
+WDS.sampleResult.sampleStart();
+//String BlogPage=&quot;http://delvmplcmsweb02.sapient.com/content/corteva/corporate/resources/bloglanding.html&quot;;
+String BlogPage=&quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage/blog/bloghub.html&quot;;
+
+//WebElement link = WDS.browser.findElement(By.cssSelector(&quot;#globalHeaderFeatureFlag &gt; div &gt; nav.main &gt; ul &gt; li:nth-child(4) &gt; a&quot;));
+//link.click();
+
+WDS.browser.get(BlogPage);
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-21321197">bloghub</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_SelectArticle" enabled="true">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+import org.openqa.selenium.WebElement;
+
+WDS.sampleResult.sampleStart();
+
+WebElement filterSelector1 =WDS.browser.findElement(By.cssSelector(&quot;#topicfilter_dropdown_chosen &gt; a&quot;));
+filterSelector1.click();
+
+WDS.browser.findElement(By.cssSelector(&quot;#topicfilter_dropdown_chosen &gt; div &gt; ul &gt; li:nth-child(3)&quot;)).click();
+
+//List dropDownList1 = WDS.browser.findElements(By.cssSelector(&quot;#topicfilter_dropdown_chosen &gt; div &gt; ul &gt; li:nth-child(n)&quot;));
+//
+//for (WebElement element: dropDownList1){
+//      WDS.log.info(element.getText());
+//}
+//Random rand = new Random();
+//int randomListItem1 = rand.nextInt(dropDownList1.size());
+//String selectedValue =dropDownList1.get(randomListItem1).getText();
+//WDS.log.info(&quot;selected value =&quot; + selectedValue);
+//dropDownList1.get(randomListItem1).click();
+
+
+/////// Article Filter 2 (Year)
+
+WebElement filterSelector2 =WDS.browser.findElement(By.cssSelector(&quot;#years_dropdown_chosen &gt; a&quot;));
+filterSelector2.click();
+
+List dropDownList2 = WDS.browser.findElements(By.cssSelector(&quot;#years_dropdown_chosen &gt; div &gt; ul &gt; li:nth-child(n)&quot;));
+
+for (WebElement element: dropDownList2){
+      WDS.log.info(element.getText());
+}
+Random rand = new Random();
+int randomListItem2 = rand.nextInt(dropDownList2.size());
+String selectedValue =dropDownList2.get(randomListItem2).getText();
+WDS.log.info(&quot;selected value =&quot; + selectedValue);
+dropDownList2.get(randomListItem2).click();
+
+///////Article Filter 3(Month)
+
+WebElement filterSelector3 =WDS.browser.findElement(By.cssSelector(&quot;#month_dropdown_chosen &gt; a&quot;));
+filterSelector3.click();
+
+List dropDownList3 = WDS.browser.findElements(By.cssSelector(&quot;#month_dropdown_chosen &gt; div &gt; ul &gt; li:nth-child(n)&quot;));
+
+for (WebElement element: dropDownList3){
+      WDS.log.info(element.getText());
+}
+Random rand = new Random();
+int randomListItem3 = rand.nextInt(dropDownList3.size());
+String selectedValue =dropDownList3.get(randomListItem3).getText();
+WDS.log.info(&quot;selected value =&quot; + selectedValue);
+dropDownList3.get(randomListItem3).click();
+
+WDS.sampleResult.sampleEnd();
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1835498982">articlePagesList&quot;:[]</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">20</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Click_Article_LInk" enabled="true">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+import org.openqa.selenium.WebElement;
+
+
+
+WDS.sampleResult.sampleStart();
+
+WebElement link = WDS.browser.findElement(By.cssSelector(&quot;#news-media &gt; div &gt; main &gt; div &gt; div:nth-child(1) &gt; h3 &gt; a&quot;));
+link.click();
+WDS.sampleResult.sampleEnd();
+Thread.sleep(720000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">720000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_StaticPages_MediaCenter" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3622</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">DIRECT</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_MediaCenter" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+String testUrl = &quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage/media-center/news-media-landing.html&quot;;
+
+WDS.sampleResult.sampleStart();
+try{
+		WDS.browser.get(testUrl);
+
+		//.main&gt;ul:nth-child(2)&gt;li:nth-child(5)&gt;a:nth-child(1)
+		
+//			WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(5) &gt; a:nth-child(1)&quot;));
+//		actions.moveToElement(topMenu).perform();
+
+		waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;)));
+		
+		//WDS.browser.findElement(By.cssSelector(&quot;.featured&gt;a&quot;)).click();
+		
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;News and Media&quot;));
+
+}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Our Impact Page&quot;);
+}
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(720000);
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">720000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_StaticPages_OurImpact" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3622</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">DIRECT</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurImpact" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+String testUrl = &quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage/our-impact/our-impact.html&quot;;
+
+WDS.sampleResult.sampleStart();
+try{
+		WDS.browser.get(testUrl);
+		
+		WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;));
+		actions.moveToElement(topMenu).perform();
+		
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;A Commitment to Growing Progress&quot;));
+
+}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Our Impact Page&quot;);
+}
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurInnovation" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+
+WDS.sampleResult.sampleStart();
+
+try{
+
+	WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;));
+		actions.moveToElement(topMenu).perform();
+	
+	waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.subnav&gt;ul:nth-child(1)&gt;li:nth-child(2)&gt;a:nth-child(1)&quot;)));
+	
+	WDS.browser.findElement(By.cssSelector(&quot;.subnav&gt;ul:nth-child(1)&gt;li:nth-child(2)&gt;a:nth-child(1)&quot;)).click();
+	
+	//.text&gt;h2
+	
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.text&gt;h2&quot;),&quot;Short Eloqua Title testing max cahar Validationt50&quot;));
+	}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Innovation Page&quot;);
+}
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_Sustainability" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+
+WDS.sampleResult.sampleStart();
+
+try{
+
+	WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;));
+		actions.moveToElement(topMenu).perform();
+	
+	waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.subnav&gt;ul:nth-child(1)&gt;li:nth-child(3)&gt;a:nth-child(1)&quot;)));
+	
+	WDS.browser.findElement(By.cssSelector(&quot;.subnav&gt;ul:nth-child(1)&gt;li:nth-child(3)&gt;a:nth-child(1)&quot;)).click();
+	
+	//.band-content&gt;h1
+	
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;A Commitment to Growing Progress&quot;));
+	}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Our Leadership Page&quot;);
+}
+
+WDS.sampleResult.sampleEnd();
+Thread.sleep(720000);
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">720000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_StaticPages_Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3622</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_HomePage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+String testUrl = &quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage.html&quot;;
+
+WDS.sampleResult.sampleStart();
+try{
+		WDS.browser.get(testUrl);
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.atm01-header-v1__wrapper&gt;div&gt;h2&quot;),&quot;Where we started and, where we&apos;re heading&quot;));
+}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load HomePage Page&quot;);
+}
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">5000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1989804798">Where we started and, where we&apos;re heading</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Careers" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+WDS.sampleResult.sampleStart();
+try{
+		WDS.browser.findElement(By.cssSelector(&quot;.without-seperator &gt; a:nth-child(3)&quot;)).click();
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.main &gt; ul &gt; li &gt; a&quot;),&quot;WHO WE ARE&quot;));
+}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Careers Page&quot;);
+}
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">5000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1989804798">Where we started and, where we&apos;re heading</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_ContactUs" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WDS.sampleResult.sampleStart();
+try{
+		WDS.browser.findElement(By.cssSelector(&quot;.without-seperator &gt; a:nth-child(1)&quot;)).click();
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.main &gt; ul &gt; li &gt; a&quot;),&quot;WHO WE ARE&quot;));
+}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Contact Us Page&quot;);
+}
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">5000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1989804798">Where we started and, where we&apos;re heading</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Privacy" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WDS.sampleResult.sampleStart();
+try{
+		WDS.browser.findElement(By.cssSelector(&quot;.secondary &gt; .feature-flag &gt;.with-seperator &gt; a:nth-child(2)&quot;)).click();
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.main &gt; ul &gt; li &gt; a&quot;),&quot;WHO WE ARE&quot;));
+}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Contact Us Page&quot;);
+}
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">5000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1989804798">Where we started and, where we&apos;re heading</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Sitemap" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WDS.sampleResult.sampleStart();
+try{
+		WDS.browser.findElement(By.cssSelector(&quot;.secondary &gt; .feature-flag &gt; .with-seperator &gt; a:nth-child(3)&quot;)).click();
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.main &gt; ul &gt; li &gt; a&quot;),&quot;WHO WE ARE&quot;));
+}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Contact Us Page&quot;);
+}
+WDS.sampleResult.sampleEnd();
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">5000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1989804798">Where we started and, where we&apos;re heading</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_TermsandConditions" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+WDS.sampleResult.sampleStart();
+try{
+		WDS.browser.findElement(By.cssSelector(&quot;.secondary &gt; .feature-flag &gt; .with-seperator &gt; a:nth-child(1)&quot;)).click();
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.main &gt; ul &gt; li &gt; a&quot;),&quot;WHO WE ARE&quot;));
+}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load TnC Page&quot;);
+}
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(720000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">5000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1989804798">Where we started and, where we&apos;re heading</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">720000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_StaticPages_WhoWeAre" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3622</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurMerger" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+String testUrl = &quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage.html&quot;;
+
+WDS.sampleResult.sampleStart();
+try{
+		WDS.browser.get(testUrl);
+		
+		WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+		actions.moveToElement(topMenu).perform();
+		
+		waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.featured&gt;a&quot;)));
+		
+		WDS.browser.findElement(By.cssSelector(&quot;.featured&gt;a&quot;)).click();
+		
+		waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.col.s12.m12.l12&gt;h2&quot;),&quot;More about the merger of Dow and DuPont&quot;));
+}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Merger Page&quot;);
+}
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurMission" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+
+WDS.sampleResult.sampleStart();
+
+try{
+
+	WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+	actions.moveToElement(topMenu).perform();
+	
+	waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;)));
+	
+	WDS.browser.findElement(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;)).click();
+	
+	//.col.s12.m12.l12&gt;h2
+	
+	waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.col.s12.m12.l12&gt;h2&quot;)));
+	}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Merger Page&quot;);
+}
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurLeadership" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+
+WDS.sampleResult.sampleStart();
+
+try{
+
+	WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+	actions.moveToElement(topMenu).perform();
+	
+	waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;)));
+	
+	WDS.browser.findElement(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;)).click();
+	
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.filter&gt;label&quot;),&quot;Corteva&apos;s Leadership Team&quot;));
+	}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Our Leadership Page&quot;);
+}
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurHistory" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+
+WDS.sampleResult.sampleStart();
+
+try{
+
+	WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+	actions.moveToElement(topMenu).perform();
+	
+	waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(3) &gt; a:nth-child(1)&quot;)));
+	
+	WDS.browser.findElement(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(3) &gt; a:nth-child(1)&quot;)).click();
+	
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.band-content&gt;h1&quot;),&quot;Our History&quot;));
+	}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Our History Page&quot;);
+}
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_WhoWeAre_OurDiversity" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+
+Actions actions = new Actions(WDS.browser);
+
+WDS.sampleResult.sampleStart();
+
+try{
+
+	WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+	actions.moveToElement(topMenu).perform();
+	
+	waitForObject.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(4) &gt; a:nth-child(1)&quot;)));
+	
+	WDS.browser.findElement(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(4) &gt; a:nth-child(1)&quot;)).click();
+	
+	waitForObject.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(&quot;.text&gt;h2&quot;),&quot;Embracing Equality and Inclusion&quot;));
+	}
+catch(Exception e){
+	WDS.log.error(&quot;Unable to load Our Diversity Page&quot;);
+}
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(720000);
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">720000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_BioDetails" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3622</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">DIRECT</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_HomePage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+String testUrl=&quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage.html&quot;;
+
+WDS.sampleResult.sampleStart();
+WDS.browser.get(testUrl);
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_BioDetails_LeadershipPage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+Actions actions = new Actions(WDS.browser);
+
+WDS.sampleResult.sampleStart();
+
+WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+actions.moveToElement(topMenu).perform();
+
+WebElement leadershipLink =WDS.browser.findElement(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;));
+
+actions.moveToElement(leadershipLink);
+actions.click().build().perform();
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_BioDetails_FilterByLocation" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import java.util.List;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+
+//String testleadershipUrl=&quot;http://delvmplcmsweb02.sapient.com/content/corteva/corporate/our-homepage/whoweare/our-leadership.html &quot;;
+
+//WDS.browser.get(testleadershipUrl);
+
+
+WDS.sampleResult.sampleStart();
+
+WebElement countrySelector =WDS.browser.findElement(By.className(&quot;chosen-single&quot;));
+countrySelector.click();
+List dropDownList = WDS.browser.findElements(By.cssSelector(&quot;li.active-result:nth-child(n)&quot;));
+//for (WebElement element: dropDownList){
+//      WDS.log.info(element.getText());
+//}
+Random rand = new Random();
+int randomListItem = rand.nextInt(dropDownList.size());
+String selectedValue =dropDownList.get(randomListItem).getText();
+WDS.log.info(&quot;selected location =&quot; + selectedValue);
+dropDownList.get(randomListItem).click();
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_BioDetails_ChooseALeader" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import java.util.List;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.Actions;
+
+WebDriverWait waitForObject = new WebDriverWait(WDS.browser,10);
+Actions scrollThePage = new Actions(WDS.browser);
+
+
+List executiveSelector = WDS.browser.findElements(By.cssSelector(&quot;.item.det15-card-executive-bio&gt;h3&quot;));
+//WDS.log.info(&quot;totalLeaders=&quot; + executiveSelector.size());
+List visibleLeaders = new ArrayList();
+
+WDS.sampleResult.sampleStart();
+
+for (WebElement element: executiveSelector){
+	//WDS.log.info(&quot;First Element =&quot; + element.getText());
+	boolean displaySelector = element.isDisplayed();
+	//WDS.log.info(&quot;DisplaySelector=&quot; + displaySelector);
+	if(displaySelector == true)
+		{
+			WDS.log.info(&quot;Element name = &quot; + element.getText());
+			visibleLeaders.add(element);
+			
+		}
+	else {
+		int index = executiveSelector.indexOf(element);
+		//WDS.log.info(&quot;element not visible &amp; removed index = &quot; + index);
+	}
+}
+
+for (WebElement newElementList: visibleLeaders){
+	WDS.log.info(&quot;Visible elemtns  =&quot; + newElementList.getText());
+}
+Random rand = new Random();
+int randomLeaderList = rand.nextInt(visibleLeaders.size());
+//String selectedNames =visibleLeaders.get(randomLeaderList).getText();
+//WDS.log.info(&quot;selected leaderlist =&quot; + selectedNames);
+visibleLeaders.get(randomLeaderList).click();
+
+for(String handle:WDS.browser.getWindowHandles())
+    {
+       WDS.log.info(handle);
+       WDS.browser.switchTo().window(handle);
+   //    String actualTitle = WDS.browser.getTitle();
+  //     WDS.log.info(&quot;Now in page &quot;+ actualTitle);
+ }
+ 
+waitForObject.until(ExpectedConditions.elementToBeClickable(By.xpath(&quot;//*[@id=&apos;bioDetailFeatureFlag&apos;]/div/div/div[2]/div[1]/a[1]&quot;)));
+
+WebElement downloadImage= WDS.browser.findElement(By.xpath(&quot;//a[text()=&apos;Download Image&apos;]&quot;));
+
+Thread.sleep(1000);
+
+	WDS.log.info(&quot;text of the element  &quot; + downloadImage.getText());
+	WDS.log.info(&quot;link of the element  &quot; + downloadImage.getAttribute(&quot;href&quot;));
+String imageURL = downloadImage.getAttribute(&quot;href&quot;);
+
+WDS.browser.get(imageURL);
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(720000);
+
+Thread.sleep(1000);
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">720000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_Leadership" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3622</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">DIRECT</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_HomePage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+String testUrl=&quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/homepage.html&quot;;
+
+WDS.sampleResult.sampleStart();
+WDS.browser.get(testUrl);
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_LeadershipPage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+Actions actions = new Actions(WDS.browser);
+
+WDS.sampleResult.sampleStart();
+
+WebElement topMenu = WDS.browser.findElement(By.cssSelector(&quot;.main &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)&quot;));
+actions.moveToElement(topMenu).perform();
+
+WebElement leadershipLink =WDS.browser.findElement(By.cssSelector(&quot;.subnav &gt; ul:nth-child(3) &gt; li:nth-child(2) &gt; a:nth-child(1)&quot;));
+
+actions.moveToElement(leadershipLink);
+actions.click().build().perform();
+
+WDS.sampleResult.sampleEnd();
+
+Thread.sleep(720000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">720000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Corteva_UI_Search" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3622</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">Search_UI.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">Search,FIlter</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Hompage" enabled="true">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+
+WDS.sampleResult.sampleStart();
+String HomepageUrl=&quot;https://delvmplagcoweb.sapient.com/content/corteva/corporate/our-homepage.html&quot;;
+//String HomepageUrl=&quot;http://delvmplcmsweb02.sapient.com/content/corteva/corporate/our-homepage.html&quot;;
+
+
+WDS.browser.get(HomepageUrl);
+
+WDS.sampleResult.sampleEnd();
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="738185615">Our-Homepage</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_ Search" enabled="true">
+          <stringProp name="WebDriverSampler.script">//import org.apache.commons.io.FileUtils;
+import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+
+WDS.sampleResult.sampleStart();
+
+WDS.browser.findElement(By.id(&quot;top-search&quot;)).sendKeys(new String[]{&quot;${Search}&quot;});
+WDS.browser.findElement(By.id(&quot;top-search&quot;)).sendKeys(new Keys[]{Keys.ENTER});
+
+WDS.sampleResult.sampleEnd();</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-507610754">Search Results</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Search Facet" enabled="true">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+import org.openqa.selenium.WebElement;
+
+WDS.sampleResult.sampleStart();
+
+WebElement filterSelector =WDS.browser.findElement(By.cssSelector(&quot;#filter_chosen &gt; a&quot;));
+filterSelector.click();
+
+//List dropDownList = WDS.browser.findElements(By.cssSelector(&quot;#filter_chosen &gt; div &gt; ul &gt; li:nth-child(n)&quot;));
+WDS.browser.findElement(By.cssSelector(&quot;#filter_chosen &gt; div &gt; ul &gt; li:nth-child(${FIlter})&quot;)).click();
+
+//for (WebElement element: dropDownList){
+//      WDS.log.info(element.getText());
+//}
+//Random rand = new Random();
+//int randomListItem = rand.nextInt(dropDownList.size());
+//String selectedValue =dropDownList.get(randomListItem).getText();
+//WDS.log.info(&quot;selected value =&quot; + selectedValue);
+//dropDownList.get(randomListItem).click();
+
+WDS.sampleResult.sampleEnd();
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">java</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-507610754">Search Results</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Corteva_UI_Click_SearchFilter_LInk" enabled="true">
+          <stringProp name="WebDriverSampler.script">import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+import org.openqa.selenium.WebElement;
+
+WDS.sampleResult.sampleStart();
+WDS.browser.executeScript(&quot;window.scrollBy(0,250)&quot;, &quot;&quot;);
+Thread.sleep(2000);
+WDS.browser.findElement(By.xpath(&quot;//*[@id=&apos;containerSearchFeatureFlag&apos;]/div/div[2]/div/div[2]/div[1]/a&quot;)).click();
+WDS.sampleResult.sampleEnd(); 
+Thread.sleep(720000);</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">720000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">E:\Results_Corteva\Corteva_Perf_AverageLoad_UI_Run2_2June.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

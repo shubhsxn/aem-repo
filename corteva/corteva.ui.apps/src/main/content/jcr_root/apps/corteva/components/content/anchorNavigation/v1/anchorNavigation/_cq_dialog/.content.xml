@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Anchor Navigation"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Anchor Navigation Settings"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <viewType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-custom-dropdown-showhide viewType"
+                                cq-dialog-dropdown-showhide-target=".viewType-option-listtype-showhide-target"
+                                fieldDescription="Select the View Type."
+                                fieldLabel="Select the View Type"
+                                name="./viewType"
+                                value="">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <anchorNavContainer
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Anchor Nav Container View"
+                                        value="anchorNavContainer"/>
+                                    <timeline
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Timeline View"
+                                        value="timeline"/>
+                                    <inPageNavigation
+                                        jcr:primaryType="nt:unstructured"
+                                        text="In Page Navigation View"
+                                        value="inPageNavigation"/>
+                                </items>
+                            </viewType>
+                            <setIntroText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="viewType-option-listtype-showhide-target foundation-layout-util-vmargin"
+                                showhidecustomtargetvalue="timeline">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <introText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        fieldDescription="Intro Text."
+                                        fieldLabel="Intro Text"
+                                        name="./introText"/>
+                                </items>
+                            </setIntroText>
+                            <anchorNavHidden
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./anchorNavHidden"/>
+                            <setAnchorLinks
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="viewType-option-listtype-showhide-target foundation-layout-util-vmargin"
+                                showhidecustomtargetvalue="timeline,anchorNavContainer">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <instructionalLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        class="isMandatory"
+                                        fieldDescription="Instructional Label"
+                                        fieldLabel="Instructional Label"
+                                        name="./instructionalLabel"
+                                        required="{Boolean}true"/>
+                                    <anchorLinks
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        fieldLabel="Anchor Links Section">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested=""
+                                            name="./anchorLinks">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <anchorLinkLabel
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            class="isMandatory"
+                                                            fieldDescription="Anchor Link label"
+                                                            fieldLabel="Anchor Link label"
+                                                            maxlength="{Long}25"
+                                                            name="./anchorLinkLabel"
+                                                            required="{Boolean}true"/>
+														<anchorLinkLabelHidden
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            class="anchor-linklabel-hidden"
+                                                            name="./anchorLinkLabelHidden"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </anchorLinks>
+                                </items>
+                            </setAnchorLinks>
+                            <setSections
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="viewType-option-listtype-showhide-target foundation-layout-util-vmargin"
+                                showhidecustomtargetvalue="inPageNavigation">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <label
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        class="isMandatory"
+                                        fieldDescription="Label - Sections"
+                                        fieldLabel="Label - Sections"
+                                        maxlength="{Long}40"
+                                        name="./label"
+                                        required="{Boolean}true"/>
+                                    <section
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        fieldLabel="Section"
+                                        minItems="2">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested=""
+                                            name="./sections">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <sectionLabel
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            class="isMandatory"
+                                                            fieldDescription="Section Title"
+                                                            fieldLabel="Section Title"
+                                                            name="./anchorLinkLabel"
+                                                            required="{Boolean}true"/>
+														<anchorLinkLabelHidden
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            class="anchor-linklabel-hidden"
+                                                            name="./anchorLinkLabelHidden"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </section>
+                                </items>
+                            </setSections>
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,313 @@
+.chart-container-content {
+  position: relative;
+  margin: 0 auto;
+  max-width: $content-width;
+}
+
+.chart-title {
+  @include fluid-type($heading-m, $heading-l);
+  @include fluid-line-height(54px, 60px);
+  @include margin-bottom(xxlarge);
+  font-family: $brand-font;
+  font-weight: 800;
+  text-align: center;
+}
+
+.chart {
+  @include fluid-type($font-m, $base-font);
+  height: auto;
+  max-width: $content-width;
+  background-color: $base;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
+  font-family: $body-font;
+  display: flex;
+}
+
+.chart-graph {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & .chart-row, & .chart-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    & .chart-label {
+      position: relative;
+      margin-right: 20px;
+      word-wrap: break-word;
+      word-break: break-word;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      @include fluid-line-height(16px, 23px);
+      
+      span {
+        /*position: absolute;
+        top: 50%;
+        transform: translateY(-50%);*/
+      }
+    }
+
+    & .chart-bar {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      height: 27px;
+    }
+  }
+
+  & .chart-bar-box, & .x-label {
+    @include margin(none);
+    display: inline-block;
+    width: 11.1111%;
+    height: inherit;
+  }
+
+  & .chart-row {
+    @include margin-bottom(xlarge);
+    display: flex;
+    align-items: center;
+    & .chart-bar-box {
+      &-1 {
+        opacity: .21;
+      }
+      &-2 {
+        opacity: .38;
+      }
+      &-3 {
+        opacity: .5;
+      }
+      &-4 {
+        opacity: .6;
+      }
+      &-5 {
+        opacity: .65;
+      }
+      &-6 {
+        opacity: .7;
+      }
+      &-7 {
+        opacity: .78;
+      }
+      &-8 {
+        opacity: .86;
+      }
+      &-9 {
+        opacity: 1;
+      }
+    }
+  }
+
+  & .chart-header {
+    @include fluid-type($font-s, $font-sm);
+    @include fluid-line-height(18px, 20px);
+    @include margin-bottom(medium);
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.chart-sidebar {
+  height: inherit;
+
+  &-content {
+    border-collapse: collapse;
+    border: 0;
+    & tr {
+      height: 42px;
+      @media only screen and (min-width: $tablet) {
+         &:first-child td {
+            padding-top: 0;
+         }
+      }
+    }
+    & td {
+      border-width: 0 0 1px 0;
+      border-bottom: 1px solid $border-quaternary;
+    }
+    & .bold {
+      font-weight: bold;
+      text-align: right;
+    }
+  }
+}
+
+.chart-disclaimer {
+  min-height: 70px;
+  height: auto;
+  width: 100%;
+  background-color: $brand-quaternary;
+
+  & div {
+    @include fluid-type($font-m, $base-font);
+    @include fluid-line-height(25px, 30px);
+    height: inherit;
+    font-family: $body-font;
+    
+    & p {
+      color: $base;
+    }
+  }
+
+  a {
+    color: $base;
+    font-size: $base-font;
+    font-weight: normal;
+    text-decoration: underline;
+  }
+}
+
+.chart-container {
+  &.maroon {
+    background-color: $brand-primary;
+
+    & .chart-bar-box {
+      background-color: $base;
+    }
+
+    & .chart-title, & .chart-graph {
+      color: $base;
+    }
+
+    & .chart-sidebar {
+      border-left: none;
+    }
+
+    & .chart-graph {
+      background-color: $brand-primary-darker;
+    }
+  }
+
+  &.gray {
+    background-color: $foundation-quaternary;
+
+    & .chart-bar-box {
+      background-color: $brand-primary;
+    }
+
+    & .chart-title, & .chart-graph {
+      color: $foundation-primary;
+    }
+
+    & .chart-graph {
+      background-color: $base;
+    }
+  }
+
+  &.white {
+    background-color: $base;
+
+    & .chart-bar-box {
+      background-color: $brand-primary;
+    }
+
+    & .chart-title, & .chart-graph {
+      color: $foundation-primary;
+    }
+
+    & .chart-graph {
+      background-color: $base;
+    }
+
+  }
+
+  &.disclaimer {
+    & .chart-disclaimer {
+      display: block;
+    }
+  }
+
+  &.sidebar {
+    & .chart-sidebar {
+      display: block;
+    }
+  }
+
+  &.no-sidebar {
+    & .chart-sidebar {
+      display: none;
+    }
+  }
+}
+
+// mobile view from tablet down
+@media only screen and (max-width: $tablet) {
+  .chart {
+    flex-direction: column;
+  }
+
+  .chart-graph {
+    @include padding(xxlarge xlarge small xlarge);
+
+    & .chart-label {
+      min-width: 80px;
+      max-width: 100px;
+      width: 20%;
+    }
+  }
+
+  .chart-sidebar {
+    @include margin-top(none);
+    @include margin-bottom(xxlarge);
+    border-top: 1px solid $border-quaternary;
+
+    &-content {
+        @include margin(none xlarge);
+        width: calc(100% - 60px);
+    }
+  }
+
+  .chart-disclaimer div {
+    @include padding(largemedium none largemedium none);
+    @include margin(none xlarge none xlarge);
+  }
+}
+
+// desktop view for tablet and up
+@media only screen and (min-width: $tablet) {
+  .chart-container {
+    &.sidebar {
+      & .chart-graph {
+        width: 65%;
+      }
+    }
+
+    &.no-sidebar {
+      & .chart-graph {
+        width: 100%;
+      }
+    }
+  }
+
+  .chart {
+    flex-direction: row;
+  }
+
+  .chart-graph {
+    @include padding(xxxlarge xxxlarge large xxxlarge);
+
+    & .chart-label {
+      min-width: 30%;
+      max-width: 170px;
+    }
+  }
+
+  .chart-sidebar {
+    @include margin-top(xxxlarge);
+    @include margin-bottom(xxxlarge);
+    border-left: 1px solid $border-quaternary;
+    width: 35%;
+
+    &-content {
+      width: 76%;
+      margin: 0 12%;
+    }
+  }
+
+  .chart-disclaimer div {
+    @include padding(large none large none);
+    @include margin(none xxxlarge none xxxlarge);
+  }
+}

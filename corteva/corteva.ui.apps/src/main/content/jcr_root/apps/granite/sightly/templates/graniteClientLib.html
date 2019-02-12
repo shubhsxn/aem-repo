@@ -1,0 +1,4 @@
+<template data-sly-template.include="${@ categories='Client Library categories', mode='optional: JS or CSS, case-insensitve'}"
+    data-sly-use.clientlib="${'apps.granite.sightly.templates.ClientLibUseObject' @ categories=categories, mode=mode}">
+           ${clientlib.include @ context='unsafe'}
+</template>

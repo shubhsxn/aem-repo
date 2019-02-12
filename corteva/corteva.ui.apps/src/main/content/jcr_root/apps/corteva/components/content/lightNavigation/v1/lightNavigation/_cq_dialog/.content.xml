@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Light Navigation"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Header Details"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <setLogoImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                assetfieldstobepopulated="\{&quot;imageAltText&quot;:&quot;./logoAltText&quot;}"
+                                class="assetMetadataClass">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <logoImage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="corteva/components/content/commonElements/image/smartimage"/>
+                                    <logoAltText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="corteva/components/content/commonElements/logo/logoAltText"/>
+                                </items>
+                            </setLogoImage>
+							<logoUrl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/include"
+                                path="corteva/components/content/commonElements/logo/logoUrl"/>
+                            <brandlogotxt
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter Brand Logo Text"
+                                fieldLabel="Brand Logo Text"
+                                maxlength="{Long}35"
+                                name="./brandlogotxt"
+                                required="{Boolean}true"/>
+                            <headertxt
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter Header Text"
+                                fieldLabel="Header Text"
+                                maxlength="{Long}35"
+                                name="./headertxt"
+                                required="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Navigation Links"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <navLinksDisplay
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="showhideCheckBox"
+                                defaultChecked="{Boolean}true"
+                                ignoreData="{Boolean}false"
+                                name="./navLinksDisplay"
+                                showhide-target=".showhide-target"
+                                text="Show Nav Links"
+                                uncheckedValue="false"
+                                value="true"/>
+                            <navigationlink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="showhide-target"
+                                showhide-target-value="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <navLinks
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        fieldLabel="Navigation Link"
+                                        maxitems="6"
+                                        text="Navigation Link">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested=""
+                                            fieldLabel="Navigation Links"
+                                            name="./navLinks"
+                                            text="Navigation Link">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items
+                                                jcr:primaryType="nt:unstructured"
+                                                fieldLabel="Navigation Links"
+                                                text="Navigation Links">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <linkLabel
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/include"
+                                                            path="/apps/corteva/components/content/commonElements/link/linkLabel"/>
+                                                        <linkUrl
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/include"
+                                                            path="/apps/corteva/components/content/commonElements/link/linkUrl"/>
+                                                        <linkAction
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/include"
+                                                            path="/apps/corteva/components/content/commonElements/link/linkAction"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </navLinks>
+                                </items>
+                            </navigationlink>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="showhide-target"
+                                showhide-target-value="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <buttontext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/button/buttontext"/>
+                                    <buttonlink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/button/buttonlink"/>
+                                    <buttonAction
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/include"
+                                        path="/apps/corteva/components/content/commonElements/button/buttonAction"/>
+                                </items>
+                            </button>
+                        </items>
+                    </columns>
+                </items>
+            </tab2>
+        </items>
+    </content>
+</jcr:root>

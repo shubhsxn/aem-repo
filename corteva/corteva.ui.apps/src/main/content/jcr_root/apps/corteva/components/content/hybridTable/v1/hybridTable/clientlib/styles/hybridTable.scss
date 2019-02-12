@@ -1,0 +1,220 @@
+.hybrid-table-container {
+  position: relative;
+  h2 {
+    @include fluid-type(24px, $heading-m);
+    @include fluid-line-height(28px, 36px);
+  }    
+
+  .hybrid-table {
+    border: none;
+    max-width: 1500px;
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, .15);
+    margin: auto;
+    table-layout: fixed;
+  }
+
+  .hybrid-title-band {
+    @include padding-bottom(xlarge);
+    display: flex;
+    align-items: center;
+  }
+  
+  .hybrid-table-bg {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: $foundation-tertiary;
+    z-index: -1;
+  }
+  .title-icon {
+    height: 72px;
+    width: 72px;
+  }
+
+  picture + h2 {
+    @include padding-left(large);
+  }
+
+  .arrow-container {
+    @include padding-left(small);
+    display: flex;
+    flex-direction: column;
+    &-up,
+    &-down {
+      background: $arrow-down;
+      width: 8px;
+      height: 6px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    &-up {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    &-down {
+      @include margin-top(xsmall);
+    }
+  }
+
+  .sort-arrow {
+    @include margin-bottom(xxsmall);
+    width: 8px;
+    height: 5.6px;
+    display: block;
+  }
+
+  td,
+  th {
+    @include padding-right(medium);
+  }
+    
+  tbody td:first-child,
+  thead th:first-child {
+    padding-left: 20px;
+  }
+
+  thead {
+    border-bottom: none;
+  }
+
+  thead th {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 168px;
+  }
+
+  th.header-mobile,
+  th.header-tablet,
+  th.header-desktop {
+    border: none;
+    border-right: 0 solid $foundation-primary;
+    background: $foundation-primary;
+    color: $base;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    border-radius: 0;
+    font-size: 14px;
+  }
+
+  .th-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .header-text {
+    max-width: 82%;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    overflow: auto;
+  }
+
+  th.header-desktop > .arrow-container {
+    @include margin-left(-2%);
+  }
+
+  th.header-desktop:nth-child(7),
+  th.header-desktop:nth-child(9) {
+    >.arrow-container {
+      @include margin-left(-12%);
+    }
+  }
+
+  tbody td{
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+
+  .table-cell,
+  .table-cell-desktop,
+  .table-cell-tablet {
+    font-size: 14px;
+    line-height: 26px;
+    border: none;
+  }
+
+  .table-row {
+    border: none;
+    color: $brand-primary;
+    font-family: 'Gilroy', 'Helvetica Neue', 'Neue Helvetica', 'Helvetica', 'Arial', sans-serif;
+    font-size: $font-m;
+    font-weight: 800;
+    line-height: 20px;
+    a {
+      font-family: 'Gilroy', 'Helvetica Neue', 'Neue Helvetica', 'Helvetica', 'Arial', sans-serif;
+      font-size: $font-m;
+      font-weight: 800;
+      cursor: pointer;
+    }
+  }
+
+  .body-cell-value {
+    order: 2;
+  }
+
+  .new-label {
+    order: 1;
+    color: $foundation-primary;
+  }
+
+  .table-body-row {
+    border-bottom: 1px solid $border-primary;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .table-body-row:hover {
+    background-color: rgba(244, 124, 6, .2);
+  }
+
+  @media only screen and (max-width: $mobile) {
+    thead th {
+        top: 60px;
+    }
+    th.header-mobile,
+    th.header-tablet,
+    th.header-desktop {
+        min-width: initial;
+    }
+    th.header-tablet {
+      display: none;
+    }
+    th.header-desktop {
+      display: none;
+    }
+    .table-cell-tablet {
+      display: none;
+    }
+    .table-cell-desktop {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: $mobile) and (max-width: 1024px) {
+    th.header-mobile,
+    th.header-tablet,
+    th.header-desktop {
+        min-width: initial;
+    }
+    th.header-tablet {
+      display: table-cell;
+    }
+    th.header-desktop {
+      display: none;
+    }
+    .table-cell-desktop {
+      display: none;
+    }
+    .table-desk-tablet {
+      display: table-cell !important;
+    }
+  }
+}

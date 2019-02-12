@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:language="it"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="nt:folder">
+    <all
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="all"
+        sling:message="Tutti"/>
+    <allContent
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="containerSearch.allContent"
+        sling:message="Tutti i contenuti"/>
+	<ofText      
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="containerSearch.ofText"
+        sling:message="of"/>
+    <button
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="buttonText"
+        sling:message="Chiudi"/>
+    <copyright
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="copy"
+        sling:message="Copyright"/>
+    <goButtonLabel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="goButtonLabel"
+        sling:message="Vai a "/>
+    <jumpToSection
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="jumpToSection"
+        sling:message="Vai alla sezione"/>
+    <loadMore
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="loadMore"
+        sling:message="Scopri di più"/>
+    <menu
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="globalHeader.menu"
+        sling:message="menu"/>
+    <navHeaderTabsSection
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="navHeaderTabs.navHeaderTabsSection"
+        sling:message="NavHeaderTab Section"/>
+    <next
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="galleryImage.next"
+        sling:message="Continua"/>
+    <noReferenceSearchBasePath
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="noReferenceSearch.noReferenceSearchBasePath"
+        sling:message="Please Configure Base Path."/>
+    <previous
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="galleryImage.previous"
+        sling:message="Precedente"/>
+    <scrollToTop
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="scrollToTop.backToTop"
+        sling:message="Torna su"/>
+</jcr:root>

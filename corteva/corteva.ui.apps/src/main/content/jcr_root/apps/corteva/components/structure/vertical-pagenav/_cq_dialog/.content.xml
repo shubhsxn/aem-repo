@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[cq.common.wcm,cq.siteadmin.admin.properties]"
+    mode="edit">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="cq-dialog-content-page">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container"
+                rel="cq-siteadmin-admin-properties-tabs">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+                    type="nav"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <displayverticlepage
+                        cq:showOnCreate="{Boolean}true"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Vertical Nav In Page"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <vertical-type
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="cq-dialog-custom-dropdown-showhide"
+                                        cq-dialog-dropdown-showhide-target=".vertical-field-hide-show"
+                                        defaultValue="No"
+                                        fieldDescription="This page template can be used to display non-article (e.g. legal policies) or article (e.g. long-form research) content. Select Yes or No to indicate whether this page contains article content. If Yes, this content may appear in Article Feeds. If No (default), this page will not appear in Article Feeds."
+                                        fieldLabel="Is this an Article  Page?"
+                                        name="./vertical-type">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <option1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Yes"
+                                                value="yes"/>
+                                            <option2
+                                                jcr:primaryType="nt:unstructured"
+                                                selected="{Boolean}true"
+                                                text="No"
+                                                value="no"/>
+                                        </items>
+                                    </vertical-type>
+                                    <section
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Article Configuration"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <set-article-type
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                class="hide vertical-field-hide-show"
+                                                showhidecustomtargetvalue="yes">
+                                                <items
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured">
+                                                    <articletype
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        autocreateTag="{Boolean}true"
+                                                        fieldDescription="Select the Article Type tag that most accurately describes this page's content. This displays in search results and enables the article filter. (Required)"
+                                                        fieldLabel="Article Type"
+                                                        multiple="{Boolean}false"
+                                                        name="./cq:articleType"
+                                                        required="{Boolean}true"
+                                                        rootPath="/etc/tags/corteva/contentTypes/article">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cq-msm-lockable="cq:articleType"/>
+                                                    </articletype>
+                                                    <displayarticletype
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        fieldDescription="Use this toggle to show or hide the article type label on the page. If checked (default), the article type label will appear. If unchecked, the label will be hidden."
+                                                        name="./displayArticleType"
+                                                        renderReadOnly="{Boolean}true"
+                                                        text="Display Article Type label on page"
+                                                        value="true">
+                                                        <granite:data
+                                                            jcr:primaryType="nt:unstructured"
+                                                            allowBulkEdit="{Boolean}true"
+                                                            cq-msm-lockable="displayArticleType"/>
+                                                    </displayarticletype>
+                                                    <author
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        cq-msm-lockable="author"
+                                                        fieldDescription="Specify the author of this article, to be displayed as a byline on the page. (Optional)"
+                                                        fieldLabel="Author Byline"
+                                                        name="./author"
+                                                        renderReadOnly="{Boolean}true"/>
+                                                    <customdisplaydate
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        class="isMandatory"
+                                                        cq-msm-lockable="displayDate"
+                                                        displayedFormat="MMMM DD, YYYY hh:mm a"
+                                                        displayTimezoneMessage="{Boolean}true"
+                                                        fieldDescription="Select the date to be displayed as the publish date for this article, both on the page and in article feeds. (This allows you to specify a custom date independent of system-generated publish/modified dates.)"
+                                                        fieldLabel="Custom Display Date"
+                                                        name="./displayDate"
+                                                        renderReadOnly="{Boolean}true"
+                                                        required="{Boolean}true"
+                                                        type="datetime"/>
+                                                    <shortdescription
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                        class="isMandatory"
+                                                        cq-msm-lockable="author"
+                                                        fieldDescription="Provide a short description summarizing this article, to be displayed in article feeds. Maximum of  250 characters. (Required)"
+                                                        fieldLabel="Short Description"
+                                                        maxlength="{Long}250"
+                                                        name="./shortDescription"
+                                                        renderReadOnly="{Boolean}true"
+                                                        required="{Boolean}true"/>
+                                                </items>
+                                            </set-article-type>
+                                            <articletopic
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}false"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                allowBulkEdit="{Boolean}true"
+                                                autocreateTag="{Boolean}true"
+                                                fieldLabel="Article Topic"
+                                                multiple="{Boolean}true"
+                                                name="./cq:articleTopicTags"
+                                                rootPath="/etc/tags/corteva/articleTopics/articleTopics">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-msm-lockable="cq:articleTopicTags"/>
+                                            </articletopic>
+                                            <brand
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}false"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                allowBulkEdit="{Boolean}true"
+                                                autocreateTag="{Boolean}true"
+                                                fieldLabel="Brand"
+                                                multiple="{Boolean}true"
+                                                name="./cq:brandTags"
+                                                rootPath="/etc/tags/corteva/brands">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-msm-lockable="cq:brandTags"/>
+                                            </brand>
+                                            <productType
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}false"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                allowBulkEdit="{Boolean}true"
+                                                autocreateTag="{Boolean}true"
+                                                fieldLabel="Product Type"
+                                                multiple="{Boolean}true"
+                                                name="./cq:productTypeTags"
+                                                rootPath="/etc/tags/corteva/productTypes">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-msm-lockable="cq:productTypeTags"/>
+                                            </productType>
+                                            <displaylastupdateddate
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}false"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./displayLastUpdatedate"
+                                                renderReadOnly="{Boolean}true"
+                                                text="Display Last Updated Date"
+                                                value="true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"
+                                                    cq-msm-lockable="displayLastUpdatedate"/>
+                                            </displaylastupdateddate>
+                                            <vertical-nav-in-page
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}false"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                class="hide vertical-field-hide-show"
+                                                showhidetargetvalue="no">
+                                                <items
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"/>
+                                            </vertical-nav-in-page>
+                                        </items>
+                                    </section>
+                                    <imagesection
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Images"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <set-article-type
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                class="hide vertical-field-hide-show"
+                                                showhidecustomtargetvalue="yes">
+                                                <items
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured">
+                                                    <primaryImage
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="corteva/components/content/contextualpathbrowser"
+                                                        fieldDescription="Select an image that will be displayed dynamically in other components, such as article feed, dynamic cards and tiles, social sharing, etc. (Required)"
+                                                        fieldLabel="Primary Image"
+                                                        name="./primaryImage"
+                                                        contentRootPath="/content/dam/dpagco"/>
+                                                    <primaryImageMobile
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="corteva/components/content/contextualpathbrowser"
+                                                        fieldDescription="If the Primary Image does not render well on mobile due to cropping, select a different image here that is cropped to fit mobile viewport. Mobile aspect ratio is 375x200. (Optional)"
+                                                        fieldLabel="Primary Image For Mobile"
+                                                        name="./primaryImageMobile"
+                                                        contentRootPath="/content/dam/dpagco"/>
+                                                </items>
+                                            </set-article-type>
+                                        </items>
+                                    </imagesection>
+                                </items>
+                            </column>
+                        </items>
+                    </displayverticlepage>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

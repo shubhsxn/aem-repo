@@ -1,0 +1,48 @@
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+	<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+            Edit Comparative Image Slider
+    </sly>
+      <div class="band white">
+        <div class="band-content">
+          <div class="atm01-header-v3__wrapper">
+            <div class="col s12 m12 l12">
+                <h2>
+                    ${properties.title}          
+                </h2>
+                
+                <p class="subhead">${properties.introText}</p>
+                
+            </div>
+          </div> 
+          <sly data-sly-use.comparativeImage="com.corteva.model.component.models.ComparativeImageSliderModel">   
+            <ul class="str04-compare-image">
+              <li>
+                <picture>
+                  <source srcset="${comparativeImage.leftImage.desktopImagePath}" media="(min-width: 1200px)">
+
+                  <source srcset="${comparativeImage.leftImage.tabletImagePath}" media="(min-width: 992px)">
+
+                  <source srcset="${comparativeImage.leftImage.mobileImagePath}" media="(min-width: 720px)">
+                  
+                  <img class="lazyload" src="${comparativeImage.leftImage.desktopImagePath}" alt="${properties.leftAltText}">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="${comparativeImage.rightImage.desktopImagePath}" media="(min-width: 1200px)">
+
+                  <source srcset="${comparativeImage.rightImage.tabletImagePath}" media="(min-width: 992px)">
+
+                  <source srcset="${comparativeImage.rightImage.mobileImagePath}" media="(min-width: 720px)">
+                  
+                  <img class="lazyload" src="${comparativeImage.rightImage.desktopImagePath}" alt="${properties.rightAltText}">
+                </picture>
+              </li>
+            </ul>
+          </sly>
+          <p class="image-caption">${properties.caption}</p>
+        </div>
+      </div>
+    </sly>
+</div>

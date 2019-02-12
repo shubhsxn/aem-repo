@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    prop.replication-action-type="ACTIVATE"
+    prop.rules.hierarchical="[/etc/corteva/product=/bin/corteva/product&amp;/content/corteva/na/us/en/homepage/product-finder&amp;/content/corteva/na/us/en/homepage/labels-and-safety-data-sheets,/content/corteva/na/us/en/homepage/products-and-solutions/.*=/content/corteva/na/us/en/homepage/labels-and-safety-data-sheets&amp;/content/corteva/na/us/en/homepage/product-finder]"/>
+    
+    
+    
+

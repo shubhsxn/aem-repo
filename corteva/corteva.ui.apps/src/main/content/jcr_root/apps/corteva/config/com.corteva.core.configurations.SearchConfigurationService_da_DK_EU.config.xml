@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    searchUrl="https://stage-sp10056bcc.guided.ss-omtrdc.net/"
+    sortOption="Relevans###m_DuPontSort=relevance,Dato (sidst opdateret)###m_DuPontSort=date"
+    filterOption="Artikel###q1=Artikel;x1=contentType,Om Corteva###q1=Om+Corteva;x1=contentType,Innovation###q1=Innovation;x1=contentType,Bæredygtighed###q1=B%C3%A6redygtighed;x1=contentType,Karriere###q1=Karriere;x1=contentType,Aktivitet###q1=Aktivitet;x1=contentType,FAQ###q1=FAQ;x1=contentType,Teknisk dokumentation###q1=Teknisk+dokumentation;x1=contentType,Middel###q1=Middel;x1=contentType,Biografi###q1=Biografi;x1=contentType,Medier###q1=Medier;x1=contentType,Legal notice###q1=Legal+notice;x1=contentType"
+    autoCompleteUrl="https://content.atomz.com/autocomplete/sp10/05/6b/cc-stage/"
+    minCharacterLength="3"
+    maxSuggestionLength="5"
+
+/>

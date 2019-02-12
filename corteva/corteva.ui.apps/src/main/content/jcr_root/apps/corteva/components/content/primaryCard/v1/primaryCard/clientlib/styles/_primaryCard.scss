@@ -1,0 +1,21 @@
+
+.det18-tile-full-bleed {
+    span {
+        padding: 20px 10px 20px 10px;
+    }
+}
+
+.con02-cards-3-column {
+    .det09-card-cta {
+        height: 430px;
+    }
+}
+
+.det18-card-responsive{
+	a{
+		@media screen and (max-width: $tablet) {
+            position: static;
+		}
+	}
+}
+

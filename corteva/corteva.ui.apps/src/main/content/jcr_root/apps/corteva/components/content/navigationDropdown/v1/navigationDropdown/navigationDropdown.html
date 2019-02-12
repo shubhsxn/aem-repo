@@ -1,0 +1,40 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+	<sly data-sly-test="${comElement.featureFlagState == 'on'}">
+		<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" >
+			Edit Navigation Dropdown
+		</sly>
+		<sly data-sly-use.navDrop="com.corteva.model.component.models.NavDropdownModel">
+			<nav>
+				<div class="subnav">
+					<sly data-sly-test="${properties.showPromo=='yes'}">
+						<div class="image" style="background-image: url(${navDrop.promoImg.desktopImagePath @ context='uri'});"></div>
+						<div class="featured">
+						<sly data-sly-test="${properties.promoUrlAction=='_self'}">
+							<a data-analytics-type="global-sub-navigation" target="${properties.promoUrlAction}" href="${navDrop.promoUrl @ extension='html'}">${properties.title}</a>
+						</sly>
+						<sly data-sly-test="${properties.promoUrlAction=='_blank'}">
+							<a data-analytics-type="global-sub-navigation" target="${properties.promoUrlAction}" rel="noopener noreferrer" href="${navDrop.promoUrl @ extension='html'}">${properties.title}</a>
+						</sly>
+								${properties.teaserText @ context='html'}
+						</div>
+					</sly>
+					<ul>
+						<sly data-sly-use.links="com.corteva.model.component.models.LinkListModel">
+							<sly data-sly-list="${links.navigationLinks}">
+								<li><a data-analytics-type="global-sub-navigation" href="${item.linkUrl @ extension='html'}">${item.linkLabel}</a></li>
+							</sly>
+						</sly>
+					</ul>
+				</div>
+			</nav>
+		</sly>
+	</sly>
+</div>

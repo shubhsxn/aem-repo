@@ -1,0 +1,4 @@
+#base=js
+
+dist/globalHeader.js
+dist/skipNavigation.js

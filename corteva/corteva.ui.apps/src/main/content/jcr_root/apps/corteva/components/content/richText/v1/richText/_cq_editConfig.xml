@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    cq:dialogMode="floating"
+    cq:disableTargeting="{Boolean}true"
+    cq:layout="editbar"
+    jcr:mixinTypes="[cq:ReplicationStatus]"
+    jcr:primaryType="cq:EditConfig">
+    <cq:listeners
+        jcr:primaryType="cq:EditListenersConfig"
+        afterdelete="REFRESH_PAGE"
+        afteredit="REFRESH_PAGE"/>
+    <cq:inplaceEditing
+        jcr:primaryType="cq:InplaceEditingConfig"
+        active="{Boolean}true"
+        editorType="text">
+        <config jcr:primaryType="nt:unstructured">
+            <rtePlugins jcr:primaryType="nt:unstructured">
+                <links
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <edit
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <findreplace
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <format
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <image
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <keys
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <justify
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <lists
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <misctools
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <paraformat
+                    jcr:primaryType="nt:unstructured"
+                    features="*">
+                    <formats jcr:primaryType="cq:WidgetCollection">
+                        <paragraph
+                            jcr:primaryType="nt:unstructured"
+                            description="Paragraph"
+                            tag="p"/>
+                        <heading1
+                            jcr:primaryType="nt:unstructured"
+                            description="Heading 1"
+                            tag="h1"/>
+                        <heading2
+                            jcr:primaryType="nt:unstructured"
+                            description="Heading 2"
+                            tag="h2"/>
+                        <heading3
+                            jcr:primaryType="nt:unstructured"
+                            description="Heading 3"
+                            tag="h3"/>
+                        <heading4
+                            jcr:primaryType="nt:unstructured"
+                            description="Heading 4"
+                            tag="h4"/>
+                        <blockquote
+                            jcr:primaryType="nt:unstructured"
+                            description="Block Quote"
+                            tag="blockquote"/>
+                    </formats>
+                </paraformat>
+                <spellcheck
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <styles
+                    jcr:primaryType="nt:unstructured"
+                    features="*">
+                    <styles jcr:primaryType="cq:WidgetCollection">
+                        <X-Small-Body-Paragraph
+                            jcr:primaryType="nt:unstructured"
+                            cssName="x-small"
+                            text="X-Small Body Paragraph"/>
+                        <Small-Body-Paragraph
+                            jcr:primaryType="nt:unstructured"
+                            cssName="small"
+                            text="Small Body Paragraph"/>
+                        <Large-Paragraph
+                            jcr:primaryType="nt:unstructured"
+                            cssName="large"
+                            text="Large Paragraph"/>
+                        <Label-Header
+                            jcr:primaryType="nt:unstructured"
+                            cssName="label"
+                            text="Label Header"/>
+                        <Subheader
+                            jcr:primaryType="nt:unstructured"
+                            cssName="subhead"
+                            text="subheader"/>
+                        <Download-Link
+                            jcr:primaryType="nt:unstructured"
+                            cssName="download-link"
+                            text="Download Link"/>
+                    </styles>
+                </styles>
+                <subsuperscript
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <table
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <undo
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+            </rtePlugins>
+        </config>
+    </cq:inplaceEditing>
+</jcr:root>

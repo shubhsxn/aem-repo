@@ -1,0 +1,392 @@
+.det01-accordion-list {
+  @media screen and (max-width: $mobile) {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  @media print {
+    padding: 0;
+  }
+
+  .atm01-header-v1__wrapper * {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  margin: 0;
+
+  .item {
+    position: relative;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+
+    /* position */
+    .item-content {
+      height: 0px;
+      overflow: hidden;
+      transition-delay: 0s;
+      margin-top: rem(15px);
+    }
+
+    /* open when active */
+    &.active .item-content {
+      height: auto;
+      overflow: auto;
+      grid-row: 2;
+    }
+
+    .item-toggle {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: rem(28px);
+      appearance: none;
+      cursor: pointer;
+      z-index: 5;
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+
+    /* Styling contents now */
+    border-bottom: 1px solid $border-secondary;
+    padding: rem(21px) 0;
+
+    @media screen and (max-width: $mobile) {
+      padding-bottom: rem(16px);
+      padding-top: rem(19px);
+      &:first-child{
+        padding-top: 0;
+      }
+    }
+
+    h3 {
+      font-size: $font-xl;
+      line-height: rem(28px);
+      min-height: rem(28px);
+      padding-right: rem(30px);
+      cursor: pointer;
+      color: $brand-primary;
+      transition: color 400ms ease;
+      position: relative;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:after {
+        content: "";
+        width: 25px;
+        height: 26px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        background: $base url("../vectors/chevron-down.svg") center center no-repeat;
+        transition: background 400ms ease;
+        background-size: contain;
+        pointer-events: none;
+        z-index: 6;
+        transform: translateY(-50%);
+      }
+    }
+
+    &.active h3 {
+      color: $foundation-primary;
+    }
+
+    &.active h3:after {
+      background-color: $foundation-tertiary;
+      background-image: url("../vectors/chevron-up.svg");
+    }
+
+    .item-content {
+
+      img,
+      .icon {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: rem(10px);
+      }
+
+      p {
+        margin: rem(10px) 0 rem(10px);
+        @media screen and (max-width: $mobile) {
+          margin-top: rem(2px);
+          margin-bottom: 0;
+        }
+      }
+
+      .read-more {
+        font-size: $font-m;
+        line-height: rem(20px);
+        font-weight: 700;
+      }
+    }
+  }
+
+  /* No-collapse mode */
+  &.no-collapse:not(.collapse) {
+    .item.active {
+      grid-row-gap: 0;
+    }
+
+    h3 {
+      color: $foundation-primary;
+      cursor: default;
+      pointer-events: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    h3:after {
+      display: none;
+    }
+
+    .item-content {
+      height: auto;
+      max-height: none;
+      margin: 0;
+    }
+  }
+
+  /*      Icon Mode       */
+  &.icons {
+
+    /* When collapse is disabled (all items visible)  */
+    &:not(.collapse) .item {
+      grid-row-gap: 0;
+      padding: rem(21px) 0;
+      padding-left: rem(107px);
+
+      @supports (display: grid) {
+        padding-left: 35px;
+      }
+      &.active {
+        grid-row-gap: 0;
+      }
+
+      h3 {
+        position: static;
+        color: $foundation-primary;
+        height: auto;
+        align-self: end;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      img,
+      .icon {
+        align-self: end;
+        top: 0;
+
+        @supports (display: grid) {
+          transform: translateY(50%);
+        }
+      }
+
+      .item-content {
+        height: auto;
+        max-height: none;
+        margin: 0;
+        grid-row: 2;
+      }
+    }
+
+    .item {
+      padding-left: rem(107px);
+      position: relative;
+      padding-top: rem(40px);
+      padding-bottom: rem(40px);
+      margin: 0 0 0 0;
+
+      img,
+      .icon {
+        width: 67px;
+        height: 67px;
+        position: absolute;
+        top: 40px;
+        left: 0;
+      }
+
+      svg {
+        position: absolute;
+        left: 0;
+        top: 12px;
+        background: $brand-primary;
+        border-radius: 50%;
+        padding: rem(30px);
+        height: 60px;
+        width: 60px;
+
+        path {
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      @supports (display: grid) {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content;
+        grid-gap: 0px rem(40px);
+        padding: rem(20px) 0;
+
+        @media screen and (max-width: $mobile) {
+          padding: rem(10px) 0;
+          grid-column-gap: 20px;
+        }
+
+        img,
+        svg,
+        .icon {
+          grid-column: 1;
+          grid-row: 1;
+          position: static;
+          display: block;
+          align-self: center;
+          justify-self: center;
+          margin: 0;
+          padding: 0;
+          top: 0;
+          left: 0;
+        }
+
+        h3 {
+          grid-column: 2;
+          grid-row: 1;
+          align-self: center;
+          justify-self: stretch;
+          margin: 0;
+          padding: 0;
+        }
+
+        .item-content {
+          grid-column: 2;
+          grid-row: 1;
+          align-self: start;
+          margin-top: rem(-15px);
+
+          p {
+            margin-top: 0;
+          }
+        }
+
+        &.active .item-content {
+          grid-row: 2;
+        }
+      }
+    }
+  }
+}
+
+
+/* Overrides for thumbnail mode */
+
+.det01-accordion-list.thumbnails {
+  .item {
+    padding-left: rem(281px);
+    padding-top: rem(34px);
+    padding-bottom: rem(34px);
+    margin: 0 0;
+    min-height: rem(240px);
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    h3 {
+      position: static;
+      color: $foundation-primary;
+      height: auto;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    .item-content {
+      height: auto;
+      max-height: none;
+      margin: 0;
+
+      img,
+      .icon {
+        width: rem(241px);
+        height: rem(160px);
+        position: absolute;
+        object-fit: cover;
+        left: 0;
+        top: 30px;
+      }
+
+      p {
+        margin-top: rem(10px);
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding-left: 0;
+
+      .item-content img {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .item-content {
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+
+/* Overrides for text-only mode */
+
+.det01-accordion-list.thumbnails.text-only {
+  .item {
+    padding-left: 0;
+    padding-top: 0;
+    margin: rem(30px) 0;
+
+    h3 {
+      position: static;
+      color: $foundation-primary;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    .item-content {
+      height: auto;
+      max-height: none;
+      margin: 0;
+
+      img,
+      .icon {
+        display: none;
+      }
+    }
+  }
+}
+
+.det01-accordion-list.no-images {
+
+  
+  .item .item-content .icon {
+    display: none;
+  }
+}

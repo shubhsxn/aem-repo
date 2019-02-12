@@ -1,0 +1,26 @@
+.navHeaderTabs {
+    .band {
+        .band  {
+            padding: 0;
+        }
+    }
+    .columnControl {
+	    max-width: calc(#{$content-width} + 40px);
+	    margin: 0 auto;
+	    [class*=col-] {
+	    	padding: 0;
+	    }
+	}
+	.rightRailRte {
+		margin-top: 50px;
+		@media screen and (min-width: $mobile) {
+			margin-top: 11rem;
+		}
+	}
+	.articleFilter.section {
+		padding:0;
+		@media screen and (min-width: 1300px){
+			padding: 0 0 0 20px;
+		}
+	}
+}

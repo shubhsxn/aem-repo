@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    searchUrl="https://stage-sp10056bcf.guided.ss-omtrdc.net/"
+    sortOption="Aktualumas###m_DuPontSort=relevance,Paskutinė modifikavimo data###m_DuPontSort=date"
+    filterOption="Straipsnis###q1=Straipsnis;x1=contentType,Apie „Corteva“###q1=Apie+%E2%80%9ECorteva%E2%80%9C;x1=contentType,Inovatyvumas###q1=Inovatyvumas;x1=contentType,Tvarumas###q1=Tvarumas;x1=contentType,Karjera###q1=Karjera;x1=contentType,Renginys###q1=Renginys;x1=contentType,DUK###q1=DUK;x1=contentType,Techniniai dokumentai###q1=Techniniai+dokumentai;x1=contentType,Produktas###q1=Produktas;x1=contentType,Biografija###q1=Biografija;x1=contentType,Žiniasklaida###q1=%C5%BDiniasklaida;x1=contentType,Juridiniai dalykai###q1=Juridiniai+dalykai;x1=contentType"
+    autoCompleteUrl="https://content.atomz.com/autocomplete/sp10/05/6b/cf-stage/"
+    minCharacterLength="3"
+    maxSuggestionLength="5"
+
+/>

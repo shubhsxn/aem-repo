@@ -1,0 +1,17 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+  ~   This software is the confidential and proprietary information of SapientRazorfish_,
+  ~  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  ~  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<sly data-sly-use.body="body.js" data-sly-use.templatedContainer="com.day.cq.wcm.foundation.TemplatedContainer"/>
+<sly data-sly-test="${!templatedContainer.hasStructureSupport}"
+     data-sly-resource="${body.resourcePath @ resourceType='wcm/foundation/components/parsys'}"/>
+
+    <sly data-sly-test="${templatedContainer.hasStructureSupport}"
+         data-sly-repeat.child="${templatedContainer.structureResources}"
+         data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div'}"/>
+
+<sly data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"/>
+<sly data-sly-include="footerlibs.html"/>
+<sly data-sly-include="featureflag.html"/>

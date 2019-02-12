@@ -1,0 +1,91 @@
+.str04-compare-image {
+  margin-bottom: rem(23px);
+
+  &.ready {
+    width: auto;
+    font-size: 0;
+    position: relative;
+    user-select: none;
+
+    picture {
+      display: none;
+    }
+
+
+
+    li {
+      width: 50%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+      user-select: none;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      background-size: 100vw auto;
+      background-repeat: no-repeat;
+      background-position: top left;
+
+      z-index: 1;
+
+      &:last-child {
+        left: auto;
+        right: 0;
+        width: 100%;
+        cursor: e-resize;
+
+        z-index: 0;
+
+        background-position: top right;
+      }
+
+      &:first-child {
+        border-right: 2px solid rgba(255, 255, 255, 1);
+        transition: border 240ms ease-in;
+        transition-delay: 320ms;
+        cursor: w-resize;
+        /*    The slider itself */
+        &:before {
+          content: "";
+          width: 18px;
+          height: 100%;
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          background: url("../vectors/slider.svg") center center no-repeat;
+          cursor: col-resize;
+          transform: translateX(50%);
+          opacity: 1;
+          transition: opacity 240ms ease-in;
+          transition-delay: 320ms;
+
+        }
+      }
+    }
+
+    li {
+      transition: width 300ms ease;
+    }
+    &:active li {
+      transition: width 0ms;
+    }
+
+    &:hover li:first-child {
+      border-right: 2px solid rgba(255, 255, 255, 1);
+      transition-delay: 0ms;
+      &:before {
+        opacity: 1;
+        transition-delay: 0ms;
+      }
+    }
+  }
+
+  ~ p.image-caption {
+    line-height: 26px;
+    margin: 23px 0;
+  }
+}

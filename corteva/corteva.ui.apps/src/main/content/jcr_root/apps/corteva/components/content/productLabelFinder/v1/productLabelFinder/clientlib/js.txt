@@ -1,0 +1,3 @@
+#base=js
+dist/label-finder.js
+dist/product-label-accordion.js

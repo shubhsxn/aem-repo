@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="15" viewBox="0 0 20 15">
+  <defs>
+    <rect id="flag-middle3-a" width="20" height="15"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="flag-middle3-b" fill="#fff">
+      <use xlink:href="#flag-middle3-a"/>
+    </mask>
+    <use fill="#D8D8D8" xlink:href="#flag-middle3-a"/>
+    <g mask="url(#flag-middle3-b)">
+      <g transform="translate(-2)">
+        <g transform="translate(.5 .004)">
+          <polygon fill="#0C590B" fill-rule="nonzero" points="0 0 23 0 23 15.273 0 15.273"/>
+          <polygon fill="#FFF" fill-rule="nonzero" points="0 0 5.766 0 5.766 15.273 0 15.273"/>
+          <g fill="#FFF" fill-rule="nonzero" transform="translate(8.326 4.117)">
+            <polygon points="6.61 2.607 5.676 2.412 5.185 3.226 5.084 2.282 4.154 2.068 5.025 1.68 4.941 .734 5.581 1.438 6.459 1.067 5.984 1.891 6.61 2.607"/>
+            <path d="M6.96154297,5.01416214 C6.13303385,6.83265579 3.95845573,7.62699387 2.12764974,6.78224152 C0.296574219,5.93725052 -0.501088542,3.77140549 0.347216146,1.94751244 C0.779873698,1.01726463 1.48790234,0.377987747 2.48735417,0.0290851593 C2.37238411,0.125916367 2.25864193,0.226357117 2.13396875,0.354480972 C0.842914062,1.681689 0.876455729,3.80269814 2.20883854,5.08862015 C3.54122135,6.37463165 5.67057812,6.34125084 6.96151302,5.01404282 L6.96154297,5.01416214 Z"/>
+          </g>
+        </g>
+        <rect width="5" height="15" x="2" fill="#095A11"/>
+      </g>
+    </g>
+  </g>
+</svg>

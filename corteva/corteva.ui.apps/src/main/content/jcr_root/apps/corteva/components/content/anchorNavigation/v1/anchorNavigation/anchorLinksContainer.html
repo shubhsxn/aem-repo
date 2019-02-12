@@ -1,0 +1,20 @@
+<sly data-sly-use.links="com.corteva.model.component.models.AnchorLinksNavigationModel">
+
+    <!-- Anchor Link Contaoner Starts -->
+    <div class="band con09-anchor-links-container hide bands jump-bands">
+        <div class="band-content">
+            <nav>
+                <span>${links.instructionalLabel}</span>               
+            </nav>
+        </div>
+    </div>
+
+
+    <sly data-sly-list="${links.anchorLinksContainer}">
+        <div  id="${item.anchorNodeName @ context='html'}" class="anchor-band" data-title="${item.anchorLinkLabel}">
+
+            <sly data-sly-resource="${item.anchorNodeName @ resourceType='wcm/foundation/components/responsivegrid'}"/>
+        </div>
+    </sly>
+</sly>
+		

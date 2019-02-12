@@ -1,0 +1,39 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+<sly data-sly-test="${comElement.featureFlagState == 'on'}">
+    <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+        Edit Nav Header Tabs Component
+    </sly>
+    <sly data-sly-use.navHeaderTabs="com.corteva.model.component.models.NavHeaderTabsModel">
+        <div class="band white nav04-header-tabs">
+                <div class="band-content">
+                    <h1> ${navHeaderTabs.title @ context = 'html'}</h1>                
+                    <p class="subhead">${navHeaderTabs.subTitle @ context = 'html'}</p>                
+                </div>
+                <nav>
+                    <div class="band-content">
+                        <!-- JS will insert links here -->
+                    </div>
+                </nav>
+        </div>
+        <sly data-sly-list="${navHeaderTabs.navHeaderTabs}">
+            <div class="band"  id="${item.tabLabel @ context='html'}"  data-title="${item.tabLabel}">
+					<sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+						${'navHeaderTabs.navHeaderTabsSection' @i18n,locale=comElement.localeForInternationalization} ${item.tabLabel}
+					</sly>
+                    <sly data-sly-resource="${item.tabLabel @ resourceType='wcm/foundation/components/responsivegrid'}"/>
+            </div>
+
+        </sly>
+        
+    </sly>
+
+</sly>
+</div>

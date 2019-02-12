@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    searchUrl="https://stage-sp10056bd0.guided.ss-omtrdc.net/"
+    sortOption="Pertinencia###m_DuPontSort=relevance,Última fecha de modificación###m_DuPontSort=date"
+    filterOption="Artigo###q1=Artigo;x1=contentType,Sobre A Corteva###q1=Sobre+A+Corteva;x1=contentType,Inovação###q1=Inova%C3%A7%C3%A3o;x1=contentType,Sustentabilidade###q1=Sustentabilidade;x1=contentType,Carreiras###q1=Carreiras;x1=contentType,Eventos###q1=Eventos;x1=contentType,FAQ###q1=FAQ;x1=contentType,Documentação Técnica###q1=Documenta%C3%A7%C3%A3o+T%C3%A9cnica;x1=contentType,Produto###q1=Produto;x1=contentType,Biografia###q1=Biografia;x1=contentType,Mídia###q1=M%C3%ADdia;x1=contentType,Legislgação###q1=Legislga%C3%A7%C3%A3o;x1=contentType"
+    autoCompleteUrl="https://content.atomz.com/autocomplete/sp10/05/6b/d0-stage/"
+    minCharacterLength="3"
+    maxSuggestionLength="5"
+
+/>

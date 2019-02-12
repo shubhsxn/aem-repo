@@ -1,0 +1,9 @@
+node_modules
+node
+src/main/content/jcr_root/apps/corteva/components/clientlib/toplib/css/
+src/main/content/jcr_root/apps/corteva/components/content/**/clientlib/js/dist/
+src/main/content/jcr_root/apps/corteva/components/clientlib/toplib/resources
+package-lock.json
+src/main/content/jcr_root/apps/corteva/components/clientlib/toplib/js/vendor/babel-polyfill.js
+src/main/content/jcr_root/apps/corteva/components/clientlib/toplib/js/dist/
+src/main/content/jcr_root/apps/corteva/components/clientlib/toplib/js/utils/dist

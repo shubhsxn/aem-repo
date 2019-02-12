@@ -1,0 +1,91 @@
+.con08-biography-filter select.form-dropdown {
+  width: 100%;
+  max-width: 400px;
+  appearance: textfield;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  padding: 12px 30px 12px 24px;
+  background: #ffffff;
+  color: $brand-primary;
+  box-shadow: none;
+  position: relative;
+  background: #ffffff url("../vectors/carot-down.svg") right 18px center no-repeat;
+  -webkit-appearance: textfield;
+  &:focus {
+    outline: 2px solid $brand-primary;
+  }
+
+  + label {
+    display: none;
+  }
+
+  /* Re-style Chosen.js dropdowns */
+  ~ {
+    .chosen-container .chosen-single {
+      height: 50px;
+      background: none;
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+      width: 100%;
+      padding: 12px 30px 12px 20px;
+      color: $brand-primary;
+      font-size: $font-m;
+      font-weight: 700;
+      line-height: 26px;
+      box-shadow: none;
+      * {
+        font-weight: bold;
+        font-weight: 700;
+      }
+      &:after {
+        content: "";
+        height: 10px;
+        width: 6px;
+        background: transparent url("../vectors/blue-carot.svg") center center
+          no-repeat;
+        background-size: contain;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        transform-origin: center center;
+        transition: transform 150ms ease-in;
+      }
+    }
+
+    .chosen-with-drop .chosen-single:after {
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    .chosen-container .chosen-results li {
+      padding: 20px;
+      height: 60px;
+      font-size: $font-m;
+      color: $foundation-primary;
+      width: 100%;
+      transition: background 200ms ease-out;
+      color: $foundation-primary;
+      border-bottom: 1px solid #aaaaaa;
+      &:first-child {
+        border-top: 1px solid #aaaaaa;
+      }
+      &:hover,
+      &.highlighted {
+        background: #eeeeee;
+      }
+
+      &.result-selected {
+        font-weight: 700;
+      }
+    }
+
+    .chosen-container .chosen-drop {
+      box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
+      padding: 0;
+    }
+    .chosen-container .chosen-results {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

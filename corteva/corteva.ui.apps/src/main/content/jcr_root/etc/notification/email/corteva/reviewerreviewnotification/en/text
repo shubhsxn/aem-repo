@@ -1,0 +1,11 @@
+Dear Reviewer Group,
+
+<a href= "${payload.link}">${payload.title}</a> was submitted for review by ${authorName} with a requested publish date of ${absoluteDate} ET. 
+
+
+Please review at your earliest convenience.
+
+
+
+\ -------------------------------------------------------------------------------------\
+This is a system-generated email; please do not reply to this email address. 

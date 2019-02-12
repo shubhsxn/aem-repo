@@ -1,0 +1,10 @@
+.con08-biography-filter{
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	    .chosen-container .chosen-search-input{
+	      display: none;
+	    }
+		}
+		select.form-dropdown{
+			min-height: 46px;
+		}
+}

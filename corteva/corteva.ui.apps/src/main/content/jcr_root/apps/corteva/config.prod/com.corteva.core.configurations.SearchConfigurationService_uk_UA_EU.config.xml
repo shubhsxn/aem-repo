@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    searchUrl="https://sp10056bd4.guided.ss-omtrdc.net/"
+    sortOption="релевантність###m_DuPontSort=relevance,дата останньої зміни###m_DuPontSort=date"
+    filterOption="Стаття###q1=%D0%A1%D1%82%D0%B0%D1%82%D1%82%D1%8F;x1=contentType,Про Corteva###q1=%D0%9F%D1%80%D0%BE+Corteva;x1=contentType,Інновації###q1=%D0%86%D0%BD%D0%BD%D0%BE%D0%B2%D0%B0%D1%86%D1%96%D1%97;x1=contentType,Стійкість###q1=%D0%A1%D1%82%D1%96%D0%B9%D0%BA%D1%96%D1%81%D1%82%D1%8C;x1=contentType,Кар'єра###q1=%D0%9A%D0%B0%D1%80'%D1%94%D1%80%D0%B0;x1=contentType,Події###q1=%D0%9F%D0%BE%D0%B4%D1%96%D1%97;x1=contentType,FAQ (питання-відповідь)###q1=FAQ+(%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D1%8F-%D0%B2%D1%96%D0%B4%D0%BF%D0%BE%D0%B2%D1%96%D0%B4%D1%8C);x1=contentType,Технічна документація###q1=%D0%A2%D0%B5%D1%85%D0%BD%D1%96%D1%87%D0%BD%D0%B0+%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D1%96%D1%8F;x1=contentType,Продукт###q1=%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82;x1=contentType,Біографія###q1=%D0%91%D1%96%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%96%D1%8F;x1=contentType,Медіа###q1=%D0%9C%D0%B5%D0%B4%D1%96%D0%B0;x1=contentType,Юридична інформація###q1=%D0%AE%D1%80%D0%B8%D0%B4%D0%B8%D1%87%D0%BD%D0%B0+%D1%96%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D1%96%D1%8F;x1=contentType,Product###q1=Product;x1=contentType"
+    autoCompleteUrl="https://content.atomz.com/autocomplete/sp10/05/6b/d4/"
+    minCharacterLength="3"
+    maxSuggestionLength="5"
+
+/>

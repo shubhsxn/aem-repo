@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:language="es_ar"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="nt:folder">
+    <all
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="all"
+        sling:message="Todos"/>
+    <allContent
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="containerSearch.allContent"
+        sling:message="Todo"/>
+    <button
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="buttonText"
+        sling:message="Cerrar"/>
+    <copyright
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:key="copy"
+        sling:message="en key"/>
+    <goButtonLabel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="goButtonLabel"
+        sling:message="Ir"/>
+    <jumpToSection
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="jumpToSection"
+        sling:message="Ir a"/>
+    <labels jcr:primaryType="nt:folder">
+        <biographyLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="biographyLabel"
+            sling:message="Descargar Biogarfía"/>
+        <connectLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="connectLabel"
+            sling:message="Conectar"/>
+        <downloadImageLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="downloadImageLabel"
+            sling:message="Descargar Imágenes"/>
+        <downloadLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="downloadLabel"
+            sling:message="Descargar"/>
+    </labels>
+    <loadMore
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="loadMore"
+        sling:message="Cargar más"/>
+    <menu
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="globalHeader.menu"
+        sling:message="Menú"/>
+    <navHeaderTabsSection
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="navHeaderTabs.navHeaderTabsSection"
+        sling:message="NavHeaderTab Section"/>
+    <new
+        jcr:mixinTypes="[sling:Message]"
+        jcr:primaryType="nt:folder"
+        sling:message="Nuevo"/>
+    <next
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="galleryImage.next"
+        sling:message="Siguiente"/>
+    <noReferenceSearchBasePath
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="noReferenceSearch.noReferenceSearchBasePath"
+        sling:message="Please Configure Base Path."/>
+    <pdp jcr:primaryType="nt:folder">
+        <activeIngredientLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.active.ingredient"
+            sling:message="Ingrediente Activo"/>
+        <additionalInformation
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.additional.information"
+            sling:message="Información Adicional"/>
+        <applicationMethod
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.application.method"
+            sling:message="Modo de Aplicación"/>
+        <applicationRate
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.application.rate"
+            sling:message="Ratio de Aplicación"/>
+        <applicationTiming
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.application.timing"
+            sling:message="Momento de Aplicación"/>
+        <approvedUse
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.approved.use"
+            sling:message="Recomendaciones de Uso"/>
+        <buttonLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.buttonLabel"
+            sling:message="Buscar"/>
+        <buttonLinkErrorMessage
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="buttonLinkErrorMessage"
+            sling:message="Please author destination URL corresponding to the Button label to make the button visible"/>
+        <buttonTextErrorMessage
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="buttonTextErrorMessage"
+            sling:message="Please author Button label corresponding to the destination URL to make the button visible"/>
+        <cropRotation
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.crop.rotation"
+            sling:message="Rotación de Cultivo"/>
+        <disclosureText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.disclosure.text"
+            sling:message="Refer to the Product Label for complete product efficacy information."/>
+        <findLabels
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.find.labels"
+            sling:message="Consulte la etiqueta de este producto."/>
+        <formulations
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.formulations"
+            sling:message="Formulaciones"/>
+        <grazing
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.grazing"
+            sling:message="Grazing"/>
+        <hazardInformation
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.hazard.information"
+            sling:message="Información de Seguridad"/>
+        <herbicideGroup
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.herbicide.group"
+            sling:message="Grupo químico"/>
+        <labelFinder
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.labelFinder"
+            sling:message="Find labels for this product"/>
+        <legendlabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="legendlabel"
+            sling:message="Registered"/>
+        <listviewlabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="listviewlabel"
+            sling:message="List View"/>
+        <mapviewlabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="mapviewlabel"
+            sling:message="Map View"/>
+        <mixingInstructions
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.mixing.instructions"
+            sling:message="Recomendaciones de Mezcla"/>
+        <modeOfAction
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.mode.of.action"
+            sling:message="Modo de acción"/>
+        <msdsLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.msdsLabel"
+            sling:message="Descarga la hoja de seguridad"/>
+        <noResultsText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.noResultsText"
+            sling:message="No se encontraron productos sugeridos para"/>
+        <or
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.or"
+            sling:message="O"/>
+        <packaging
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.packaging"
+            sling:message="Packaging"/>
+        <pleaseSelect
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.pleaseSelect"
+            sling:message="Seleccione"/>
+        <product.filter.cropFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.cropFilter"
+            sling:message="Filtrar por Cultivo"/>
+        <product.filter.diseaseFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.diseaseFilter"
+            sling:message="Filtrar por Enfermedad"/>
+        <product.filter.marketFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.marketFilter"
+            sling:message="Filtrar por Mercado"/>
+        <product.filter.pestsFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.pestsFilter"
+            sling:message="Filtrar por Plagas"/>
+        <product.filter.productNameFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.productNameFilter"
+            sling:message="Filtrar por Nombre de Producto"/>
+        <product.filter.productTypeFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.productTypeFilter"
+            sling:message="Filtrar por Tipo de Producto"/>
+        <product.filter.productTypeSubFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.productTypeSubFilter"
+            sling:message="Filtrar por Categoría de Producto"/>
+        <product.filter.stateFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.stateFilter"
+            sling:message="Filter by State Registration"/>
+        <product.filter.useSiteFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.useSiteFilter"
+            sling:message="Filter by Use Site"/>
+        <product.filter.weedsFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.weedsFilter"
+            sling:message="Filtrar por Maleza"/>
+        <product.label.applyFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.applyFilter"
+            sling:message="Listo"/>
+        <product.label.clearAllFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.clearAllFilter"
+            sling:message="Borrar filtros"/>
+        <product.label.filterProduct
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.filterProduct"
+            sling:message="Filtrar productos"/>
+        <product.label.loadMore
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.loadMore"
+            sling:message="Cargar más productos"/>
+        <product.label.noProductMatch
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.noProductMatch"
+            sling:message="Ningún producto coincide con su selección"/>
+        <product.label.noProductMatchDetail
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.noProductMatchDetail"
+            sling:message="Por favor, borre sus selecciones de filtro y vuelva a intentarlo"/>
+        <product.label.productsFound
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.productsFound"
+            sling:message="Productos encontrados"/>
+        <product.label.tryAgain
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.tryAgain"
+            sling:message="Por favor, borre sus selecciones de filtro y vuelva a intentarlo"/>
+        <product.notFound
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.notFound"
+            sling:message="Ningún producto coincide con su selección"/>
+        <product.select.cortevaproductTypescropProtection
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.cortevaproductTypescropProtection"
+            sling:message="Seleccione Sub-tipo de Producto"/>
+        <product.select.cropFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.cropFilter"
+            sling:message="Seleccione Cultivo"/>
+        <product.select.disease
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.disease"
+            sling:message="Seleccione Enfermedad"/>
+        <product.select.diseaseFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.diseaseFilter"
+            sling:message="Seleccione Enfermedad"/>
+        <product.select.marketFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.marketFilter"
+            sling:message="Seleccione Mercado"/>
+        <product.select.pests
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.pests"
+            sling:message="Seleccione Plaga"/>
+        <product.select.pestsFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.pestsFilter"
+            sling:message="Seleccione Plaga"/>
+        <product.select.productNameFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.productNameFilter"
+            sling:message="Ingrese un nombre de producto"/>
+        <product.select.productTypeFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.productTypeFilter"
+            sling:message="Seleccione Tipo de Producto"/>
+        <product.select.productTypeSubFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.productTypeSubFilter"
+            sling:message="Seleccione Categoría"/>
+        <product.select.stateFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.stateFilter"
+            sling:message="Seleccione Estado"/>
+        <product.select.useSiteFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.useSiteFilter"
+            sling:message="Select Use Site"/>
+        <product.select.weeds
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.weeds"
+            sling:message="Seleccione Maleza"/>
+        <product.select.weedsFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.weedsFilter"
+            sling:message="Seleccione Maleza"/>
+        <productLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.productLabel"
+            sling:message="Descargue la Etiqueta de Producto"/>
+        <productLabelFinderSectionLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.sectionLabel"
+            sling:message="Primary Labels"/>
+        <productLabelKey
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.productLabelKey"
+            sling:message="Specimen Label"/>
+        <productTechSpecsTitle
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.technical.specs.title"
+            sling:message="Especificaciones Técnicas"/>
+        <rateOfTiming
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.rate.of.timing"
+            sling:message="Ratio de tiempo"/>
+        <rates
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.rates"
+            sling:message="Ratio"/>
+        <safetyLabelKey
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.safetyLabelKey"
+            sling:message="Hoja de Seguridad"/>
+        <searchBarPromptText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.searchBarPromptText"
+            sling:message="Ingrese Nombre de Producto"/>
+        <searchLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.searchLabel"
+            sling:message="Buscar Etiqueta"/>
+        <searchProducts
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.searchProducts"
+            sling:message="Buscar Productos"/>
+        <sectionIntroText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.sectionIntroText"
+            sling:message="Para encontrar información complementaria sobre este producto , utilice nuestra herramienta Buscador de Etiquetas"/>
+        <sectionLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.sectionLabel"
+            sling:message="Etiquetas"/>
+        <selectState
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.selectState"
+            sling:message="Seleccione Estado"/>
+        <stateKey
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.stateKey"
+            sling:message="Todos los Estados"/>
+        <subSectionProductLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionProductLabel"
+            sling:message="Etiqueta de Producto"/>
+        <subSectionSafetyDataSheetLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSafetyDataSheetLabel"
+            sling:message="Hoja de Seguridad"/>
+        <subSectionSectionEighteenLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSectionEighteenLabel"
+            sling:message="Section 18 Emergency Exceptions"/>
+        <subSectionSectionThreeLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSectionThreeLabel"
+            sling:message="Section 3 Federal Supplemental Labels"/>
+        <subSectionSectionTwentyFourLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSectionTwentyFourLabel"
+            sling:message="Section 24(c) Special Local Need Labels"/>
+        <subSectionSectionTwoLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSectionTwoLabel"
+            sling:message="Section 2(ee) Recommendation Bulletin"/>
+        <subSectionSpecimenLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSpecimenLabel"
+            sling:message="Section 3 Specimen Label"/>
+        <suggestionText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.suggestionText"
+            sling:message="Pruebe un nombre de producto diferente"/>
+        <supplementalInfoLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.supplementalInfoLabel"
+            sling:message="Información suplementaria"/>
+        <suppressedDesc
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.suppressed.desc"
+            sling:message="Los productos son parte de la lista suprimida"/>
+        <tankMixes
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.tank.mixes"
+            sling:message="Mezcla de Tanque"/>
+        <toggleText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.toggleText"
+            sling:message="Seleccione Producto"/>
+        <unreglabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="unreglabel"
+            sling:message="Unregistered"/>
+        <warningText1
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.warningText1"
+            sling:message="Tenga en cuenta que"/>
+        <warningText2
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.warningText2"
+            sling:message="is not registered for use in"/>
+        <warningText3
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.warningText3"
+            sling:message=". These documents are provided for informational use only."/>
+    </pdp>
+    <previous
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="galleryImage.previous"
+        sling:message="Previous"/>
+    <scrollToTop
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="scrollToTop.backToTop"
+        sling:message="Back To Top"/>
+</jcr:root>

@@ -1,0 +1,229 @@
+
+
+.c-con01-fixed-grid-tiles__wrapper {
+    background-color: $foundation-tertiary;
+
+    .atm01-header-v1__wrapper{
+        margin-bottom: 40px;
+        p{
+            margin-top: 10px;
+        }
+        @media only screen and (max-width: $mobile) {
+            margin-bottom: 22px;
+        }
+    }
+
+    header {
+        text-align: center;
+    } 
+    
+    p.subhead {
+        @include fluid-type(16px, 20px);
+        @include fluid-line-height(22px, 32px);
+    }
+}
+
+.c-con01-fixed-grid-tiles__heading  {
+    color: $foundation-primary;
+    text-align: center;
+}
+
+.c-con01-fixed-grid-tiles__body  {
+    color: $foundation-primary;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.c-con01-fixed-grid-tiles__tile {
+    float: left;
+    position: relative;
+    width: 31%;
+    padding-bottom : 31%; /* = width for a 1:1 aspect ratio */
+    margin: 1.15%;
+    background-color: $base;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 105%; /* you change this to "contain" if you don't want the images to be cropped */
+    transition: all .3s;
+}
+@media only screen and (max-width: 992px) {
+    .c-con01-fixed-grid-tiles__tile {
+    width: 48%;
+    padding-bottom : 48%; /* = width for a 1:1 aspect ratio */
+    margin:1%;
+    }
+}
+
+
+.c-con01-fixed-grid-tiles__tile--caret-left:hover::after {
+    border-top: 15px solid $brand-primary;
+}
+
+.c-con01-fixed-grid-tiles__tile--caret-left::after {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    left: 0%;
+    transform: rotate(90deg);
+    top: 80%;
+    margin-left: -22px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid $base;
+    clear: both;
+    transition:.3s;
+}
+
+.c-con01-fixed-grid-tiles__title {
+    position: absolute;
+    width: 100%;
+    padding-top: 2vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+@media only screen and (max-width: 992px) {
+    .c-con01-fixed-grid-tiles__title {
+    padding-top: 3vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    }
+}
+
+.c-con01-fixed-grid-tiles__title h4{
+    font-weight: bold;
+    font-size: $heading-s;
+    line-height: 30px;
+    color: #185AE5;
+
+    @media screen and (max-width: $mobile) {
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+.c-con01-fixed-grid-tiles__cta {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 2vw;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+@media only screen and (max-width: $mobile) {
+    .c-con01-fixed-grid-tiles__cta {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 3vw;
+    letter-spacing: 0px;
+    }
+    .c-con01-fixed-grid-tiles__cta p {
+        font-size: 0;
+    }
+    
+}
+
+.c-con01-fixed-grid-tiles__tile .c-con01-fixed-grid-tiles__cta p{
+    color: $brand-primary;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.c-con01-fixed-grid-tiles__tile .c-con01-fixed-grid-tiles__cta svg {
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+.c-con01-fixed-grid-tiles__cta svg polyline,
+.c-con01-fixed-grid-tiles__cta svg path {
+    stroke: $brand-primary;
+    color: $brand-primary;
+}
+
+.c-con01-fixed-grid-tiles__tile:hover {
+    background-color: $brand-primary;
+}
+
+.c-con01-fixed-grid-tiles__tile:hover h4 {
+    color: $base;
+}
+
+.c-con01-fixed-grid-tiles__tile:hover .c-con01-fixed-grid-tiles__cta p{
+    color: $base;
+}
+
+.c-con01-fixed-grid-tiles__tile:hover .c-con01-fixed-grid-tiles__cta svg polyline{
+    stroke: $base;
+}
+
+.c-con01-fixed-grid-tiles__tile:hover .c-con01-fixed-grid-tiles__cta svg path{
+    stroke: $base;
+}
+
+.tile--red:hover .c-con01-fixed-grid-tiles__cta p{
+    color: $brand-primary;
+}
+
+.tile--red:hover .c-con01-fixed-grid-tiles__cta svg polyline{
+    stroke: $brand-primary;
+}
+
+.tile--red:hover .c-con01-fixed-grid-tiles__cta svg path{
+    stroke: $brand-primary;
+}
+
+.tile--red h4,
+.tile--red .c-con01-fixed-grid-tiles__cta p,
+.tile--red .c-con01-fixed-grid-tiles__cta svg polyline,
+.tile--red .c-con01-fixed-grid-tiles__cta svg path {
+    color: $base;
+    stroke: $base;
+}
+
+.tile--red {
+    background-color: $brand-primary;
+}
+
+.tile--red:hover {
+    background-color: $base;
+}
+
+.tile--red:hover h4 {
+    color: $foundation-primary;
+}
+
+.c-con01-fixed-grid-tiles__tile--caret-right:hover::after{
+    border-top: 15px solid $brand-primary;
+}
+
+.c-con01-fixed-grid-tiles__tile--caret-right::after{
+    content: '';
+    z-index: 2;
+    position: absolute;
+    right: 0%;
+    transform: rotate(-90deg);
+    top: 80%;
+    margin-right: -22px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid $base;
+    clear: both;
+    transition:.3s;
+}
+@media only screen and (max-width: 992px) {
+    .c-con01-fixed-grid-tiles__tile--caret-right::after{
+    display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .tile--hide {
+    display: none;
+}
+}

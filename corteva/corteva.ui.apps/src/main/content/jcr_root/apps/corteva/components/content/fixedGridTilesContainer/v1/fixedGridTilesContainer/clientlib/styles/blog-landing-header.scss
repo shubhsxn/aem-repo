@@ -1,0 +1,7 @@
+.band.con19-blog-landing-header {
+    background: $base;
+    background: linear-gradient(180deg, $base 400px,#eeeeee 400px);
+    @media screen and (max-width: $mobile) {
+        background: linear-gradient(180deg, $base 35%,#eeeeee 35%);
+    }
+}

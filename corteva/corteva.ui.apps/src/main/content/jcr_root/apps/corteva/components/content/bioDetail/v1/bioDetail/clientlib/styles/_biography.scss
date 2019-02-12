@@ -1,0 +1,202 @@
+.det21-biography {
+
+  h2.title {
+    font-family: $body-font;
+    font-size: $font-xl;
+    line-height: rem(32px);
+    font-weight: normal;
+    margin-top: rem(18px);
+    @media screen and (max-width: $mobile) {
+      font-size: $base-font;
+      line-height: rem(24px);
+      margin-top: rem(8px);
+    }
+  }
+
+  picture img {
+    width: 328px;
+    height: auto;
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .aside {
+    border-top: 5px solid $brand-secondary;
+    padding: 15px 0 0;
+    margin: 25px 0 0;
+    h3 {
+      font-size: $font-xl;
+      line-height: rem(26px);
+      border-bottom: 1px solid $border-secondary;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      @media screen and (max-width: $mobile) {
+        font-size: $font-l;
+        line-height: rem(24px);
+        margin-bottom: 19px;
+      }
+    }
+
+    &.downloads a {
+      display: block;
+      font-size: $font-m;
+      line-height: rem(20px);
+      font-weight: 700;
+      margin: 0 0 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:after {
+        content: "";
+        background: transparent url("../vectors/download.svg") center center no-repeat;
+        width: 14px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 1em;
+        margin-left: 1ch;
+      }
+    }
+
+    &.social a {
+      height: 15px;
+      width: 15px;
+      display: inline-block;
+      vertical-align: bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+      font-size: 0;
+      margin: 0 rem(29px) 0 0;
+      &.fb {
+        background-image: url("../vectors/fb-blue.svg");
+        width: 8px;
+      }
+
+      &.twitter {
+        background-image: url("../vectors/twitter-blue.svg");
+        width: 19px;
+      }
+
+      &.linkedin {
+        background-image: url("../vectors/li-blue.svg");
+        width: 16px;
+      }
+    }
+  }
+
+  article {
+    p {
+      margin: 30px 0;
+      @media screen and (max-width: $mobile) {
+        margin: 15px 0;
+      }
+
+      &:first-child {
+        font-size: $font-l;
+        line-height: 32px;
+        margin-top: 0;
+        @media screen and (max-width: $mobile) {
+          font-size: $base-font;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  /*   Cheap grid */
+  .sidebar {
+    width: $sidebar-width;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  article {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - #{$sidebar-width} - #{$gutter-horizontal});
+    padding-left: $gutter-horizontal;
+  }
+  @media screen and (max-width: $mobile) {
+    .sidebar, article {
+      width: 100%;
+      padding: initial;
+    }
+  }
+  /* Real grid */
+  @supports (display: grid) {
+    .band-content {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      grid-template-rows: min-content;
+      grid-auto-rows: min-content;
+      grid-gap: $gutter-vertical $gutter-horizontal;
+      grid-auto-flow: row;
+      align-items: start;
+      @media screen and (max-width: $mobile) {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content min-content;
+        grid-gap: 32px; }
+      @media print {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content min-content;
+        grid-gap: 32px; }
+
+      .name {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        height: auto;
+        @media screen and (max-width: $mobile) {
+          grid-column: 1;
+        }
+      }
+
+      .sidebar {
+        grid-column: 1;
+        grid-row: 2 / span 3;
+        position: sticky;
+        top: 170px;
+        width: 100%;
+        display: block;
+        @media print {
+          grid-row: 2;
+          position: relative;
+          top: 0;
+          .portrait {
+            margin: 0 auto;
+            display: block;
+          }
+          .aside {
+            display: none;
+          }
+        }
+        @media screen and (max-width: $mobile) {
+          grid-row: 2;
+          position: relative;
+          top: 0;
+          .portrait {
+            margin: 0 auto;
+            display: block;
+          }
+        }
+      }
+
+      article {
+        grid-column: 2;
+        grid-row: 2 / span 4;
+        padding-left: 0;
+        width: auto;
+        @media screen and (max-width: $mobile) {
+          grid-column: 1;
+          grid-row: auto;
+        }
+        @media print {
+          grid-column: 1;
+          grid-row: auto;
+        }
+      }
+    }
+  }
+}

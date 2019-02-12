@@ -1,0 +1,178 @@
+/* =====================================================
+   General mixins
+   ===================================================== */
+
+
+/*
+
+  Forces visibility of scrollbar when necessary, even when MacOS would hide them
+
+*/
+@mixin auto-scrollbar {
+  overflow: auto;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    appearance: none;
+    border-radius: 4px;
+    background-color: rgba(0,114,206, 0.4);
+    transition: background 300ms ease;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0,114,206,0.6);
+  }
+}
+
+
+@function rem($pixels, $context: $base-font) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+@mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: $mobile, $upper-range: $desktop) {
+
+  font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+
+  @media screen and (max-width: $lower-range) {
+    font-size: $min-font-size;
+  }
+  @media screen and (min-width: $upper-range){
+    font-size: $max-font-size;
+  }
+}
+
+
+@mixin fluid-line-height($min-line-height: 12px, $max-line-height: 21px, $lower-range: $mobile, $upper-range: $desktop) {
+
+  line-height: calc(#{$min-line-height} + #{(($max-line-height / ($max-line-height * 0 + 1)) - ($min-line-height / ($min-line-height * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+
+  @media screen and (max-width: $lower-range) {
+    line-height: $min-line-height;
+  }
+  @media screen and (min-width: $upper-range){
+    line-height: $max-line-height;
+  }
+}
+
+/* ==========================================================================
+   MIXINS FOR CREATING DIRECTIONAL PROPERTIES
+
+   For example attributes like padding and margin that accept TRBL values
+
+   Note: this was forked from Bourbon
+   ========================================================================== */
+
+/// Directional-property mixins are shorthands for writing properties like the following
+///
+/// @ignore You can also use `false` instead of `null`.
+///
+/// @param {List} $vals
+///   List of directional values
+///
+/// @example scss - Usage
+///   .element {
+///     @include border-style(dotted null);
+///     @include margin(null 0 10px);
+///   }
+///
+/// @example styles - CSS Output
+///   .element {
+///     border-bottom-style: dotted;
+///     border-top-style: dotted;
+///     margin-bottom: 10px;
+///     margin-left: 0;
+///     margin-right: 0;
+///   }
+///
+/// @require {function} contains-falsy
+///
+/// @return {List}
+
+@function collapse-directionals($vals) {
+    $output: null;
+
+    $a: nth($vals, 1);
+    $b: if(length($vals) < 2, $a, nth($vals, 2));
+    $c: if(length($vals) < 3, $a, nth($vals, 3));
+    $d: if(length($vals) < 2, $a, nth($vals, if(length($vals) < 4, 2, 4)));
+
+    @if $a == 0 { $a: 0; }
+    @if $b == 0 { $b: 0; }
+    @if $c == 0 { $c: 0; }
+    @if $d == 0 { $d: 0; }
+
+    @if $a == $b and $a == $c and $a == $d { $output: $a;          }
+    @else if $a == $c and $b == $d         { $output: $a $b;       }
+    @else if $b == $d                      { $output: $a $b $c;    }
+    @else                                  { $output: $a $b $c $d; }
+
+    @return $output;
+}
+
+@function contains-falsy($list) {
+    @each $item in $list {
+        @if not $item {
+            @return true;
+        }
+    }
+
+    @return false;
+}
+
+/// Output directional properties, for instance `margin`.
+///
+/// @access private
+///
+/// @param {String} $pre
+///   Prefix to use
+/// @param {String} $suf
+///   Suffix to use
+/// @param {List} $vals
+///   List of values
+///
+/// @require {function} collapse-directionals
+/// @require {function} contains-falsy
+
+@mixin directional-property($pre, $suf, $vals) {
+    // Property Names
+    $top:    $pre + "-top"    + if($suf, "-#{$suf}", "");
+    $bottom: $pre + "-bottom" + if($suf, "-#{$suf}", "");
+    $left:   $pre + "-left"   + if($suf, "-#{$suf}", "");
+    $right:  $pre + "-right"  + if($suf, "-#{$suf}", "");
+    $all:    $pre +             if($suf, "-#{$suf}", "");
+
+    $vals: collapse-directionals($vals);
+
+    @if contains-falsy($vals) {
+        @if nth($vals, 1) { #{$top}: nth($vals, 1); }
+
+        @if length($vals) == 1 {
+            @if nth($vals, 1) { #{$right}: nth($vals, 1); }
+        } @else {
+            @if nth($vals, 2) { #{$right}: nth($vals, 2); }
+        }
+
+        @if length($vals) == 2 {
+            @if nth($vals, 1) { #{$bottom}: nth($vals, 1); }
+            @if nth($vals, 2) { #{$left}:   nth($vals, 2); }
+        } @else if length($vals) == 3 {
+            @if nth($vals, 3) { #{$bottom}: nth($vals, 3); }
+            @if nth($vals, 2) { #{$left}:   nth($vals, 2); }
+        } @else if length($vals) == 4 {
+            @if nth($vals, 3) { #{$bottom}: nth($vals, 3); }
+            @if nth($vals, 4) { #{$left}:   nth($vals, 4); }
+        }
+    } @else {
+        #{$all}: $vals;
+    }
+}

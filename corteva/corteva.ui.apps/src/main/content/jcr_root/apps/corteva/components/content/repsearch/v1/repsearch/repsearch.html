@@ -1,0 +1,63 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+            Edit Sales Rep Model 
+        </sly>
+        <sly data-sly-use.model="com.corteva.model.component.models.FindSalesRepRetailerModel">
+        <div class="findRep" data-search-type="${properties.searchType}" data-api-domain="${model.apiUrl}">
+            <sly data-sly-test="${properties.searchType == 'salesrep'}">
+                <sly data-sly-test.type="sales"/>
+            </sly>
+            <sly data-sly-test="${properties.searchType == 'retailer'}">
+                <sly data-sly-test.type="retailer"/>
+            </sly>
+            <sly data-sly-test="${properties.searchType == 'contractor'}">
+                <sly data-sly-test.type="contractor"/>
+            </sly>
+            <section class="band component-body">
+                <div class="band-content">
+                    <div class="header">
+                        <h2 class="title">${properties.title  @context='html'}</h2>
+                        <p class="desc">${properties.intro}</p>
+                    </div>
+
+                    <sly data-sly-test="${properties.searchButtonDisplay=='true'}">
+                        <form class="find-rep-form">
+                            <label for="location" class="location-input-label">${properties.searchlabel}</label>
+                            <div class="row">
+                                <div class="col s12 m8 l7 no-pad-left">
+                                    <input type="text" id="location" name="location" class="location-input" placeholder="${properties.postcode}" autocomplete="off" oninvalid="this.classList.add('invalid')" required >
+                                    <a class="reset-search" href="javascript:void(0)" title="">&nbsp;</a>
+                                </div>
+                                <div class="col s4 m4 l5 no-pad-right col-submit-button">
+                                    <button type="submit" class="c-button submit-button" title="${properties.buttonText}" data-analytics-type="${type}-rep-search">${properties.buttonText}</button>
+                                </div>
+                            </div>
+                            <div class="invalid-location-error">${properties.validationError @context='html'}</div>
+                        </form>
+                    </sly>
+
+                    <div class="results-wrapper">
+                        <div class="row results-row">
+                        </div>
+                        <div class="footer">
+                            <button class="c-button secondary load-more-button" title="${'loadMore' @i18n,locale=comElement.localeForInternationalization}"
+                              data-analytics-type="${type}-load-more"
+                            >${'loadMore' @i18n,locale=comElement.localeForInternationalization}</button>
+                        </div>
+                    </div>
+
+                    <div class="results-error">${properties.errorMessage @context='html'}</div>
+                </div>
+            </section>
+        </div>
+        </sly>
+    </sly>
+</div>

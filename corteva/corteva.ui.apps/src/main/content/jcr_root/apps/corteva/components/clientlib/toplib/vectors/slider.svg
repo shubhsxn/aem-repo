@@ -1,0 +1,23 @@
+
+<svg width="28px" height="140px" viewBox="0 0 28 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="3" y="0" width="12" height="124" rx="2"></rect>
+    </defs>
+    <g id="_Components-Library" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="STR_04-|-Comparative-Image-Slider" transform="translate(-706.000000, -412.000000)">
+            <g id="Image-Slider" transform="translate(0.000000, 93.000000)">
+                <g id="Slider" transform="translate(711.000000, 327.000000)">
+                    <g id="Rectangle-9">
+                        <use fill="black" fill-opacity="1" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <circle id="Oval" fill="#FFFFFF" cx="9" cy="63" r="9"></circle>
+                    <polygon id="Triangle-2" fill="#185EE5" points="4 63 7 60 7 66"></polygon>
+                    <polygon id="Triangle-2-Copy" fill="#185EE5" transform="translate(12.500000, 63.000000) rotate(-180.000000) translate(-12.500000, -63.000000) " points="11 63 14 60 14 66"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

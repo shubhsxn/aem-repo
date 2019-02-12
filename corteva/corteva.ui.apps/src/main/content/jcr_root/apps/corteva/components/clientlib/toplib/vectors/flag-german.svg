@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15">
+  <g fill="none">
+    <polygon fill="#000" points="0 0 6.656 0 6.656 14.977 0 14.977"/>
+    <polygon fill="#FFD90C" points="6.656 0 13.313 0 13.313 14.977 6.656 14.977"/>
+    <polygon fill="#F31830" points="13.313 0 19.969 0 19.969 14.977 13.313 14.977"/>
+  </g>
+</svg>

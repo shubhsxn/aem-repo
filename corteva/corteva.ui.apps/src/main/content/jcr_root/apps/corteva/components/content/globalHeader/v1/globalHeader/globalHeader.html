@@ -1,0 +1,62 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="${'com.corteva.model.component.models.CommonElementsModel' @ feature='/globalHeader'}" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" >
+        Edit Global Header
+        </sly>
+        <sly data-sly-use.links="com.corteva.model.component.models.LinkListModel">
+        <sly data-sly-use.globalNav="com.corteva.model.component.models.GlobalNavigationModel">
+        <div class="global-nav">
+            <!-- accessibility fix-->
+            <a href="#body" class="skip-nav" tabindex="0">Skip Navigation</a>
+            <div class="logo">
+                <a href="${globalNav.logoUrl @ extension='html'}" title="${comElement.logoAltText}">
+                    <img alt="${comElement.logoAltText}" src="${comElement.imagePath.desktopImagePath @ context='uri'}" />
+                </a>
+            </div>            
+            <nav class="topline">
+                <sly data-sly-resource="${'utilityMenu' @ resourceType='corteva/components/content/linkList/v1/linkList'}" />
+            </nav>
+
+            <!-- nav search starts from here-->
+            <div class="nav-search">
+                <sly data-sly-resource="${'navSearch' @ resourceType='corteva/components/content/navSearch/v1/navSearch'}" />
+            </div>
+
+            <!-- main navigation starts from here-->
+            <nav class="main">
+                <button>${'globalHeader.menu' @i18n,locale=comElement.localeForInternationalization}</button>
+                <ul style="background-image:url(${comElement.imagePath.desktopImagePath @ context='uri'})">
+                    <sly data-sly-list="${links.navigationLinks}">
+                        <li>
+                        <sly data-sly-test="${item.hasDropdown=='yes'}">
+                            <sly data-sly-test.linkURL="${'# {0}' @ format = [item.linkLabel]}" />
+                            <a href="${item.linkUrl}" class="has-dropdown" target="${item.linkAction}" data-analytics-type="global-dropdown-navigation">${item.linkLabel}</a>
+                            <sly data-sly-resource="subMenu-${itemList.index @ resourceType='corteva/components/content/reference/v1/reference'}"/>                 
+                        </sly>
+                        <sly data-sly-test="${item.hasDropdown=='no'}">
+                            <a href="${item.linkUrl}" target="${item.linkAction}" data-analytics-type="global-navigation" data-analytics-value=${item.linkLabel}>${item.linkLabel}</a>
+                       </sly>
+                        </li>
+                    </sly>
+                    <sly data-sly-test="${!wcmmode.edit}" >
+                        <li class="nav-topline" tabindex="-1">                            
+                            <sly data-sly-resource="${'utilityMenu' @ resourceType='corteva/components/content/linkList/v1/linkList'}" />
+                        </li>
+                    </sly>
+                </ul>
+            </nav>
+        </div>
+        <!-- accessibility fix-->
+        <a id="body"></a>
+        </sly>
+        </sly>
+    </sly>
+</div>

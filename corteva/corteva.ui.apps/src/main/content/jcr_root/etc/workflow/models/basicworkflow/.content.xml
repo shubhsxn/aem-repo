@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/default"
+        cq:lastModified="{Date}2018-09-19T17:12:38.036+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Basic Publish Workflow"
+        sling:resourceType="cq/workflow/components/pages/model"
+        workflowStages="[accept,reject]">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <process
+                jcr:created="{Date}2018-04-10T12:04:29.353+05:30"
+                jcr:createdBy="admin"
+                jcr:description="send email to publisher group for the page review"
+                jcr:lastModified="{Date}2018-04-16T11:11:54.344+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="send email to publisher group"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.corteva.core.workflow.EmailProcessStep"
+                    PROCESS_ARGS="emailTemplate=/etc/notification/email/corteva/publishreviewnotification;receiverList=publisher"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+            <dynamic_participant
+                jcr:created="{Date}2018-09-19T16:42:05.923+05:30"
+                jcr:createdBy="admin"
+                jcr:description="review the page and take next steps"
+                jcr:lastModified="{Date}2018-09-19T17:05:32.895+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="review the page and take next steps"
+                sling:resourceType="cq/workflow/components/model/dynamic_participant">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    DYNAMIC_PARTICIPANT="com.corteva.core.workflow.ParticipantStepImpl"
+                    PROCESS_ARGS="role=publisher"/>
+            </dynamic_participant>
+            <or
+                jcr:created="{Date}2018-04-10T12:05:38.759+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-04-10T12:05:38.759+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/workflow/components/model/or"
+                branches="2"
+                orSplit="true">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <process
+                        jcr:created="{Date}2018-04-10T12:06:11.395+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="Approver accept the  content changes ,done by author"
+                        jcr:lastModified="{Date}2018-04-13T15:06:13.140+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Approve page and publish"
+                        sling:resourceType="cq/workflow/components/model/process">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.corteva.core.workflow.AbsoluteTimeProcessStep"
+                            PROCESS_AUTO_ADVANCE="true"
+                            workflowStage="accept"/>
+                    </process>
+                    <participant
+                        jcr:created="{Date}2018-04-13T15:52:24.469+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="waiting for the scheduled time"
+                        jcr:lastModified="{Date}2018-04-13T16:01:05.301+05:30"
+                        jcr:lastModifiedBy="test1"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="waiting for the scheduled time"
+                        sling:resourceType="cq/workflow/components/model/participant">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PARTICIPANT="admin"
+                            timeoutHandler="com.adobe.granite.workflow.console.timeout.autoadvance.AbsoluteTimeAutoAdvancer"
+                            timeoutMillis="0"/>
+                    </participant>
+                    <process_1510736786
+                        jcr:created="{Date}2018-04-13T14:27:06.232+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="activate the page since it has been approved"
+                        jcr:lastModified="{Date}2018-04-13T15:05:43.321+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Activate the page"
+                        sling:resourceType="cq/workflow/components/model/process">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.day.cq.wcm.workflow.process.ActivatePageProcess"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </process_1510736786>
+                    <process_1903566794
+                        jcr:created="{Date}2018-04-13T17:04:35.244+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="Send mail to initiator regarding the page publish"
+                        jcr:lastModified="{Date}2018-09-19T17:12:38.028+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Send mail to initiator regarding the page publish"
+                        sling:resourceType="cq/workflow/components/model/process">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.corteva.core.workflow.EmailProcessStep"
+                            PROCESS_ARGS="emailTemplate=/etc/notification/email/corteva/publishacceptnotification"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </process_1903566794>
+                </_x0031_>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <process
+                        jcr:created="{Date}2018-04-10T12:06:40.427+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="Approver reject the  content changes done by author"
+                        jcr:lastModified="{Date}2018-09-19T17:06:12.158+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Reject publish request and notify page author"
+                        sling:resourceType="cq/workflow/components/model/process">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.corteva.core.workflow.EmailProcessStep"
+                            PROCESS_ARGS="emailTemplate=/etc/notification/email/corteva/publishrejectnotification"
+                            PROCESS_AUTO_ADVANCE="true"
+                            workflowStage="reject"/>
+                    </process>
+                </_x0032_>
+            </or>
+        </flow>
+        <model/>
+        <image
+            jcr:lastModified="{Date}2018-04-10T12:05:26.601+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

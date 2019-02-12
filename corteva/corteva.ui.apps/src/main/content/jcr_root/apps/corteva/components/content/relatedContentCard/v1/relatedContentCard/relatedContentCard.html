@@ -1,0 +1,36 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel" class="feature-flag" data-componentname="${comElement.componentName}" data-featureflagvalue="${comElement.featureFlagState}">
+    <sly data-sly-test="${comElement.featureFlagState == 'on'}">
+        <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+            Edit Related Content Card
+        </sly>
+        <sly
+            data-sly-use.relCardObj="com.corteva.model.component.models.RelatedContentCardModel">
+            <div class="col s12 m4">
+                <a href="${relCardObj.pagePath}" data-analytics-type="cta-related-content" data-analytics-value="${relCardObj.title}" class="card det03-card-related">
+                        <picture>
+                    
+                            <source srcset="${comElement.imagePath.desktopImagePath}" media="(min-width: 1200px)">
+                    
+                            <source srcset="${comElement.imagePath.tabletImagePath}" media="(min-width: 992px)">
+                    
+                            <source srcset="${comElement.imagePath.mobileImagePath}" media="(max-width: 991px)">
+                    
+                            <img class="" src="${comElement.imagePath.desktopImagePath}" alt="${relCardObj.altText}">
+                    
+                        </picture>
+                    
+                        <span>${relCardObj.title}</span>
+                    </a>
+            </div>            
+
+        </sly>
+    </sly>
+</div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+    fieldDescription="Choose Body Text Placement"
+    fieldLabel="Body Text Alignment"
+    name="./radioButton"
+    vertical="{Boolean}true">
+    <items jcr:primaryType="nt:unstructured">
+        <option1
+            jcr:primaryType="nt:unstructured"
+            checked="{Boolean}true"
+            text="Below Title"
+            value="below"/>
+        <option2
+            jcr:primaryType="nt:unstructured"
+            text="Above Title"
+            value="above"/>
+    </items>
+</jcr:root>

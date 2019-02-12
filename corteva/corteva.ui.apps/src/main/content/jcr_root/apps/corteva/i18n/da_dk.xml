@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:language="da_dk"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="nt:folder">
+    <labels jcr:primaryType="nt:folder">
+        <biographyLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="biographyLabel"
+            sling:message="Download biografi"/>
+        <connectLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="connectLabel"
+            sling:message="Tilslut"/>
+        <downloadImageLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="downloadImageLabel"
+            sling:message="Download billede"/>
+        <downloadLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="downloadLabel"
+            sling:message="Downloads"/>
+    </labels>
+    <pdp jcr:primaryType="nt:folder">
+        <activeIngredientLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.active.ingredient"
+            sling:message="Aktivstof"/>
+        <additionalInformation
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.additional.information"
+            sling:message="Yderligere information"/>
+        <applicationMethod
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.application.method"
+            sling:message="Anvendelsesmetode"/>
+        <applicationRate
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.application.rate"
+            sling:message="Dosering"/>
+        <applicationTiming
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.application.timing"
+            sling:message="Anvendelsestidspunkt"/>
+        <approvedUse
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.approved.use"
+            sling:message="Godkendelse"/>
+        <buttonLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.buttonLabel"
+            sling:message="Søg"/>
+        <buttonLinkErrorMessage
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="buttonLinkErrorMessage"
+            sling:message="Angiv destinations-URL til den korrekte knapetiket for at gøre knappen synlig."/>
+        <buttonTextErrorMessage
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="buttonTextErrorMessage"
+            sling:message="Angiv knapetiket til den korrekte destinations-URL for at gøre knappen synlig."/>
+        <cropRotation
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.crop.rotation"
+            sling:message="Sædskifte"/>
+        <disclosureText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.disclosure.text"
+            sling:message="Læs brugsanvisningen for at få fuldstændig information om midlet."/>
+        <findLabels
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.find.labels"
+            sling:message="Find etiketter"/>
+        <formulations
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.formulations"
+            sling:message="Formulering"/>
+        <fungicideGroup
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.fungicide.group"
+            sling:message="Fungicide Group"/>
+        <grazing
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.grazing"
+            sling:message="Græsning"/>
+        <hazardInformation
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.hazard.information"
+            sling:message="H-sætninger"/>
+        <herbicideGroup
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.herbicide.group"
+            sling:message="Herbicidgruppe"/>
+        <insecticideGroup
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.insecticide.group"
+            sling:message="Insecticide Group"/>
+        <labelFinder
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.labelFinder"
+            sling:message="Find etiketter"/>
+        <legendlabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="legendlabel"
+            sling:message="Registered"/>
+        <listviewlabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="listviewlabel"
+            sling:message="List View"/>
+        <mapviewlabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="mapviewlabel"
+            sling:message="Map View"/>
+        <mixingInstructions
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.mixing.instructions"
+            sling:message="Opblandingsvejledning"/>
+        <modeOfAction
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.mode.of.action"
+            sling:message="Virkemåde"/>
+        <msdsLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.msdsLabel"
+            sling:message="Download sikkerhedsdatablad"/>
+        <noResultsText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.noResultsText"
+            sling:message="Ingen foreslåede produkter blev fundet til"/>
+        <or
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.or"
+            sling:message="eller"/>
+        <packaging
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.packaging"
+            sling:message="Emballage"/>
+        <pleaseSelect
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.pleaseSelect"
+            sling:message="Vælg"/>
+        <product.filter.cropFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.cropFilter"
+            sling:message="Filtrér efter afgrøde"/>
+        <product.filter.diseaseFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.diseaseFilter"
+            sling:message="Filtrér efter sygdom"/>
+        <product.filter.marketFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.marketFilter"
+            sling:message="Filtrér efter land"/>
+        <product.filter.pestsFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.pestsFilter"
+            sling:message="Filtrér efter skadedyr"/>
+        <product.filter.productNameFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.productNameFilter"
+            sling:message="Filtrér efter produktnavn"/>
+        <product.filter.productTypeFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.productTypeFilter"
+            sling:message="Filtrér efter produkttype"/>
+        <product.filter.productTypeSubFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.productTypeSubFilter"
+            sling:message="Filtrér efter produktkategori"/>
+        <product.filter.stateFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.stateFilter"
+            sling:message="Filtrér efter statsregistrering"/>
+        <product.filter.useSiteFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.useSiteFilter"
+            sling:message="Filtrér efter anvendelsesområde"/>
+        <product.filter.weedsFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.filter.weedsFilter"
+            sling:message="Filtrér efter ukrudt"/>
+        <product.label.applyFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.applyFilter"
+            sling:message="Udført"/>
+        <product.label.clearAllFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.clearAllFilter"
+            sling:message="Nulstil alle filtre"/>
+        <product.label.filterProduct
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.filterProduct"
+            sling:message="Filtrér produkter"/>
+        <product.label.loadMore
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.loadMore"
+            sling:message="Indlæs flere produkter"/>
+        <product.label.noProductMatch
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.noProductMatch"
+            sling:message="Ingen produkter matcher dine valg."/>
+        <product.label.noProductMatchDetail
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.noProductMatchDetail"
+            sling:message="Nulstil dine filtervalg, og forsøg igen."/>
+        <product.label.productsFound
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.productsFound"
+            sling:message="Fundne produkter"/>
+        <product.label.tryAgain
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.label.tryAgain"
+            sling:message="Nulstil dine filtervalg, og forsøg igen."/>
+        <product.notFound
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.notFound"
+            sling:message="Ingen produkter matcher dine valg"/>
+        <product.select.cortevaproductTypescropProtection
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.cortevaproductTypescropProtection"
+            sling:message="Vælg undergruppe af produkt"/>
+        <product.select.cropFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.cropFilter"
+            sling:message="Vælg afgrøde"/>
+        <product.select.disease
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.disease"
+            sling:message="Vælg sygdom"/>
+        <product.select.diseaseFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.diseaseFilter"
+            sling:message="Vælg sygdom"/>
+        <product.select.marketFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.marketFilter"
+            sling:message="Vælg land"/>
+        <product.select.pests
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.pests"
+            sling:message="Vælg skadedyr"/>
+        <product.select.pestsFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.pestsFilter"
+            sling:message="Vælg skadedyr"/>
+        <product.select.productNameFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.productNameFilter"
+            sling:message="Indtast produktnavn"/>
+        <product.select.productTypeFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.productTypeFilter"
+            sling:message="Vælg produkttype"/>
+        <product.select.productTypeSubFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.productTypeSubFilter"
+            sling:message="Vælg kategori"/>
+        <product.select.stateFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.stateFilter"
+            sling:message="Vælg stat"/>
+        <product.select.useSiteFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.useSiteFilter"
+            sling:message="Vælg anvendelsesområde"/>
+        <product.select.weeds
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.weeds"
+            sling:message="Vælg ukrudt"/>
+        <product.select.weedsFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.weedsFilter"
+            sling:message="Vælg ukrudt"/>
+        <productLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.productLabel"
+            sling:message="Download brugsanvisning"/>
+        <productLabelFinderSectionLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.sectionLabel"
+            sling:message="Primære etiketter"/>
+        <productLabelKey
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.productLabelKey"
+            sling:message="Prøveetiket"/>
+        <productTechSpecsTitle
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.technical.specs.title"
+            sling:message="Tekniske specifikationer"/>
+        <rateOfTiming
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.rate.of.timing"
+            sling:message="Tidspunkt"/>
+        <rates
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.rates"
+            sling:message="Dosering"/>
+        <safetyLabelKey
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.safetyLabelKey"
+            sling:message="Sikkerhedsdatablad"/>
+        <searchBarPromptText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.searchBarPromptText"
+            sling:message="Indtast produktnavn"/>
+        <searchLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.searchLabel"
+            sling:message="Søg etiket"/>
+        <searchProducts
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.searchProducts"
+            sling:message="Søg produkter"/>
+        <sectionIntroText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.sectionIntroText"
+            sling:message="Gå ind i vores etiketsøgningsværktøj for at finde mere information om dette produkt i en registreret stat."/>
+        <sectionLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.sectionLabel"
+            sling:message="Etiketter"/>
+        <selectState
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.selectState"
+            sling:message="Vælg stat"/>
+        <stateKey
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.stateKey"
+            sling:message="Alle stater"/>
+        <subSectionProductLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionProductLabel"
+            sling:message="Brugsanvisning"/>
+        <subSectionSafetyDataSheetLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSafetyDataSheetLabel"
+            sling:message="Sikkerhedsdatablade"/>
+        <subSectionSectionEighteenLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSectionEighteenLabel"
+            sling:message="Afsnit 18 Undtagelser i nødsituationer"/>
+        <subSectionSectionThreeLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSectionThreeLabel"
+            sling:message="Afsnit 3 Supplerende føderale etiketter"/>
+        <subSectionSectionTwentyFourLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSectionTwentyFourLabel"
+            sling:message="Afsnit 24(c) Etiketter til særlige lokale behov"/>
+        <subSectionSectionTwoLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSectionTwoLabel"
+            sling:message="Afsnit 2(ee) Meddelelser om anbefalinger"/>
+        <subSectionSpecimenLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.subSectionSpecimenLabel"
+            sling:message="Afsnit 3 Etiket som eksempel"/>
+        <suggestionText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.suggestionText"
+            sling:message="Forsøg med et andet produktnavn."/>
+        <supplementalInfoLabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabel.supplementalInfoLabel"
+            sling:message="Supplerende information"/>
+        <suppressedDesc
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.suppressed.desc"
+            sling:message="Produkterne er en del af komprimeret liste"/>
+        <tankMixes
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.label.tank.mixes"
+            sling:message="Tankblandinger"/>
+        <toggleText
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.toggleText"
+            sling:message="Vælg produkt"/>
+        <unreglabel
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="unreglabel"
+            sling:message="Unregistered"/>
+        <warningText1
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.warningText1"
+            sling:message="Bemærk, at"/>
+        <warningText2
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.warningText2"
+            sling:message="er ikke registreret til brug i"/>
+        <warningText3
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="pdp.productLabelFinder.warningText3"
+            sling:message=". Disse dokumenter er kun til information."/>
+		<product.select.productTypeSeqFilter
+            jcr:primaryType="sling:MessageEntry"
+            sling:key="product.select.productTypeSeqFilter"
+            sling:message="Vælg undergruppe af produkt"/>
+    </pdp>
+</jcr:root>

@@ -1,0 +1,62 @@
+<!--/*
+  Copyright 2018,SapientRazorfish_; All Rights Reserved.
+ 
+  This software is the confidential and proprietary information of SapientRazorfish_,
+  ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into with SapientRazorfish_.
+*/-->
+
+<div data-sly-use.comElement="com.corteva.model.component.models.CommonElementsModel"	
+	class="feature-flag" data-componentname="${comElement.componentName}"
+	data-featureflagvalue="${comElement.featureFlagState}">
+	<sly data-sly-test="${comElement.featureFlagState == 'on'}">
+    <sly data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+	Edit Article Header Component </sly>
+	<div class="band white det23-article" data-sly-use.articleModel="com.corteva.model.component.models.ArticleHeaderModel">
+		<article class="band-content">	
+			<header class="det23-article-header">	
+            	<sly data-sly-test.displayArticleType="${properties.displayArticleType}"/>
+                <sly data-sly-test.displayPublishDate="${properties.displayPublishDate}"/>
+                <sly data-sly-test="${displayArticleType || displayPublishDate}">
+				<span class="eyebrow">
+				<sly data-sly-test="${displayArticleType}">
+					${articleModel.articleType}
+                </sly>
+				<sly data-sly-test="${displayArticleType && displayPublishDate}">•</sly>
+                <sly data-sly-test="${displayPublishDate}">
+				 &nbsp;${articleModel.customDisplayDate}
+                </sly>
+                </span>
+                </sly>
+				<h1>${properties.title @context= 'html'}</h1>	
+
+                <sly data-sly-test="${properties.displayByLine}">
+                <span class="author">
+					${properties.bylinePrefix}&nbsp;${articleModel.authorText}
+                  </span>
+                </sly>
+				 <sly data-sly-test="${properties.displayRevisionDate}">
+                <span class="author">
+					${properties.revisionDatePrefix}&nbsp;${articleModel.lastModifiedDate}
+                  </span>
+                </sly>
+				 <sly data-sly-test="${properties.fileReference!=null}">
+				<picture>	
+         		<source srcset="${comElement.imagePath.desktopImagePath}" media="(min-width: 1200px)">
+				<source srcset="${comElement.imagePath.tabletImagePath}" media="(min-width: 992px)">
+				<source srcset="${comElement.imagePath.mobileImagePath}" media="(max-width: 991px)">
+					<img class="" src="${comElement.imagePath.desktopImagePath  @ context='uri'}" alt="${comElement.altText}">	
+				</picture>
+    			 <sly data-sly-test="${properties.displayHeroImageAttribution} ">
+					<span class="caption">
+               			 ${properties.heroImageAttributionPrefix}&nbsp;${articleModel.heroImageSource}</span>
+               	</sly>
+				</sly>
+				<div class="intro">
+					${properties.introText @context= 'html'}
+				</div>
+			</header>		
+		</article>
+	</div>
+	</sly>
+</div>

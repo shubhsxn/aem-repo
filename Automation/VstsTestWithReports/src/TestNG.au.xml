@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Corteva.ca Regression Test Suite" parallel="false">
+	<listeners>
+		<listener class-name="utils.Listeners.TestListener" />
+		<listener class-name="utils.Listeners.AnnotationTransformer" />
+	</listeners>
+
+	<test name="Regression Test cases" preserve-order="true" parallel="false">
+		<classes>
+			<class name="au.corteva.tests.NavigationTests" />
+			<class name="au.corteva.tests.GlobalHeaderAndFooterTest" />
+		</classes>
+	</test>
+</suite>
