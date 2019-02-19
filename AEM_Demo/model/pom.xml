@@ -23,13 +23,13 @@
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>AEM_Demo.core</artifactId>
+    <artifactId>AEM_Demo.model</artifactId>
     <packaging>bundle</packaging>
-    <name>AEM_Demo - Core</name>
-    <description>Core bundle for AEM_Demo</description>
+    <name>AEM_Demo - Model</name>
+    <description>Model bundle for AEM Demo</description>
     <build>
         <plugins>
-            <plugin>
+             <plugin>   
                 <groupId>org.apache.sling</groupId>
                 <artifactId>maven-sling-plugin</artifactId>
             </plugin>
@@ -38,18 +38,30 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <executions>
+                <!-- Configure extra execution of 'manifest' in process-classes phase 
+						to make sure SCR metadata is generated before unit test runs -->
                     <execution>
-                        <id>bundle-manifest</id>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>manifest</goal>
-                        </goals>
-                    </execution>
+						<id>scr-metadata</id>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+						<configuration>
+							<supportIncrementalBuild>true</supportIncrementalBuild>
+						</configuration>
+					</execution>
                 </executions>
-                <configuration>
-                    <instructions>
-                        <!-- Import any version of javax.inject, to allow running on multiple versions of AEM -->
-                        <Import-Package>
+               <configuration>
+					<exportScr>true</exportScr>
+					<instructions>
+						<Sling-Model-Packages>
+							com.aem.demo.models
+						</Sling-Model-Packages>
+						<Export-Package>
+							com.aem.demo.models.*;version="1.0.0";uses:="com.aem.demo.core.configurations,com.aem.demo.models.component.bean,com.day.cq.wcm.api,com.fasterxml.jackson.annotation,
+							javax.annotation,javax.jcr,org.apache.sling.api,org.apache.sling.api.resource,
+							org.apache.sling.models.annotations
+						</Export-Package>
+						<Import-Package>
 							javax.inject;version=0.0.0,com.day.cq.replication;version="[6.0.0,7)",
 							org.apache.sling.event.jobs;version="[1.5,5]",
 							com.day.cq.workflow;version="[1.0,2)",
@@ -59,21 +71,61 @@
 							com.day.cq.commons.jcr;version="[5.7.0,7.0.0)",
 							*
 						</Import-Package>
-						<Import-Package>
-							org.osgi.framework,
-							*;resolution:=optional
-						</Import-Package>
-						<Export-Package>
-							com.aem.demo.core.*
-						</Export-Package>
-                    </instructions>
-                </configuration>
+						<!-- Enable processing of OSGI DS component annotations -->
+						<_dsannotations>*</_dsannotations>
+						<!-- Enable processing of OSGI metatype annotations -->
+						<_metatypeannotations>*</_metatypeannotations>
+						<!-- Support parsing of maven-scr-plugin annotations through the felix.scr.bnd 
+							plugin -->
+						<!-- <_plugin>org.apache.felix.scrplugin.bnd.SCRDescriptorBndPlugin;destdir=${project.build.outputDirectory};</_plugin> -->
+					</instructions>
+				</configuration>
             </plugin>
         </plugins>
     </build>
-
+	<profiles>
+			<!-- Development profile: install only the bundle -->
+			<profile>
+				<id>autoInstallBundle</id>
+				<activation>
+					<activeByDefault>false</activeByDefault>
+				</activation>
+				<build>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.sling</groupId>
+							<artifactId>maven-sling-plugin</artifactId>
+							<configuration>
+								<!-- Note that this requires /apps/app/install to exist!! -->
+								<!-- This is typically the case when ui.apps is deployed first -->
+								<!-- Otherwise, create /apps/app/install manually (CRXDE|Lite) -->
+								<slingUrlSuffix>/apps/aemDemo/install/</slingUrlSuffix>
+								<failOnError>true</failOnError>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-pmd-plugin</artifactId>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-checkstyle-plugin</artifactId>
+						</plugin>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>findbugs-maven-plugin</artifactId>
+						</plugin>
+					</plugins>
+				</build>
+			</profile>
+		</profiles>
     <dependencies>
-        		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>AEM_Demo</groupId>
+			<artifactId>AEM_Demo.core</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -94,22 +146,21 @@
 			</dependency> <dependency> <groupId>biz.aQute</groupId> <artifactId>bndlib</artifactId> 
 			</dependency> <dependency> <groupId>org.osgi</groupId> <artifactId>org.osgi.core</artifactId> 
 			</dependency> <dependency> <groupId>org.osgi</groupId> <artifactId>org.osgi.compendium</artifactId> 
-			</dependency> <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> 
-			</dependency> <dependency> <groupId>javax.jcr</groupId> <artifactId>jcr</artifactId> 
-			</dependency> <dependency> <groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> 
-			</dependency> <dependency> <groupId>com.adobe.aem</groupId> <artifactId>aem-api</artifactId> 
-			</dependency> <dependency> <groupId>org.apache.sling</groupId> <artifactId>org.apache.sling.models.api</artifactId> 
-			</dependency> <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
-			</dependency> <dependency> <groupId>org.mockito</groupId> <artifactId>mockito-all</artifactId> 
-			</dependency> <dependency> <groupId>org.javassist</groupId> <artifactId>javassist</artifactId> 
+			</dependency> Other Dependencies <dependency> <groupId>org.slf4j</groupId> 
+			<artifactId>slf4j-api</artifactId> </dependency> <dependency> <groupId>javax.jcr</groupId> 
+			<artifactId>jcr</artifactId> </dependency> <dependency> <groupId>javax.servlet</groupId> 
+			<artifactId>servlet-api</artifactId> </dependency> <dependency> <groupId>com.adobe.aem</groupId> 
+			<artifactId>aem-api</artifactId> </dependency> <dependency> <groupId>org.apache.sling</groupId> 
+			<artifactId>org.apache.sling.models.api</artifactId> </dependency> <dependency> 
+			<groupId>junit</groupId> <artifactId>junit</artifactId> </dependency> <dependency> 
+			<groupId>org.mockito</groupId> <artifactId>mockito-all</artifactId> </dependency> 
+			<dependency> <groupId>org.javassist</groupId> <artifactId>javassist</artifactId> 
 			</dependency> <dependency> <groupId>io.wcm</groupId> <artifactId>io.wcm.testing.aem-mock</artifactId> 
 			</dependency> <dependency> <groupId>junit-addons</groupId> <artifactId>junit-addons</artifactId> 
 			</dependency> <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi</artifactId> 
+			</dependency> <dependency> <groupId>org.apache.commons</groupId> <artifactId>commons-lang3</artifactId> 
 			</dependency> <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi-ooxml</artifactId> 
 			</dependency> -->
-		<!-- <dependency> <groupId>org.apache.commons</groupId> <artifactId>commons-lang3</artifactId> 
-			</dependency> -->
-		<!-- OSGi Dependencies -->
 		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.apache.felix.scr</artifactId>
@@ -122,7 +173,6 @@
 			<groupId>biz.aQute</groupId>
 			<artifactId>bndlib</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>osgi.core</artifactId>
@@ -179,6 +229,10 @@
 			<artifactId>org.apache.sling.testing.sling-mock-oak</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.adobe.acs</groupId>
+			<artifactId>acs-aem-commons-bundle</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 		</dependency>
@@ -186,9 +240,13 @@
 			<groupId>com.openpojo</groupId>
 			<artifactId>openpojo</artifactId>
 		</dependency>
-        <dependency>
-    		<groupId>org.apache.commons</groupId>
-    		<artifactId>commons-email</artifactId>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
 		</dependency>
     </dependencies>
 </project>
